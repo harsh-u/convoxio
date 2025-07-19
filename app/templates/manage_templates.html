@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block title %}Manage Templates | WhatsApp Onboarding{% endblock %}
+{% block head %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+{% endblock %}
+{% block content %}
+<div class="row justify-content-center g-4">
+  <div class="col-lg-7">
+    <div class="card p-4 fade-in mb-4">
+      <h3 class="mb-3"><i class="bi bi-file-earmark-plus me-2"></i>Create New Template</h3>
+      <form method="POST">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+          {{ form.name.label(class_="form-label") }}
+          {{ form.name(class_="form-control", placeholder="Template Name") }}
+        </div>
+        <div class="mb-3">
+          {{ form.language.label(class_="form-label") }}
+          {{ form.language(class_="form-control", placeholder="en_US") }}
+        </div>
+        <div class="mb-3">
+          {{ form.category.label(class_="form-label") }}
+          {{ form.category(class_="form-select") }}
+        </div>
+        <div class="mb-3">
+          {{ form.content.label(class_="form-label") }}
+          {{ form.content(class_="form-control", rows=3, placeholder="Message Content") }}
+        </div>
+        <div class="mb-3">
+          {{ form.header_type.label(class_="form-label") }}
+          {{ form.header_type(class_="form-select") }}
+        </div>
+        <div class="mb-3">
+          {{ form.header_text.label(class_="form-label") }}
+          {{ form.header_text(class_="form-control", placeholder="Header Text (if type is Text)") }}
+        </div>
+        <div class="mb-3">
+          {{ form.header_image_url.label(class_="form-label") }}
+          {{ form.header_image_url(class_="form-control", placeholder="Header Image URL (if type is Image)") }}
+        </div>
+        <div class="mb-3">
+          {{ form.footer_text.label(class_="form-label") }}
+          {{ form.footer_text(class_="form-control", placeholder="Footer Text (optional)") }}
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Buttons (up to 3, optional)</label>
+          <div class="row g-2 mb-2">
+            <div class="col-md-4">{{ form.button1_type.label(class_="form-label") }}{{ form.button1_type(class_="form-select") }}</div>
+            <div class="col-md-4">{{ form.button1_text.label(class_="form-label") }}{{ form.button1_text(class_="form-control", placeholder="Button 1 Text") }}</div>
+            <div class="col-md-4">{{ form.button1_url.label(class_="form-label") }}{{ form.button1_url(class_="form-control", placeholder="Button 1 URL (for CTA)") }}</div>
+          </div>
+          <div class="row g-2 mb-2">
+            <div class="col-md-4">{{ form.button2_type.label(class_="form-label") }}{{ form.button2_type(class_="form-select") }}</div>
+            <div class="col-md-4">{{ form.button2_text.label(class_="form-label") }}{{ form.button2_text(class_="form-control", placeholder="Button 2 Text") }}</div>
+            <div class="col-md-4">{{ form.button2_url.label(class_="form-label") }}{{ form.button2_url(class_="form-control", placeholder="Button 2 URL (for CTA)") }}</div>
+          </div>
+          <div class="row g-2 mb-2">
+            <div class="col-md-4">{{ form.button3_type.label(class_="form-label") }}{{ form.button3_type(class_="form-select") }}</div>
+            <div class="col-md-4">{{ form.button3_text.label(class_="form-label") }}{{ form.button3_text(class_="form-control", placeholder="Button 3 Text") }}</div>
+            <div class="col-md-4">{{ form.button3_url.label(class_="form-label") }}{{ form.button3_url(class_="form-control", placeholder="Button 3 URL (for CTA)") }}</div>
+          </div>
+        </div>
+        <div class="d-grid">
+          {{ form.submit(class_="btn btn-main btn-lg") }}
+        </div>
+      </form>
+    </div>
+    <div class="card p-4 fade-in mb-4">
+      <h3 class="mb-3"><i class="bi bi-list-check me-2"></i>Your Templates</h3>
+      {% if templates %}
+      <ul class="list-group">
+        {% for t in templates %}
+        <li class="list-group-item">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <span class="fw-bold">{{ t.name }}</span> <span class="badge bg-secondary">{{ t.language }}</span>
+              <span class="badge bg-info">{{ t.status }}</span>
+              <span class="badge bg-warning">{{ t.category }}</span>
+            </div>
+            <span class="text-muted small">{{ t.created_at.strftime('%Y-%m-%d') }}</span>
+          </div>
+          <div class="mt-2">{{ t.content }}</div>
+          {% if t.header_type != 'NONE' %}
+            <div class="mt-1"><b>Header:</b> {{ t.header_type }}{% if t.header_text %} - {{ t.header_text }}{% endif %}{% if t.header_image_url %} - <a href="{{ t.header_image_url }}" target="_blank">Image</a>{% endif %}</div>
+          {% endif %}
+          {% if t.footer_text %}
+            <div class="mt-1"><b>Footer:</b> {{ t.footer_text }}</div>
+          {% endif %}
+          {% if t.buttons_json %}
+            <div class="mt-1"><b>Buttons:</b> <code>{{ t.buttons_json }}</code></div>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+        <div class="text-muted">No templates created yet.</div>
+      {% endif %}
+    </div>
+    <div class="text-end mt-3">
+      <a href="{{ url_for('main.dashboard') }}" class="btn btn-outline-primary"><i class="bi bi-arrow-left me-1"></i>Back to Dashboard</a>
+    </div>
+  </div>
+</div>
+{% endblock %} 

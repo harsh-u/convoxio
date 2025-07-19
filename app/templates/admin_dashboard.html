@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Admin Dashboard | WhatsApp Onboarding{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-lg-8 col-xl-7">
+    <div class="card p-4 fade-in mb-4">
+      <h2 class="mb-3">All Users</h2>
+      <ul class="list-group">
+        {% for user in users %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            <span>{{ user.email }} — <span class="badge bg-secondary">Status: {{ user.onboarding_status }}</span></span>
+            <a href="{{ url_for('admin.view_user', user_id=user.id) }}" class="btn btn-outline-success btn-sm">View</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

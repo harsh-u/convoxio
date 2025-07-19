@@ -1,0 +1,40 @@
+/* Custom Animations & Modern Touches */
+.fade-in {
+  animation: fadeIn 1s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.btn-main {
+  background: #25d366;
+  color: #fff;
+  border: none;
+  transition: background 0.2s, transform 0.2s;
+}
+.btn-main:hover, .btn-main:focus {
+  background: #128c7e;
+  color: #fff;
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 4px 16px rgba(18,140,126,0.10);
+}
+.card {
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.card:hover {
+  box-shadow: 0 8px 32px rgba(37,211,102,0.10);
+  transform: translateY(-2px) scale(1.01);
+}
+input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  border-color: #25d366 !important;
+  box-shadow: 0 0 0 0.2rem rgba(37,211,102,.15) !important;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #f7f9fa;
+}
+::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  border-radius: 4px;
+}
