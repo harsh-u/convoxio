@@ -347,14 +347,20 @@ def send_message():
         }
     }
     
+    print(f"message_data :: {message_data}")
+    
     url = f"https://graph.facebook.com/v18.0/{current_user.phone_number_id}/messages"
     headers = {
         'Authorization': f'Bearer {current_user.whatsapp_access_token}',
         'Content-Type': 'application/json'
     }
-    
+    print(f"url :: {url}")
+    print(f"headers :: {headers}")
     try:
         response = requests.post(url, json=message_data, headers=headers)
+        print(f"Response status: {response.status_code}")
+        print(f"Response body: {response.text}")
+        
         if response.status_code == 200:
             result = response.json()
             
@@ -371,34 +377,60 @@ def send_message():
             
             return jsonify({'message': 'Message sent successfully'})
         else:
-            return jsonify({'error': 'Failed to send message'}), 400
+            error_response = response.json()
+            return jsonify({'error': error_response}), 400
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
-@api.route('/webhook/meta', methods=['POST'])
+@api.route('/webhook/meta', methods=['POST', 'GET'])
 def meta_webhook():
-    data = request.get_json()
+    print(f"Webhook called with method: {request.method}")
+    print(f"Request args: {dict(request.args)}")
     
-    # Handle webhook verification
-    if request.args.get('hub.mode') == 'subscribe':
-        if request.args.get('hub.verify_token') == 'your_verify_token':
-            return request.args.get('hub.challenge')
-        return 'Forbidden', 403
+    # Handle webhook verification (GET request)
+    if request.method == 'GET':
+        print("Handling webhook verification...")
+        if request.args.get('hub.mode') == 'subscribe':
+            verify_token = request.args.get('hub.verify_token')
+            challenge = request.args.get('hub.challenge')
+            print(f"Verify token: {verify_token}")
+            print(f"Challenge: {challenge}")
+            
+            if verify_token == '12345':
+                print("Webhook verification successful")
+                return challenge
+            else:
+                print("Webhook verification failed - invalid token")
+                return 'Forbidden', 403
+        return 'OK', 200
     
-    # Handle status updates
-    if data.get('entry'):
-        for entry in data['entry']:
-            for change in entry.get('changes', []):
-                if change.get('value', {}).get('statuses'):
-                    for status in change['value']['statuses']:
-                        message_id = status.get('id')
-                        message_status = status.get('status')
-                        
-                        # Update message history
-                        message = MessageHistory.query.filter_by(meta_message_id=message_id).first()
-                        if message:
-                            message.status = message_status
-                            db.session.commit()
+    # Handle webhook data (POST request)
+    if request.method == 'POST':
+        print("Handling webhook POST request...")
+        data = request.get_json()
+        print(f"Webhook data received: {data}")
+        
+        # Handle status updates
+        if data and data.get('entry'):
+            for entry in data['entry']:
+                for change in entry.get('changes', []):
+                    if change.get('value', {}).get('statuses'):
+                        for status in change['value']['statuses']:
+                            message_id = status.get('id')
+                            message_status = status.get('status')
+                            
+                            print(f"Message status update: {message_id} -> {message_status}")
+                            
+                            # Update message history
+                            message = MessageHistory.query.filter_by(meta_message_id=message_id).first()
+                            if message:
+                                message.status = message_status
+                                db.session.commit()
+                                print(f"Updated message {message_id} status to {message_status}")
+                            else:
+                                print(f"Message {message_id} not found in database")
+        
+        return jsonify({'status': 'ok'})
     
     return jsonify({'status': 'ok'})
 

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import WhatsAppDiagnostic from './WhatsAppDiagnostic';
 
 const Dashboard = ({ user }) => {
   const [dashboardData, setDashboardData] = useState(null);
@@ -116,7 +117,6 @@ const Dashboard = ({ user }) => {
         <div className="col-lg-6">
           <div className="card p-4 fade-in mb-4">
             <h4 className="mb-3">
-              <span className="badge bg-primary me-2">Step 1</span>
               📤 Upload Business Documents
             </h4>
             <form onSubmit={handleFileUpload} className="mb-3">
@@ -164,7 +164,6 @@ const Dashboard = ({ user }) => {
         <div className="col-lg-6">
           <div className="card p-4 fade-in mb-4">
             <h4 className="mb-3">
-              <span className="badge bg-primary me-2">Step 2</span>
               📱 WhatsApp Business Setup
             </h4>
             {!dashboardData.docs_uploaded ? (
@@ -191,7 +190,6 @@ const Dashboard = ({ user }) => {
 
           <div className="card p-4 fade-in mb-4">
             <h4 className="mb-3">
-              <span className="badge bg-primary me-2">Step 3</span>
               💬 Send WhatsApp Test Message
             </h4>
             {dashboardData.can_send ? (
@@ -242,7 +240,6 @@ const Dashboard = ({ user }) => {
             <>
               <div className="card p-4 fade-in mb-4">
                 <h4 className="mb-3">
-                  <span className="badge bg-primary me-2">Step 4</span>
                   📝 Manage Message Templates
                 </h4>
                 <p>Create and manage your WhatsApp message templates for approval and use.</p>
@@ -253,7 +250,6 @@ const Dashboard = ({ user }) => {
 
               <div className="card p-4 fade-in mb-4">
                 <h4 className="mb-3">
-                  <span className="badge bg-primary me-2">Step 5</span>
                   📊 Message History
                 </h4>
                 {dashboardData.message_history.length > 0 ? (
@@ -263,7 +259,7 @@ const Dashboard = ({ user }) => {
                         <tr>
                           <th scope="col">Sent At</th>
                           <th scope="col">Recipient</th>
-                          <th scope="col">Template</th>
+                          <th scope="col">Template ID</th>
                           <th scope="col">Status</th>
                         </tr>
                       </thead>
@@ -298,7 +294,6 @@ const Dashboard = ({ user }) => {
             <>
               <div className="card p-4 fade-in mb-4">
                 <h4 className="mb-3">
-                  <span className="badge bg-primary me-2">Step 4</span>
                   📝 Manage Message Templates
                 </h4>
                 <div className="alert alert-warning mb-0">You must complete WhatsApp onboarding before managing templates.</div>
@@ -306,7 +301,6 @@ const Dashboard = ({ user }) => {
 
               <div className="card p-4 fade-in mb-4">
                 <h4 className="mb-3">
-                  <span className="badge bg-primary me-2">Step 5</span>
                   📊 Message History
                 </h4>
                 <div className="alert alert-warning mb-0">You must complete WhatsApp onboarding before viewing message history.</div>

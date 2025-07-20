@@ -153,6 +153,7 @@ const ManageTemplates = ({ user }) => {
                 <option value="TRANSACTIONAL">Transactional</option>
                 <option value="MARKETING">Marketing</option>
                 <option value="OTP">OTP</option>
+                <option value="UTILITY">Utility</option>
               </select>
             </div>
             <div className="mb-3">
