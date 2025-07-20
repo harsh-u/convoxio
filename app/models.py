@@ -28,6 +28,7 @@ class Template(db.Model):
     status = db.Column(db.Enum('Pending', 'Approved', 'Rejected'), default='Pending')
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     meta_template_id = db.Column(db.String(100))  # Meta's template ID
+    category = db.Column(db.Enum('TRANSACTIONAL', 'MARKETING', 'OTP'), default='TRANSACTIONAL')
     header_type = db.Column(db.Enum('NONE', 'TEXT', 'IMAGE'), default='NONE')
     header_text = db.Column(db.String(255))
     header_image_url = db.Column(db.String(255))
