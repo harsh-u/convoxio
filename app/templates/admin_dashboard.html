@@ -1,18 +1,240 @@
 {% extends 'base.html' %}
-{% block title %}Admin Dashboard | WhatsApp Onboarding{% endblock %}
+{% block title %}Admin Dashboard - WaBridge{% endblock %}
+
 {% block content %}
-<div class="row justify-content-center">
-  <div class="col-lg-8 col-xl-7">
-    <div class="card p-4 fade-in mb-4">
-      <h2 class="mb-3">All Users</h2>
-      <ul class="list-group">
-        {% for user in users %}
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <span>{{ user.email }} — <span class="badge bg-secondary">Status: {{ user.onboarding_status }}</span></span>
-            <a href="{{ url_for('admin.view_user', user_id=user.id) }}" class="btn btn-outline-success btn-sm">View</a>
-          </li>
-        {% endfor %}
-      </ul>
+<div class="container-fluid">
+  <!-- Header -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h1 class="fw-bold mb-1">Admin Dashboard</h1>
+          <p class="text-muted mb-0">Platform overview and key metrics</p>
+        </div>
+        <div class="d-flex gap-2">
+          <a href="{{ url_for('admin.admin_analytics') }}" class="btn btn-outline-primary">
+            <i class="bi bi-graph-up me-1"></i>Analytics
+          </a>
+          <a href="{{ url_for('main.index') }}" class="btn btn-outline-secondary">
+            <i class="bi bi-house me-1"></i>Main Site
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Metrics Cards -->
+  <div class="row g-4 mb-4">
+    <div class="col-md-3">
+      <div class="card bg-primary bg-opacity-10 border-primary border-opacity-25 p-3">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-people-fill text-primary me-3" style="font-size: 2.5rem;"></i>
+          <div>
+            <h3 class="fw-bold text-primary mb-0">{{ total_users }}</h3>
+            <small class="text-muted">Total Users</small>
+            <div class="small text-success mt-1">
+              <i class="bi bi-arrow-up"></i> +{{ monthly_users }} this month
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="card bg-success bg-opacity-10 border-success border-opacity-25 p-3">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-credit-card-fill text-success me-3" style="font-size: 2.5rem;"></i>
+          <div>
+            <h3 class="fw-bold text-success mb-0">{{ active_subscriptions }}</h3>
+            <small class="text-muted">Active Subscriptions</small>
+            <div class="small text-muted mt-1">
+              Paying customers
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="card bg-warning bg-opacity-10 border-warning border-opacity-25 p-3">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-currency-rupee text-warning me-3" style="font-size: 2.5rem;"></i>
+          <div>
+            <h3 class="fw-bold text-warning mb-0">₹{{ "{:,.0f}".format(total_revenue) }}</h3>
+            <small class="text-muted">Total Revenue</small>
+            <div class="small text-success mt-1">
+              <i class="bi bi-arrow-up"></i> ₹{{ "{:,.0f}".format(monthly_revenue) }} this month
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="card bg-info bg-opacity-10 border-info border-opacity-25 p-3">
+        <div class="d-flex align-items-center">
+          <i class="bi bi-chat-dots-fill text-info me-3" style="font-size: 2.5rem;"></i>
+          <div>
+            <h3 class="fw-bold text-info mb-0">{{ messages_sent_today }}</h3>
+            <small class="text-muted">Messages Today</small>
+            <div class="small text-muted mt-1">
+              Platform activity
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick Actions -->
+  <div class="row g-4 mb-4">
+    <div class="col-md-6 col-lg-3">
+      <div class="card text-center p-4">
+        <i class="bi bi-people text-primary" style="font-size: 2rem;"></i>
+        <h6 class="fw-bold mt-2 mb-3">Manage Users</h6>
+        <a href="{{ url_for('admin.admin_users') }}" class="btn btn-primary">
+          <i class="bi bi-arrow-right me-1"></i>View Users
+        </a>
+      </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3">
+      <div class="card text-center p-4">
+        <i class="bi bi-receipt text-success" style="font-size: 2rem;"></i>
+        <h6 class="fw-bold mt-2 mb-3">Payments</h6>
+        <a href="{{ url_for('admin.admin_payments') }}" class="btn btn-success">
+          <i class="bi bi-arrow-right me-1"></i>View Payments
+        </a>
+      </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3">
+      <div class="card text-center p-4">
+        <i class="bi bi-file-text text-warning" style="font-size: 2rem;"></i>
+        <h6 class="fw-bold mt-2 mb-3">Templates</h6>
+        <a href="{{ url_for('admin.admin_templates') }}" class="btn btn-warning">
+          <i class="bi bi-arrow-right me-1"></i>Manage Templates
+        </a>
+      </div>
+    </div>
+    
+    <div class="col-md-6 col-lg-3">
+      <div class="card text-center p-4">
+        <i class="bi bi-graph-up text-info" style="font-size: 2rem;"></i>
+        <h6 class="fw-bold mt-2 mb-3">Analytics</h6>
+        <a href="{{ url_for('admin.admin_analytics') }}" class="btn btn-info">
+          <i class="bi bi-arrow-right me-1"></i>View Analytics
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <!-- Recent Users -->
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-header bg-light">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="fw-bold mb-0">
+              <i class="bi bi-person-plus me-2"></i>Recent Users
+            </h5>
+            <a href="{{ url_for('admin.admin_users') }}" class="btn btn-outline-primary btn-sm">View All</a>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          {% if recent_users %}
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th>User</th>
+                  <th>Status</th>
+                  <th>Joined</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for user in recent_users %}
+                <tr>
+                  <td>
+                    <div>
+                      <div class="fw-semibold">{{ user.business_name or user.email }}</div>
+                      <small class="text-muted">{{ user.email }}</small>
+                    </div>
+                  </td>
+                  <td>
+                    <span class="badge bg-{{ 'success' if user.onboarding_status == 'Verified' else 'warning' if user.onboarding_status == 'In Progress' else 'secondary' }}">
+                      {{ user.onboarding_status }}
+                    </span>
+                  </td>
+                  <td class="text-muted">{{ user.created_at.strftime('%b %d') }}</td>
+                  <td>
+                    <a href="{{ url_for('admin.view_user', user_id=user.id) }}" class="btn btn-outline-primary btn-sm">
+                      <i class="bi bi-eye"></i>
+                    </a>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <div class="text-center py-4">
+            <i class="bi bi-person text-muted" style="font-size: 2rem;"></i>
+            <p class="text-muted mb-0">No users yet</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Recent Payments -->
+    <div class="col-lg-6">
+      <div class="card">
+        <div class="card-header bg-light">
+          <div class="d-flex justify-content-between align-items-center">
+            <h5 class="fw-bold mb-0">
+              <i class="bi bi-credit-card me-2"></i>Recent Payments
+            </h5>
+            <a href="{{ url_for('admin.admin_payments') }}" class="btn btn-outline-success btn-sm">View All</a>
+          </div>
+        </div>
+        <div class="card-body p-0">
+          {% if recent_payments %}
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th>User</th>
+                  <th>Plan</th>
+                  <th>Amount</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for payment in recent_payments %}
+                <tr>
+                  <td>
+                    <div class="fw-semibold">{{ payment.user.business_name or payment.user.email }}</div>
+                  </td>
+                  <td>
+                    <span class="badge bg-primary">{{ payment.plan.name }}</span>
+                  </td>
+                  <td class="fw-semibold text-success">₹{{ payment.amount }}</td>
+                  <td class="text-muted">{{ payment.created_at.strftime('%b %d') }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <div class="text-center py-4">
+            <i class="bi bi-credit-card text-muted" style="font-size: 2rem;"></i>
+            <p class="text-muted mb-0">No payments yet</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
     </div>
   </div>
 </div>

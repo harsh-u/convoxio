@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+{% block title %}Bulk Messages - WaBridge{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h1 class="fw-bold mb-1">Bulk Messages</h1>
+          <p class="text-muted mb-0">Send WhatsApp messages to multiple customers at once</p>
+        </div>
+        <div class="d-flex gap-2">
+          <a href="{{ url_for('main.send_messages') }}" class="btn btn-outline-primary">
+            <i class="bi bi-person me-1"></i>Single Message
+          </a>
+          <a href="{{ url_for('main.dashboard') }}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-1"></i>Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <!-- Bulk Message Form -->
+    <div class="col-lg-8">
+      <div class="card p-4">
+        <h5 class="fw-bold mb-4">
+          <i class="bi bi-broadcast me-2"></i>
+          Send to Multiple Recipients
+        </h5>
+        
+        <!-- Message Limit Warning -->
+        <div class="alert alert-info d-flex align-items-center mb-4">
+          <i class="bi bi-info-circle me-2"></i>
+          <div>
+            <strong>Message Limit:</strong> You have {{ remaining_messages }} messages remaining this month.
+            {% if remaining_messages < 100 %}
+              <a href="{{ url_for('main.business_verification') }}" class="alert-link">Verify your business</a> to increase your limit.
+            {% endif %}
+          </div>
+        </div>
+        
+        <form method="POST" enctype="multipart/form-data">
+          {{ form.hidden_tag() }}
+          
+          <!-- Template Selection -->
+          <div class="mb-4">
+            {{ form.template.label(class_="form-label fw-semibold") }}
+            {{ form.template(class_="form-select form-select-lg") }}
+            <div class="form-text">
+              <i class="bi bi-info-circle me-1"></i>
+              Only approved templates are available for bulk messaging
+            </div>
+          </div>
+          
+          <!-- Recipients Input Methods -->
+          <div class="mb-4">
+            <h6 class="fw-semibold mb-3">Add Recipients</h6>
+            
+            <!-- Tab Navigation -->
+            <ul class="nav nav-tabs mb-3" id="recipientTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="text-tab" data-bs-toggle="tab" data-bs-target="#text-pane" type="button" role="tab">
+                  <i class="bi bi-type me-1"></i>Type Numbers
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="csv-tab" data-bs-toggle="tab" data-bs-target="#csv-pane" type="button" role="tab">
+                  <i class="bi bi-file-earmark-spreadsheet me-1"></i>Upload CSV
+                </button>
+              </li>
+            </ul>
+            
+            <!-- Tab Content -->
+            <div class="tab-content" id="recipientTabContent">
+              <!-- Text Input Tab -->
+              <div class="tab-pane fade show active" id="text-pane" role="tabpanel">
+                {{ form.recipients_text.label(class_="form-label fw-semibold") }}
+                {{ form.recipients_text(class_="form-control", rows="8", style="font-family: monospace;") }}
+                <div class="form-text">
+                  <i class="bi bi-info-circle me-1"></i>
+                  Enter one phone number per line. Include country code (e.g., 919876543210)
+                </div>
+              </div>
+              
+              <!-- CSV Upload Tab -->
+              <div class="tab-pane fade" id="csv-pane" role="tabpanel">
+                {{ form.csv_file.label(class_="form-label fw-semibold") }}
+                {{ form.csv_file(class_="form-control form-control-lg") }}
+                <div class="form-text">
+                  <i class="bi bi-info-circle me-1"></i>
+                  Upload a CSV file with phone numbers in the first column
+                </div>
+                
+                <!-- CSV Format Help -->
+                <div class="mt-3 p-3 bg-light rounded">
+                  <h6 class="fw-semibold mb-2">CSV Format Example:</h6>
+                  <pre class="mb-0 small">phone_number,name
+919876543210,John Doe
+919876543211,Jane Smith
+919876543212,Bob Johnson</pre>
+                  <small class="text-muted mt-2 d-block">Only the first column (phone numbers) will be used</small>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Preview Section -->
+          <div class="bg-light rounded-3 p-3 mb-4">
+            <h6 class="fw-bold mb-2">
+              <i class="bi bi-eye me-2"></i>
+              Message Preview
+            </h6>
+            <div id="template-preview" class="text-muted">
+              Select a template to see preview
+            </div>
+          </div>
+          
+          <div class="d-grid">
+            {{ form.submit(class_="btn btn-primary btn-lg") }}
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+      <!-- Usage Stats -->
+      <div class="card p-4 mb-4">
+        <h6 class="fw-bold mb-3">
+          <i class="bi bi-graph-up me-2"></i>
+          Usage This Month
+        </h6>
+        
+        <div class="mb-3">
+          <div class="d-flex justify-content-between align-items-center mb-1">
+            <small class="text-muted">Messages Sent</small>
+            <small class="fw-semibold">{{ current_user.messages_sent_this_month }}</small>
+          </div>
+          <div class="progress" style="height: 8px;">
+            <div class="progress-bar" role="progressbar" 
+                 style="width: {{ (current_user.messages_sent_this_month / current_user.message_limit * 100)|round }}%">
+            </div>
+          </div>
+        </div>
+        
+        <div class="row g-3 text-center">
+          <div class="col-6">
+            <div class="bg-success bg-opacity-10 rounded-3 p-2">
+              <h5 class="fw-bold text-success mb-0">{{ remaining_messages }}</h5>
+              <small class="text-muted">Remaining</small>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="bg-primary bg-opacity-10 rounded-3 p-2">
+              <h5 class="fw-bold text-primary mb-0">{{ current_user.message_limit }}</h5>
+              <small class="text-muted">Monthly Limit</small>
+            </div>
+          </div>
+        </div>
+        
+        {% if not current_user.is_verified %}
+        <div class="mt-3">
+          <a href="{{ url_for('main.business_verification') }}" class="btn btn-outline-success btn-sm w-100">
+            <i class="bi bi-shield-check me-1"></i>
+            Verify Business for 10x Limit
+          </a>
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Templates Info -->
+      <div class="card p-4 mb-4">
+        <h6 class="fw-bold mb-3">
+          <i class="bi bi-file-text me-2"></i>
+          Available Templates
+        </h6>
+        
+        {% if templates %}
+        <div class="list-group list-group-flush">
+          {% for template in templates[:3] %}
+          <div class="list-group-item px-0 py-2">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="mb-1">{{ template.name }}</h6>
+                <small class="text-muted">{{ template.language }}</small>
+              </div>
+              <span class="badge bg-success">Approved</span>
+            </div>
+          </div>
+          {% endfor %}
+          {% if templates|length > 3 %}
+          <div class="list-group-item px-0 py-2 text-center">
+            <small class="text-muted">+{{ templates|length - 3 }} more templates</small>
+          </div>
+          {% endif %}
+        </div>
+        {% else %}
+        <div class="text-center py-3">
+          <i class="bi bi-file-plus text-muted" style="font-size: 2rem;"></i>
+          <p class="text-muted mb-2">No templates yet</p>
+          <a href="{{ url_for('main.template_library') }}" class="btn btn-outline-primary btn-sm">
+            Browse Templates
+          </a>
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Tips -->
+      <div class="card bg-light border-0 p-4">
+        <h6 class="fw-bold mb-2">
+          <i class="bi bi-lightbulb me-2"></i>
+          Bulk Messaging Tips
+        </h6>
+        <ul class="list-unstyled mb-0 small">
+          <li class="mb-2">• Test with a small group first</li>
+          <li class="mb-2">• Include country code in phone numbers</li>
+          <li class="mb-2">• Use approved templates only</li>
+          <li class="mb-2">• Check message limits before sending</li>
+          <li class="mb-0">• Monitor delivery status in history</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Template preview functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const templateSelect = document.getElementById('{{ form.template.id }}');
+    const previewDiv = document.getElementById('template-preview');
+    
+    // Template content mapping
+    const templateContent = {
+        {% for template in templates %}
+        '{{ template.name }}': '{{ template.content|replace("'", "\\'") }}',
+        {% endfor %}
+    };
+    
+    function updatePreview() {
+        const selectedTemplate = templateSelect.value;
+        if (selectedTemplate && templateContent[selectedTemplate]) {
+            let content = templateContent[selectedTemplate];
+            // Replace common variables with sample data
+            content = content.replace(/\{\{business_name\}\}/g, '{{ current_user.business_name or "Your Business" }}');
+            content = content.replace(/\{\{customer_name\}\}/g, 'Customer');
+            content = content.replace(/\{\{phone\}\}/g, '{{ current_user.phone_number or "919876543210" }}');
+            
+            previewDiv.innerHTML = '<div class="border-start border-primary border-3 ps-3">' + content + '</div>';
+        } else {
+            previewDiv.innerHTML = '<span class="text-muted">Select a template to see preview</span>';
+        }
+    }
+    
+    templateSelect.addEventListener('change', updatePreview);
+    
+    // Initial preview update
+    updatePreview();
+    
+    // Character counter for text area
+    const textArea = document.getElementById('{{ form.recipients_text.id }}');
+    if (textArea) {
+        textArea.addEventListener('input', function() {
+            const lines = this.value.split('\n').filter(line => line.trim().length > 0);
+            const validNumbers = lines.filter(line => {
+                const phone = line.trim();
+                return phone.length >= 10 && /^\d+$/.test(phone);
+            });
+            
+            // Update counter (you can add a counter element if needed)
+            console.log(`Valid numbers: ${validNumbers.length}/${lines.length}`);
+        });
+    }
+});
+</script>
+{% endblock %}

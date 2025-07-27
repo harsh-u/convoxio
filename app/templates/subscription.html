@@ -1,0 +1,306 @@
+{% extends 'base.html' %}
+{% block title %}Subscription - WaBridge{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h1 class="fw-bold mb-1">Subscription Management</h1>
+          <p class="text-muted mb-0">Manage your plan and billing information</p>
+        </div>
+        <div class="d-flex gap-2">
+          <a href="{{ url_for('main.pricing') }}" class="btn btn-outline-primary">
+            <i class="bi bi-eye me-1"></i>View All Plans
+          </a>
+          <a href="{{ url_for('main.dashboard') }}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-1"></i>Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Current Plan -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card border-primary">
+        <div class="card-header bg-primary text-white">
+          <h5 class="fw-bold mb-0">
+            <i class="bi bi-star-fill me-2"></i>
+            Current Plan
+          </h5>
+        </div>
+        <div class="card-body p-4">
+          {% if current_plan %}
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h4 class="fw-bold mb-2">{{ current_plan.name }} Plan</h4>
+              <p class="text-muted mb-3">{{ current_plan.message_limit }} messages per month</p>
+              
+              <!-- Usage Progress -->
+              <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <small class="text-muted">Messages Used This Month</small>
+                  <small class="fw-semibold">{{ current_user.messages_sent_this_month }} / {{ current_user.message_limit }}</small>
+                </div>
+                <div class="progress" style="height: 8px;">
+                  <div class="progress-bar" role="progressbar" 
+                       style="width: {{ (current_user.messages_sent_this_month / current_user.message_limit * 100)|round }}%">
+                  </div>
+                </div>
+              </div>
+              
+              {% if subscription %}
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <small class="text-muted d-block">Status</small>
+                  <span class="badge bg-{{ 'success' if subscription.status == 'active' else 'warning' if subscription.status == 'cancelled' else 'danger' }} fs-6">
+                    {{ subscription.status.title() }}
+                  </span>
+                </div>
+                <div class="col-sm-6">
+                  <small class="text-muted d-block">
+                    {% if subscription.status == 'active' %}Next Billing{% else %}Expires{% endif %}
+                  </small>
+                  <span class="fw-semibold">{{ subscription.end_date.strftime('%B %d, %Y') }}</span>
+                </div>
+              </div>
+              {% endif %}
+            </div>
+            <div class="col-md-4 text-end">
+              <div class="mb-3">
+                <h3 class="fw-bold text-primary mb-0">₹{{ current_plan.price }}</h3>
+                <small class="text-muted">per month</small>
+              </div>
+              
+              {% if subscription and subscription.status == 'active' %}
+                <div class="d-grid gap-2">
+                  <button class="btn btn-outline-danger btn-sm" data-bs-toggle="modal" data-bs-target="#cancelModal">
+                    <i class="bi bi-x-circle me-1"></i>Cancel Plan
+                  </button>
+                  {% if subscription.auto_renew %}
+                    <small class="text-success">
+                      <i class="bi bi-arrow-repeat me-1"></i>Auto-renewal enabled
+                    </small>
+                  {% else %}
+                    <small class="text-warning">
+                      <i class="bi bi-exclamation-triangle me-1"></i>Auto-renewal disabled
+                    </small>
+                  {% endif %}
+                </div>
+              {% endif %}
+            </div>
+          </div>
+          {% else %}
+          <!-- Free Plan -->
+          <div class="row align-items-center">
+            <div class="col-md-8">
+              <h4 class="fw-bold mb-2">Free Starter Plan</h4>
+              <p class="text-muted mb-3">{{ current_user.message_limit }} messages per month</p>
+              
+              <!-- Usage Progress -->
+              <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <small class="text-muted">Messages Used This Month</small>
+                  <small class="fw-semibold">{{ current_user.messages_sent_this_month }} / {{ current_user.message_limit }}</small>
+                </div>
+                <div class="progress" style="height: 8px;">
+                  <div class="progress-bar" role="progressbar" 
+                       style="width: {{ (current_user.messages_sent_this_month / current_user.message_limit * 100)|round }}%">
+                  </div>
+                </div>
+              </div>
+              
+              <p class="text-info mb-0">
+                <i class="bi bi-info-circle me-1"></i>
+                Upgrade to unlock bulk messaging, scheduling, and advanced analytics!
+              </p>
+            </div>
+            <div class="col-md-4 text-end">
+              <div class="mb-3">
+                <h3 class="fw-bold text-success mb-0">₹0</h3>
+                <small class="text-muted">per month</small>
+              </div>
+              <a href="{{ url_for('main.pricing') }}" class="btn btn-primary">
+                <i class="bi bi-arrow-up-circle me-1"></i>Upgrade Now
+              </a>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Available Plans -->
+  {% if not current_plan or current_plan.name != 'Enterprise' %}
+  <div class="row mb-4">
+    <div class="col-12">
+      <h4 class="fw-bold mb-3">
+        <i class="bi bi-arrow-up-circle me-2"></i>
+        Upgrade Options
+      </h4>
+    </div>
+  </div>
+  
+  <div class="row g-4 mb-4">
+    {% for plan in available_plans %}
+      {% if not current_plan or plan.id != current_plan.id %}
+      <div class="col-md-6 col-lg-4">
+        <div class="card h-100 {{ 'border-primary' if plan.name == 'Business' else '' }}">
+          {% if plan.name == 'Business' %}
+          <div class="card-header bg-primary text-white text-center py-2">
+            <small class="fw-semibold">Most Popular</small>
+          </div>
+          {% endif %}
+          
+          <div class="card-body p-4 text-center">
+            <h5 class="fw-bold mb-3">{{ plan.name }}</h5>
+            <div class="mb-4">
+              <span class="display-6 fw-bold">₹{{ plan.price }}</span>
+              <span class="text-muted">/month</span>
+            </div>
+            
+            <ul class="list-unstyled mb-4 text-start">
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                <strong>{{ "{:,}".format(plan.message_limit) }} messages</strong> per month
+              </li>
+              
+              {% if plan.name == 'Business' %}
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                Bulk messaging
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                Message scheduling
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                Advanced analytics
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                Priority support
+              </li>
+              {% elif plan.name == 'Enterprise' %}
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                Everything in Business
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                API access
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                White-label solution
+              </li>
+              <li class="mb-2">
+                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                24/7 phone support
+              </li>
+              {% endif %}
+            </ul>
+            
+            <div class="d-grid">
+              <a href="{{ url_for('main.upgrade_plan', plan_id=plan.id) }}" 
+                 class="btn {{ 'btn-primary' if plan.name == 'Business' else 'btn-outline-primary' }}">
+                {% if current_plan %}
+                  Upgrade to {{ plan.name }}
+                {% else %}
+                  Choose {{ plan.name }}
+                {% endif %}
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Billing History -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-light">
+          <h5 class="fw-bold mb-0">
+            <i class="bi bi-receipt me-2"></i>
+            Billing History
+          </h5>
+        </div>
+        <div class="card-body">
+          {% if subscription %}
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead class="table-light">
+                <tr>
+                  <th>Date</th>
+                  <th>Plan</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Period</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ subscription.start_date.strftime('%b %d, %Y') }}</td>
+                  <td>{{ current_plan.name if current_plan else 'Unknown' }}</td>
+                  <td>₹{{ current_plan.price if current_plan else '0' }}</td>
+                  <td>
+                    <span class="badge bg-success">Paid</span>
+                  </td>
+                  <td>
+                    {{ subscription.start_date.strftime('%b %d') }} - {{ subscription.end_date.strftime('%b %d, %Y') }}
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <div class="text-center py-4">
+            <i class="bi bi-receipt text-muted" style="font-size: 3rem;"></i>
+            <h6 class="fw-bold mt-3 mb-2">No Billing History</h6>
+            <p class="text-muted mb-3">You're currently on the free plan. Upgrade to see billing history.</p>
+            <a href="{{ url_for('main.pricing') }}" class="btn btn-primary">
+              <i class="bi bi-arrow-up-circle me-2"></i>View Plans
+            </a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Cancel Subscription Modal -->
+<div class="modal fade" id="cancelModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Cancel Subscription</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to cancel your subscription?</p>
+        <div class="alert alert-warning">
+          <i class="bi bi-exclamation-triangle me-2"></i>
+          <strong>Note:</strong> You will continue to have access to your current plan until {{ subscription.end_date.strftime('%B %d, %Y') if subscription else 'the end of your billing period' }}. After that, you'll be moved to the free plan with limited features.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Keep Subscription</button>
+        <a href="{{ url_for('main.cancel_subscription') }}" class="btn btn-danger">
+          Yes, Cancel Subscription
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
