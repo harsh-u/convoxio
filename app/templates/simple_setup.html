@@ -1,0 +1,159 @@
+{% extends 'base.html' %}
+{% block title %}Quick Setup - WaBridge{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      
+      <!-- Progress Indicator -->
+      <div class="text-center mb-4">
+        <div class="d-flex justify-content-center align-items-center mb-3">
+          <div class="bg-primary rounded-circle p-3">
+            <i class="bi bi-whatsapp text-white" style="font-size: 2rem;"></i>
+          </div>
+        </div>
+        <h2 class="fw-bold mb-2">Almost Ready!</h2>
+        <p class="text-muted">Just verify your WhatsApp number and start messaging your customers</p>
+      </div>
+
+      <div class="card p-4">
+        <form method="POST">
+          <!-- WhatsApp Number -->
+          <div class="mb-4">
+            <label class="form-label fw-semibold">
+              <i class="bi bi-whatsapp text-success me-2"></i>
+              Your WhatsApp Business Number
+            </label>
+            <input type="tel" 
+                   name="whatsapp_number" 
+                   class="form-control form-control-lg" 
+                   placeholder="919876543210"
+                   value="{{ current_user.phone_number or '' }}"
+                   required>
+            <div class="form-text">
+              <i class="bi bi-info-circle me-1"></i>
+              Enter the WhatsApp number you use for your business (include country code)
+            </div>
+          </div>
+
+          <!-- Simple Explanation -->
+          <div class="alert alert-info mb-4">
+            <div class="d-flex align-items-start">
+              <i class="bi bi-lightbulb me-2 mt-1"></i>
+              <div>
+                <strong>How it works:</strong>
+                <ul class="mb-0 mt-2 small">
+                  <li>We'll send a verification code to your WhatsApp</li>
+                  <li>Once verified, you can immediately start sending messages</li>
+                  <li>We handle all the technical setup for you</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Verification Code (Demo) -->
+          <div class="mb-4">
+            <label class="form-label fw-semibold">
+              <i class="bi bi-shield-check text-primary me-2"></i>
+              Verification Code
+            </label>
+            <input type="text" 
+                   name="otp" 
+                   class="form-control form-control-lg text-center" 
+                   placeholder="Enter 6-digit code"
+                   maxlength="6"
+                   required>
+            <div class="form-text text-center">
+              <strong>For demo: Use code <code>123456</code></strong>
+            </div>
+          </div>
+
+          <!-- What You Get -->
+          <div class="bg-light rounded-3 p-3 mb-4">
+            <h6 class="fw-bold mb-2">
+              <i class="bi bi-gift text-success me-2"></i>
+              What you get instantly:
+            </h6>
+            <div class="row g-2 small">
+              <div class="col-6">
+                <i class="bi bi-check text-success me-1"></i> 100 free messages
+              </div>
+              <div class="col-6">
+                <i class="bi bi-check text-success me-1"></i> Ready templates
+              </div>
+              <div class="col-6">
+                <i class="bi bi-check text-success me-1"></i> Bulk messaging
+              </div>
+              <div class="col-6">
+                <i class="bi bi-check text-success me-1"></i> Message tracking
+              </div>
+            </div>
+          </div>
+
+          <!-- Submit Button -->
+          <div class="d-grid">
+            <button type="submit" class="btn btn-primary btn-lg">
+              <i class="bi bi-rocket-takeoff me-2"></i>
+              Complete Setup & Start Messaging
+            </button>
+          </div>
+        </form>
+
+        <!-- Help -->
+        <div class="text-center mt-4">
+          <small class="text-muted">
+            <i class="bi bi-question-circle me-1"></i>
+            Need help? <a href="#" class="text-decoration-none">Contact Support</a>
+          </small>
+        </div>
+      </div>
+
+      <!-- Trust Indicators -->
+      <div class="text-center mt-4">
+        <div class="row g-3">
+          <div class="col-4">
+            <div class="text-center">
+              <i class="bi bi-shield-check text-success" style="font-size: 1.5rem;"></i>
+              <div class="small text-muted mt-1">Secure</div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="text-center">
+              <i class="bi bi-lightning text-warning" style="font-size: 1.5rem;"></i>
+              <div class="small text-muted mt-1">Instant</div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="text-center">
+              <i class="bi bi-people text-primary" style="font-size: 1.5rem;"></i>
+              <div class="small text-muted mt-1">Trusted</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Auto-format phone number
+    const phoneInput = document.querySelector('input[name="whatsapp_number"]');
+    phoneInput.addEventListener('input', function() {
+        let value = this.value.replace(/\D/g, ''); // Remove non-digits
+        if (value.length > 0 && !value.startsWith('91')) {
+            value = '91' + value; // Add India country code if missing
+        }
+        this.value = value;
+    });
+
+    // Auto-focus OTP field when phone is entered
+    phoneInput.addEventListener('blur', function() {
+        if (this.value.length >= 10) {
+            document.querySelector('input[name="otp"]').focus();
+        }
+    });
+});
+</script>
+{% endblock %}

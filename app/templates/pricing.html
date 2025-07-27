@@ -1,0 +1,346 @@
+{% extends 'base.html' %}
+{% block title %}Pricing - WaBridge{% endblock %}
+
+{% block content %}
+<div class="container">
+  <!-- Header -->
+  <div class="row mb-5">
+    <div class="col-12 text-center">
+      <h1 class="display-4 fw-bold mb-3">Simple, Transparent Pricing</h1>
+      <p class="lead text-muted mb-4">Choose the perfect plan for your business size and messaging needs</p>
+      <div class="d-flex justify-content-center align-items-center gap-3 mb-4">
+        <span class="text-muted">Monthly</span>
+        <div class="form-check form-switch">
+          <input class="form-check-input" type="checkbox" id="billingToggle">
+          <label class="form-check-label" for="billingToggle">Annual (Save 20%)</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pricing Cards -->
+  <div class="row g-4 justify-content-center mb-5">
+    <!-- Free Plan -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body p-4 text-center">
+          <h5 class="fw-bold text-muted mb-3">Starter</h5>
+          <div class="mb-4">
+            <span class="display-4 fw-bold">₹0</span>
+            <span class="text-muted">/month</span>
+          </div>
+          
+          <ul class="list-unstyled mb-4 text-start">
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              <strong>100 messages</strong> per month
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              Basic message templates
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              WhatsApp Business API access
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              Message delivery tracking
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              Email support
+            </li>
+            <li class="mb-3 text-muted">
+              <i class="bi bi-x-circle me-2"></i>
+              Bulk messaging
+            </li>
+            <li class="mb-3 text-muted">
+              <i class="bi bi-x-circle me-2"></i>
+              Message scheduling
+            </li>
+          </ul>
+          
+          <div class="d-grid">
+            {% if current_user.is_authenticated %}
+              <span class="btn btn-outline-secondary">Current Plan</span>
+            {% else %}
+              <a href="{{ url_for('main.register') }}" class="btn btn-outline-primary">
+                Get Started Free
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Business Plan -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card h-100 border-primary shadow">
+        <div class="card-header bg-primary text-white text-center py-3">
+          <span class="badge bg-warning text-dark mb-2">Most Popular</span>
+          <h5 class="fw-bold mb-0">Business</h5>
+        </div>
+        <div class="card-body p-4 text-center">
+          <div class="mb-4">
+            <span class="display-4 fw-bold">₹999</span>
+            <span class="text-muted">/month</span>
+            <div class="small text-success mt-1">
+              <span class="annual-price" style="display: none;">₹799/month (billed annually)</span>
+            </div>
+          </div>
+          
+          <ul class="list-unstyled mb-4 text-start">
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              <strong>5,000 messages</strong> per month
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              All message templates
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              Bulk messaging (CSV upload)
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              Message scheduling
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              Advanced analytics
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              Priority support
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              Custom templates
+            </li>
+          </ul>
+          
+          <div class="d-grid">
+            {% if current_user.is_authenticated %}
+              <a href="{{ url_for('main.upgrade_plan', plan_id=2) }}" class="btn btn-primary">
+                Upgrade Now
+              </a>
+            {% else %}
+              <a href="{{ url_for('main.register') }}" class="btn btn-primary">
+                Start Free Trial
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enterprise Plan -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card h-100 border-0 shadow-sm">
+        <div class="card-body p-4 text-center">
+          <h5 class="fw-bold text-muted mb-3">Enterprise</h5>
+          <div class="mb-4">
+            <span class="display-4 fw-bold">₹2,999</span>
+            <span class="text-muted">/month</span>
+            <div class="small text-success mt-1">
+              <span class="annual-price" style="display: none;">₹2,399/month (billed annually)</span>
+            </div>
+          </div>
+          
+          <ul class="list-unstyled mb-4 text-start">
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              <strong>25,000 messages</strong> per month
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              Everything in Business
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              API access for integrations
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              White-label solution
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              Dedicated account manager
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              24/7 phone support
+            </li>
+            <li class="mb-3">
+              <i class="bi bi-check-circle-fill text-success me-2"></i>
+              Custom integrations
+            </li>
+          </ul>
+          
+          <div class="d-grid">
+            {% if current_user.is_authenticated %}
+              <a href="{{ url_for('main.upgrade_plan', plan_id=3) }}" class="btn btn-outline-primary">
+                Upgrade Now
+              </a>
+            {% else %}
+              <a href="{{ url_for('main.register') }}" class="btn btn-outline-primary">
+                Contact Sales
+              </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Comparison -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-header bg-light">
+          <h5 class="fw-bold mb-0 text-center">Feature Comparison</h5>
+        </div>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead class="table-light">
+                <tr>
+                  <th class="ps-4">Features</th>
+                  <th class="text-center">Starter</th>
+                  <th class="text-center">Business</th>
+                  <th class="text-center">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="ps-4 fw-semibold">Monthly Messages</td>
+                  <td class="text-center">100</td>
+                  <td class="text-center">5,000</td>
+                  <td class="text-center">25,000</td>
+                </tr>
+                <tr>
+                  <td class="ps-4 fw-semibold">Message Templates</td>
+                  <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                  <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                  <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                </tr>
+                <tr>
+                  <td class="ps-4 fw-semibold">Bulk Messaging</td>
+                  <td class="text-center"><i class="bi bi-x-circle text-muted"></i></td>
+                  <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                  <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                </tr>
+                <tr>
+                  <td class="ps-4 fw-semibold">Message Scheduling</td>
+                  <td class="text-center"><i class="bi bi-x-circle text-muted"></i></td>
+                  <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                  <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                </tr>
+                <tr>
+                  <td class="ps-4 fw-semibold">Analytics Dashboard</td>
+                  <td class="text-center">Basic</td>
+                  <td class="text-center">Advanced</td>
+                  <td class="text-center">Advanced</td>
+                </tr>
+                <tr>
+                  <td class="ps-4 fw-semibold">API Access</td>
+                  <td class="text-center"><i class="bi bi-x-circle text-muted"></i></td>
+                  <td class="text-center"><i class="bi bi-x-circle text-muted"></i></td>
+                  <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                </tr>
+                <tr>
+                  <td class="ps-4 fw-semibold">Support</td>
+                  <td class="text-center">Email</td>
+                  <td class="text-center">Priority Email</td>
+                  <td class="text-center">24/7 Phone</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ Section -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <h3 class="fw-bold text-center mb-4">Frequently Asked Questions</h3>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <div class="card border-0 bg-light h-100">
+            <div class="card-body p-4">
+              <h6 class="fw-bold mb-2">Can I change plans anytime?</h6>
+              <p class="text-muted mb-0">Yes, you can upgrade or downgrade your plan at any time. Changes take effect immediately.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 bg-light h-100">
+            <div class="card-body p-4">
+              <h6 class="fw-bold mb-2">What happens if I exceed my message limit?</h6>
+              <p class="text-muted mb-0">You'll be notified when you reach 80% of your limit. Additional messages can be purchased or you can upgrade your plan.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 bg-light h-100">
+            <div class="card-body p-4">
+              <h6 class="fw-bold mb-2">Is there a setup fee?</h6>
+              <p class="text-muted mb-0">No setup fees! Start with our free plan and upgrade when you're ready.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card border-0 bg-light h-100">
+            <div class="card-body p-4">
+              <h6 class="fw-bold mb-2">Do you offer refunds?</h6>
+              <p class="text-muted mb-0">Yes, we offer a 30-day money-back guarantee for all paid plans.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA Section -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card bg-primary text-white text-center p-5">
+        <h2 class="fw-bold mb-3">Ready to Get Started?</h2>
+        <p class="lead mb-4">Join thousands of businesses already using WhatsApp to connect with their customers.</p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="{{ url_for('main.register') }}" class="btn btn-light btn-lg px-4">
+            <i class="bi bi-rocket-takeoff me-2"></i>
+            Start Free Trial
+          </a>
+          <a href="#" class="btn btn-outline-light btn-lg px-4">
+            <i class="bi bi-telephone me-2"></i>
+            Contact Sales
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const billingToggle = document.getElementById('billingToggle');
+    const annualPrices = document.querySelectorAll('.annual-price');
+    
+    billingToggle.addEventListener('change', function() {
+        annualPrices.forEach(price => {
+            if (this.checked) {
+                price.style.display = 'block';
+            } else {
+                price.style.display = 'none';
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

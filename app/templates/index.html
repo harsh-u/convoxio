@@ -1,14 +1,206 @@
-{% extends 'base.html' %}
-{% block title %}Home | WhatsApp Onboarding{% endblock %}
+{% extends "base.html" %}
+{% block title %}WaBridge - Connect with Your Customers Instantly{% endblock %}
+
 {% block content %}
-<div class="row justify-content-center">
-  <div class="col-md-7 col-lg-6">
-    <div class="card p-4 mb-4 fade-in">
-      <h1 class="mb-3 text-center fw-bold" style="color:#128c7e;">Welcome to WhatsApp Onboarding Portal</h1>
-      <p class="lead text-center mb-4">Easily onboard your business and connect WhatsApp in a few steps.</p>
-      <div class="d-flex justify-content-center gap-3">
-        <a href="{{ url_for('main.register') }}" class="btn btn-main btn-lg px-4">Register</a>
-        <a href="{{ url_for('main.login') }}" class="btn btn-outline-success btn-lg px-4">Login</a>
+<!-- Hero Section -->
+<div class="hero-section">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6">
+        <div class="fade-in">
+          <h1 class="display-4 fw-bold mb-4">
+            Reach Your Customers on WhatsApp
+            <span class="d-block text-warning">Instantly</span>
+          </h1>
+          <p class="lead mb-4">
+            Connect with your customers where they are. Send order confirmations, 
+            appointment reminders, and promotional messages directly to WhatsApp 
+            with just a few clicks.
+          </p>
+          <div class="d-flex gap-3 mb-4">
+            <a href="{{ url_for('main.register') }}" class="btn btn-light btn-lg px-4">
+              <i class="bi bi-rocket-takeoff me-2"></i>
+              Start Free Trial
+            </a>
+            <a href="#features" class="btn btn-outline-light btn-lg px-4">
+              Learn More
+            </a>
+          </div>
+          <div class="d-flex align-items-center text-light">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            <small>No setup fees • Cancel anytime • 24/7 support</small>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="text-center">
+          <i class="bi bi-phone" style="font-size: 200px; opacity: 0.3;"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Features Section -->
+<div class="container" id="features">
+  <div class="row">
+    <div class="col-12 text-center mb-5">
+      <h2 class="display-5 fw-bold mb-3">Why Small Businesses Choose Us</h2>
+      <p class="lead text-muted">Everything you need to start messaging your customers on WhatsApp</p>
+    </div>
+  </div>
+  
+  <div class="row g-4 mb-5">
+    <div class="col-md-4">
+      <div class="card h-100 text-center p-4">
+        <div class="feature-icon mx-auto">
+          <i class="bi bi-lightning-charge"></i>
+        </div>
+        <h4 class="fw-bold mb-3">Quick Setup</h4>
+        <p class="text-muted">
+          Get started in under 5 minutes. Just add your business phone number 
+          and start sending messages immediately.
+        </p>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card h-100 text-center p-4">
+        <div class="feature-icon mx-auto">
+          <i class="bi bi-template"></i>
+        </div>
+        <h4 class="fw-bold mb-3">Ready Templates</h4>
+        <p class="text-muted">
+          Choose from 50+ pre-built message templates for restaurants, 
+          salons, retail stores, and more.
+        </p>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card h-100 text-center p-4">
+        <div class="feature-icon mx-auto">
+          <i class="bi bi-graph-up"></i>
+        </div>
+        <h4 class="fw-bold mb-3">Track Results</h4>
+        <p class="text-muted">
+          See delivery status, read receipts, and customer engagement 
+          with detailed analytics.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- How It Works -->
+  <div class="row mb-5">
+    <div class="col-12 text-center mb-5">
+      <h2 class="display-5 fw-bold mb-3">How It Works</h2>
+      <p class="lead text-muted">Start messaging your customers in 3 simple steps</p>
+    </div>
+  </div>
+  
+  <div class="row g-4 mb-5">
+    <div class="col-md-4">
+      <div class="card h-100 p-4">
+        <div class="d-flex align-items-center mb-3">
+          <div class="step-number bg-primary text-white me-3">1</div>
+          <h5 class="fw-bold mb-0">Sign Up & Verify</h5>
+        </div>
+        <p class="text-muted">
+          Create your account and verify your business phone number. 
+          We'll handle all the WhatsApp Business API setup for you.
+        </p>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card h-100 p-4">
+        <div class="d-flex align-items-center mb-3">
+          <div class="step-number bg-primary text-white me-3">2</div>
+          <h5 class="fw-bold mb-0">Choose Templates</h5>
+        </div>
+        <p class="text-muted">
+          Pick from our library of business templates or create your own. 
+          All templates are pre-approved for instant use.
+        </p>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card h-100 p-4">
+        <div class="d-flex align-items-center mb-3">
+          <div class="step-number bg-primary text-white me-3">3</div>
+          <h5 class="fw-bold mb-0">Start Messaging</h5>
+        </div>
+        <p class="text-muted">
+          Send messages to your customers instantly. Track delivery, 
+          responses, and engagement from your dashboard.
+        </p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Pricing Preview -->
+  <div class="row mb-5">
+    <div class="col-12 text-center mb-4">
+      <h2 class="display-5 fw-bold mb-3">Simple, Transparent Pricing</h2>
+      <p class="lead text-muted">Pay only for what you use, no hidden fees</p>
+    </div>
+  </div>
+  
+  <div class="row justify-content-center g-4 mb-5">
+    <div class="col-md-4">
+      <div class="card h-100 p-4 text-center">
+        <h5 class="fw-bold text-primary mb-3">Starter</h5>
+        <div class="mb-3">
+          <span class="display-6 fw-bold">₹0</span>
+          <small class="text-muted">/month</small>
+        </div>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2"><i class="bi bi-check text-success me-2"></i>100 free messages</li>
+          <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Basic templates</li>
+          <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Email support</li>
+        </ul>
+        <a href="{{ url_for('main.register') }}" class="btn btn-outline-primary w-100">Start Free</a>
+      </div>
+    </div>
+    
+    <div class="col-md-4">
+      <div class="card h-100 p-4 text-center border-primary">
+        <div class="badge bg-primary mb-2">Most Popular</div>
+        <h5 class="fw-bold text-primary mb-3">Business</h5>
+        <div class="mb-3">
+          <span class="display-6 fw-bold">₹999</span>
+          <small class="text-muted">/month</small>
+        </div>
+        <ul class="list-unstyled mb-4">
+          <li class="mb-2"><i class="bi bi-check text-success me-2"></i>5,000 messages</li>
+          <li class="mb-2"><i class="bi bi-check text-success me-2"></i>All templates</li>
+          <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Analytics dashboard</li>
+          <li class="mb-2"><i class="bi bi-check text-success me-2"></i>Priority support</li>
+        </ul>
+        <a href="{{ url_for('main.register') }}" class="btn btn-primary w-100">Get Started</a>
+      </div>
+    </div>
+  </div>
+  
+  <!-- CTA Section -->
+  <div class="row">
+    <div class="col-12">
+      <div class="card bg-primary text-white text-center p-5">
+        <h2 class="fw-bold mb-3">Ready to Connect with Your Customers?</h2>
+        <p class="lead mb-4">Join thousands of small businesses already using WhatsApp to grow their customer relationships.</p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="{{ url_for('main.register') }}" class="btn btn-light btn-lg px-4">
+            <i class="bi bi-rocket-takeoff me-2"></i>
+            Start Your Free Trial
+          </a>
+          {% if not current_user.is_authenticated %}
+            <a href="{{ url_for('main.login') }}" class="btn btn-outline-light btn-lg px-4">
+              Already have an account?
+            </a>
+          {% endif %}
+        </div>
       </div>
     </div>
   </div>

@@ -1,0 +1,248 @@
+{% extends 'base.html' %}
+{% block title %}Schedule Messages - WaBridge{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h1 class="fw-bold mb-1">Schedule Messages</h1>
+          <p class="text-muted mb-0">Schedule WhatsApp messages to be sent at a specific time</p>
+        </div>
+        <div class="d-flex gap-2">
+          <a href="{{ url_for('main.scheduled_messages') }}" class="btn btn-outline-primary">
+            <i class="bi bi-calendar-check me-1"></i>View Scheduled
+          </a>
+          <a href="{{ url_for('main.dashboard') }}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-1"></i>Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <!-- Schedule Message Form -->
+    <div class="col-lg-8">
+      <div class="card p-4">
+        <h5 class="fw-bold mb-4">
+          <i class="bi bi-clock me-2"></i>
+          Schedule a Message
+        </h5>
+        
+        <form method="POST">
+          {{ form.hidden_tag() }}
+          
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              {{ form.recipient.label(class_="form-label fw-semibold") }}
+              {{ form.recipient(class_="form-control form-control-lg", placeholder="919876543210") }}
+              <div class="form-text">
+                <i class="bi bi-info-circle me-1"></i>
+                Include country code (e.g., 91 for India)
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              {{ form.template.label(class_="form-label fw-semibold") }}
+              {{ form.template(class_="form-select form-select-lg") }}
+              <div class="form-text">
+                <i class="bi bi-info-circle me-1"></i>
+                Only approved templates are available
+              </div>
+            </div>
+          </div>
+          
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              {{ form.scheduled_date.label(class_="form-label fw-semibold") }}
+              {{ form.scheduled_date(class_="form-control form-control-lg") }}
+              <div class="form-text">
+                <i class="bi bi-calendar me-1"></i>
+                Select the date to send the message
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              {{ form.scheduled_time.label(class_="form-label fw-semibold") }}
+              {{ form.scheduled_time(class_="form-control form-control-lg") }}
+              <div class="form-text">
+                <i class="bi bi-clock me-1"></i>
+                Select the time to send the message
+              </div>
+            </div>
+          </div>
+          
+          <!-- Template Preview -->
+          <div class="bg-light rounded-3 p-3 mb-4">
+            <h6 class="fw-bold mb-2">
+              <i class="bi bi-eye me-2"></i>
+              Message Preview
+            </h6>
+            <div id="template-preview" class="text-muted">
+              Select a template to see preview
+            </div>
+          </div>
+          
+          <!-- Scheduling Info -->
+          <div class="alert alert-info d-flex align-items-center mb-4">
+            <i class="bi bi-info-circle me-2"></i>
+            <div>
+              <strong>Note:</strong> Scheduled messages will be sent automatically at the specified time. 
+              You can cancel them before they are sent.
+            </div>
+          </div>
+          
+          <div class="d-grid">
+            {{ form.submit(class_="btn btn-primary btn-lg") }}
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+      <!-- Quick Stats -->
+      <div class="card p-4 mb-4">
+        <h6 class="fw-bold mb-3">
+          <i class="bi bi-graph-up me-2"></i>
+          Scheduling Tips
+        </h6>
+        <ul class="list-unstyled mb-0 small">
+          <li class="mb-2">
+            <i class="bi bi-lightbulb text-warning me-2"></i>
+            <strong>Best Times:</strong> 10 AM - 6 PM for business messages
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-calendar-week text-primary me-2"></i>
+            <strong>Avoid:</strong> Late nights and early mornings
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-clock-history text-info me-2"></i>
+            <strong>Reminders:</strong> Schedule 1-2 hours before appointments
+          </li>
+          <li class="mb-0">
+            <i class="bi bi-megaphone text-success me-2"></i>
+            <strong>Promotions:</strong> Schedule during business hours
+          </li>
+        </ul>
+      </div>
+
+      <!-- Available Templates -->
+      <div class="card p-4 mb-4">
+        <h6 class="fw-bold mb-3">
+          <i class="bi bi-file-text me-2"></i>
+          Available Templates
+        </h6>
+        
+        {% if templates %}
+        <div class="list-group list-group-flush">
+          {% for template in templates[:3] %}
+          <div class="list-group-item px-0 py-2">
+            <div class="d-flex justify-content-between align-items-center">
+              <div>
+                <h6 class="mb-1">{{ template.name }}</h6>
+                <small class="text-muted">{{ template.language }}</small>
+              </div>
+              <span class="badge bg-success">Approved</span>
+            </div>
+          </div>
+          {% endfor %}
+          {% if templates|length > 3 %}
+          <div class="list-group-item px-0 py-2 text-center">
+            <small class="text-muted">+{{ templates|length - 3 }} more templates</small>
+          </div>
+          {% endif %}
+        </div>
+        {% else %}
+        <div class="text-center py-3">
+          <i class="bi bi-file-plus text-muted" style="font-size: 2rem;"></i>
+          <p class="text-muted mb-2">No templates yet</p>
+          <a href="{{ url_for('main.template_library') }}" class="btn btn-outline-primary btn-sm">
+            Browse Templates
+          </a>
+        </div>
+        {% endif %}
+      </div>
+
+      <!-- Common Use Cases -->
+      <div class="card bg-light border-0 p-4">
+        <h6 class="fw-bold mb-2">
+          <i class="bi bi-star me-2"></i>
+          Common Use Cases
+        </h6>
+        <ul class="list-unstyled mb-0 small">
+          <li class="mb-2">• Appointment reminders (1 day before)</li>
+          <li class="mb-2">• Follow-up messages (1 hour after service)</li>
+          <li class="mb-2">• Birthday wishes (morning of birthday)</li>
+          <li class="mb-2">• Payment reminders (day before due date)</li>
+          <li class="mb-0">• Promotional offers (during business hours)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Template preview functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const templateSelect = document.getElementById('{{ form.template.id }}');
+    const previewDiv = document.getElementById('template-preview');
+    
+    // Template content mapping
+    const templateContent = {
+        {% for template in templates %}
+        '{{ template.name }}': '{{ template.content|replace("'", "\\'") }}',
+        {% endfor %}
+    };
+    
+    function updatePreview() {
+        const selectedTemplate = templateSelect.value;
+        if (selectedTemplate && templateContent[selectedTemplate]) {
+            let content = templateContent[selectedTemplate];
+            // Replace common variables with sample data
+            content = content.replace(/\{\{business_name\}\}/g, '{{ current_user.business_name or "Your Business" }}');
+            content = content.replace(/\{\{customer_name\}\}/g, 'Customer');
+            content = content.replace(/\{\{phone\}\}/g, '{{ current_user.phone_number or "919876543210" }}');
+            
+            previewDiv.innerHTML = '<div class="border-start border-primary border-3 ps-3">' + content + '</div>';
+        } else {
+            previewDiv.innerHTML = '<span class="text-muted">Select a template to see preview</span>';
+        }
+    }
+    
+    templateSelect.addEventListener('change', updatePreview);
+    
+    // Initial preview update
+    updatePreview();
+    
+    // Set minimum date to today
+    const dateInput = document.getElementById('{{ form.scheduled_date.id }}');
+    if (dateInput) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.min = today;
+    }
+    
+    // Set minimum time if date is today
+    const timeInput = document.getElementById('{{ form.scheduled_time.id }}');
+    if (dateInput && timeInput) {
+        dateInput.addEventListener('change', function() {
+            const selectedDate = new Date(this.value);
+            const today = new Date();
+            
+            if (selectedDate.toDateString() === today.toDateString()) {
+                // If today is selected, set minimum time to current time + 1 hour
+                const minTime = new Date(today.getTime() + 60 * 60 * 1000);
+                const hours = minTime.getHours().toString().padStart(2, '0');
+                const minutes = minTime.getMinutes().toString().padStart(2, '0');
+                timeInput.min = `${hours}:${minutes}`;
+            } else {
+                timeInput.removeAttribute('min');
+            }
+        });
+    }
+});
+</script>
+{% endblock %}

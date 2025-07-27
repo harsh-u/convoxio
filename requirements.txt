@@ -3,4 +3,7 @@ flask-login
 flask-wtf
 flask-mysqldb
 flask_sqlalchemy
+flask-mail
 email-validator
+razorpay
+requests

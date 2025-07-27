@@ -4,9 +4,11 @@ from wtforms.validators import DataRequired, Email, Length
 from flask_wtf.file import FileAllowed
 
 class RegisterForm(FlaskForm):
+    business_name = StringField('Business Name', validators=[DataRequired(), Length(min=2, max=200)])
     email = StringField('Email', validators=[DataRequired(), Email()])
+    phone_number = StringField('WhatsApp Business Number', validators=[DataRequired(), Length(min=10, max=20)])
     password = PasswordField('Password', validators=[DataRequired(), Length(min=6)])
-    submit = SubmitField('Register')
+    submit = SubmitField('Create Account')
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired()])
@@ -23,6 +25,20 @@ class WhatsAppMessageForm(FlaskForm):
     template = SelectField('Template', choices=[], validators=[DataRequired()])
     language = StringField('Language Code', default='en_US')  # Not shown in UI, set by template
     submit = SubmitField('Send Message')
+
+class BulkMessageForm(FlaskForm):
+    template = SelectField('Template', choices=[], validators=[DataRequired()])
+    recipients_text = TextAreaField('Phone Numbers', validators=[DataRequired()], 
+                                   render_kw={"placeholder": "Enter phone numbers (one per line)\n919876543210\n919876543211\n919876543212"})
+    csv_file = FileField('Or Upload CSV File', validators=[FileAllowed(['csv'], 'CSV files only!')])
+    submit = SubmitField('Send to All')
+
+class ScheduleMessageForm(FlaskForm):
+    recipient = StringField('Phone Number (with country code)', validators=[DataRequired()])
+    template = SelectField('Template', choices=[], validators=[DataRequired()])
+    scheduled_date = StringField('Date', validators=[DataRequired()], render_kw={"type": "date"})
+    scheduled_time = StringField('Time', validators=[DataRequired()], render_kw={"type": "time"})
+    submit = SubmitField('Schedule Message')
 
 class TemplateForm(FlaskForm):
     name = StringField('Template Name', validators=[DataRequired()])

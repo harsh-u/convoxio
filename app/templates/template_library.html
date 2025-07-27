@@ -1,0 +1,174 @@
+{% extends 'base.html' %}
+{% block title %}Template Library - WaBridge{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h1 class="fw-bold mb-1">Template Library</h1>
+          <p class="text-muted mb-0">Choose from ready-made templates for your business type</p>
+        </div>
+        <div class="d-flex gap-2">
+          <a href="{{ url_for('main.manage_templates') }}" class="btn btn-outline-primary">
+            <i class="bi bi-plus-circle me-1"></i>Create Custom
+          </a>
+          <a href="{{ url_for('main.dashboard') }}" class="btn btn-outline-secondary">
+            <i class="bi bi-arrow-left me-1"></i>Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Category Filter -->
+  <div class="row mb-4">
+    <div class="col-12">
+      <div class="card bg-light border-0 p-3">
+        <div class="d-flex flex-wrap gap-2 align-items-center">
+          <span class="fw-semibold me-2">Filter by category:</span>
+          <a href="{{ url_for('main.template_library', category='all') }}" 
+             class="btn btn-sm {{ 'btn-primary' if selected_category == 'all' else 'btn-outline-primary' }}">
+            All Templates
+          </a>
+          {% for category in categories %}
+          <a href="{{ url_for('main.template_library', category=category) }}" 
+             class="btn btn-sm {{ 'btn-primary' if selected_category == category else 'btn-outline-primary' }}">
+            <i class="bi bi-{{ 'shop' if category == 'retail' else 'cup-hot' if category == 'restaurant' else 'scissors' if category == 'salon' else 'tools' if category == 'service' else 'building' }} me-1"></i>
+            {{ category.title() }}
+          </a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Templates Grid -->
+  <div class="row g-4">
+    {% for template in templates %}
+    <div class="col-md-6 col-lg-4">
+      <div class="card h-100">
+        <div class="card-header bg-light d-flex justify-content-between align-items-center">
+          <h6 class="fw-bold mb-0">{{ template.name }}</h6>
+          <span class="badge bg-{{ 'success' if template.category == 'restaurant' else 'info' if template.category == 'salon' else 'warning' if template.category == 'retail' else 'primary' if template.category == 'service' else 'secondary' }}">
+            {{ template.category.title() }}
+          </span>
+        </div>
+        
+        <div class="card-body">
+          <p class="text-muted small mb-3">{{ template.description }}</p>
+          
+          <!-- Template Preview -->
+          <div class="bg-light rounded-3 p-3 mb-3">
+            {% if template.header_text %}
+            <div class="fw-bold text-primary mb-2">{{ template.header_text }}</div>
+            {% endif %}
+            
+            <div class="template-content">
+              {{ template.content|replace('{{business_name}}', current_user.business_name or 'Your Business')|replace('{{customer_name}}', 'John')|replace('{{phone}}', current_user.phone_number or '919876543210') }}
+            </div>
+            
+            {% if template.footer_text %}
+            <div class="text-muted small mt-2 border-top pt-2">{{ template.footer_text }}</div>
+            {% endif %}
+          </div>
+          
+          <!-- Variables Info -->
+          {% set variables = template.content | regex_findall('{{([^}]+)}}') %}
+          {% if variables %}
+          <div class="mb-3">
+            <small class="text-muted">
+              <i class="bi bi-info-circle me-1"></i>
+              Variables: 
+              {% for var in variables %}
+                <code>{{var}}</code>{% if not loop.last %}, {% endif %}
+              {% endfor %}
+            </small>
+          </div>
+          {% endif %}
+        </div>
+        
+        <div class="card-footer bg-white border-top-0">
+          <div class="d-grid">
+            <a href="{{ url_for('main.use_template', template_id=template.id) }}" 
+               class="btn btn-primary">
+              <i class="bi bi-plus-circle me-2"></i>
+              Use This Template
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Empty State -->
+  {% if not templates %}
+  <div class="row">
+    <div class="col-12">
+      <div class="text-center py-5">
+        <i class="bi bi-file-text text-muted" style="font-size: 4rem;"></i>
+        <h4 class="fw-bold mt-3 mb-2">No Templates Found</h4>
+        <p class="text-muted mb-4">No templates available for the selected category.</p>
+        <a href="{{ url_for('main.template_library', category='all') }}" class="btn btn-primary">
+          View All Templates
+        </a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Help Section -->
+  <div class="row mt-5">
+    <div class="col-12">
+      <div class="card bg-light border-0 p-4">
+        <div class="row align-items-center">
+          <div class="col-md-8">
+            <h5 class="fw-bold mb-2">
+              <i class="bi bi-lightbulb me-2"></i>
+              How to Use Templates
+            </h5>
+            <p class="mb-0 text-muted">
+              Click "Use This Template" to add it to your account. You can customize the content 
+              and variables will be automatically replaced with your business information when sending messages.
+            </p>
+          </div>
+          <div class="col-md-4 text-end">
+            <a href="{{ url_for('main.manage_templates') }}" class="btn btn-outline-primary">
+              <i class="bi bi-gear me-2"></i>
+              Manage My Templates
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.template-content {
+  font-size: 14px;
+  line-height: 1.4;
+  white-space: pre-wrap;
+}
+
+.card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+code {
+  background: rgba(var(--bs-primary-rgb), 0.1);
+  color: var(--bs-primary);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+</style>
+{% endblock %}

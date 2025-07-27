@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% block title %}Send Messages - WaBridge{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <!-- Header -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+          <h1 class="fw-bold mb-1">Send WhatsApp Messages</h1>
+          <p class="text-muted mb-0">Send messages to your customers instantly</p>
+        </div>
+        <a href="{{ url_for('main.dashboard') }}" class="btn btn-outline-secondary">
+          <i class="bi bi-arrow-left me-1"></i>Back to Dashboard
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    <!-- Send Message Form -->
+    <div class="col-lg-8">
+      <div class="card p-4">
+        <h5 class="fw-bold mb-4">
+          <i class="bi bi-send me-2"></i>
+          Compose Message
+        </h5>
+        
+        <form method="POST">
+          {{ form.hidden_tag() }}
+          
+          <div class="row g-3 mb-4">
+            <div class="col-md-6">
+              {{ form.recipient.label(class_="form-label fw-semibold") }}
+              {{ form.recipient(class_="form-control form-control-lg", placeholder="919876543210") }}
+              <div class="form-text">
+                <i class="bi bi-info-circle me-1"></i>
+                Include country code (e.g., 91 for India)
+              </div>
+            </div>
+            
+            <div class="col-md-6">
+              {{ form.template.label(class_="form-label fw-semibold") }}
+              {{ form.template(class_="form-select form-select-lg") }}
+              <div class="form-text">
+                <i class="bi bi-info-circle me-1"></i>
+                Only approved templates are shown
+              </div>
+            </div>
+          </div>
+          
+          <!-- Template Preview -->
+          <div class="bg-light rounded-3 p-3 mb-4">
+            <h6 class="fw-bold mb-2">
+              <i class="bi bi-eye me-2"></i>
+              Template Preview
+            </h6>
+            <div id="template-preview" class="text-muted">
+              Select a template to see preview
+            </div>
+          </div>
+          
+          <div class="d-grid">
+            {{ form.submit(class_="btn btn-primary btn-lg", value="Send Message") }}
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-lg-4">
+      <!-- Quick Stats -->
+      <div class="card p-4 mb-4">
+        <h6 class="fw-bold mb-3">
+          <i class="bi bi-graph-up me-2"></i>
+          Quick Stats
+        </h6>
+        <div class="row g-3 text-center">
+          <div class="col-6">
+            <div class="bg-primary bg-opacity-10 rounded-3 p-3">
+              <h4 class="fw-bold text-primary mb-1">{{ templates|length }}</h4>
+              <small class="text-muted">Templates</small>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="bg-success bg-opacity-10 rounded-3 p-3">
+              <h4 class="fw-bold text-success mb-1">{{ recent_messages|length }}</h4>
+              <small class="text-muted">Recent</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Messages -->
+      {% if recent_messages %}
+      <div class="card p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h6 class="fw-bold mb-0">
+            <i class="bi bi-clock-history me-2"></i>
+            Recent Messages
+          </h6>
+          <a href="{{ url_for('main.message_history') }}" class="btn btn-outline-primary btn-sm">
+            View All
+          </a>
+        </div>
+        
+        <div class="list-group list-group-flush">
+          {% for msg in recent_messages %}
+          <div class="list-group-item px-0 py-2">
+            <div class="d-flex justify-content-between align-items-start">
+              <div>
+                <h6 class="mb-1">{{ msg.recipient }}</h6>
+                <small class="text-muted">Template #{{ msg.template_id }}</small>
+              </div>
+              <div class="text-end">
+                {% if msg.status == 'delivered' %}
+                  <span class="badge bg-success">Delivered</span>
+                {% elif msg.status == 'read' %}
+                  <span class="badge bg-info">Read</span>
+                {% elif msg.status == 'failed' %}
+                  <span class="badge bg-danger">Failed</span>
+                {% else %}
+                  <span class="badge bg-secondary">{{ msg.status|capitalize }}</span>
+                {% endif %}
+                <div class="small text-muted mt-1">
+                  {{ msg.created_at.strftime('%b %d') }}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+      {% endif %}
+
+      <!-- Help -->
+      <div class="card bg-light border-0 p-4 mt-4">
+        <h6 class="fw-bold mb-2">
+          <i class="bi bi-lightbulb me-2"></i>
+          Tips for Better Delivery
+        </h6>
+        <ul class="list-unstyled mb-0 small">
+          <li class="mb-2">• Always include country code</li>
+          <li class="mb-2">• Use approved templates only</li>
+          <li class="mb-2">• Avoid sending to invalid numbers</li>
+          <li class="mb-0">• Check message history for status</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// Template preview functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const templateSelect = document.getElementById('{{ form.template.id }}');
+    const previewDiv = document.getElementById('template-preview');
+    
+    // Template content mapping (you can populate this from backend)
+    const templateContent = {
+        {% for template in templates %}
+        '{{ template.name }}': '{{ template.content|safe }}',
+        {% endfor %}
+    };
+    
+    templateSelect.addEventListener('change', function() {
+        const selectedTemplate = this.value;
+        if (selectedTemplate && templateContent[selectedTemplate]) {
+            previewDiv.innerHTML = '<div class="border-start border-primary border-3 ps-3">' + templateContent[selectedTemplate] + '</div>';
+        } else {
+            previewDiv.innerHTML = '<span class="text-muted">Select a template to see preview</span>';
+        }
+    });
+});
+</script>
+{% endblock %}
