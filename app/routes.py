@@ -43,7 +43,7 @@ def register():
         
         # Auto-login the user after registration
         login_user(user)
-        flash('Welcome to WaBridge! Let\'s get your account set up.', 'success')
+        flash('Welcome to Convoxio! Let\'s get your account set up.', 'success')
         return redirect(url_for('main.dashboard'))
     return render_template('register.html', form=form)
 

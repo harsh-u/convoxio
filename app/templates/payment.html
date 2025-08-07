@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Payment - WaBridge{% endblock %}
+{% block title %}Payment - Convoxio{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "key": "{{ razorpay_key }}",
             "amount": {{ (plan.price * 100)|int }}, // Amount in paise
             "currency": "INR",
-            "name": "WaBridge",
+            "name": "Convoxio",
             "description": "{{ plan.name }} Plan Subscription",
             "order_id": "{{ order.id }}",
             "handler": function (response) {
