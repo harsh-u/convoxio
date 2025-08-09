@@ -107,18 +107,7 @@ class Template(db.Model):
     buttons_json = db.Column(db.Text)
 
 
-class TemplateLibrary(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    category = db.Column(db.String(50), nullable=False)  # restaurant, salon, retail, etc.
-    content = db.Column(db.Text, nullable=False)
-    description = db.Column(db.String(255))
-    language = db.Column(db.String(20), default='en_US')
-    header_type = db.Column(db.Enum('NONE', 'TEXT', 'IMAGE'), default='NONE')
-    header_text = db.Column(db.String(255))
-    footer_text = db.Column(db.String(255))
-    is_active = db.Column(db.Boolean, default=True)
-    created_at = db.Column(db.DateTime, server_default=db.func.now())
+
 
 
 class ScheduledMessage(db.Model):
@@ -133,12 +122,71 @@ class ScheduledMessage(db.Model):
     error_message = db.Column(db.Text)
 
 
+class Contact(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    phone_number = db.Column(db.String(32), nullable=False)
+    name = db.Column(db.String(100))
+    email = db.Column(db.String(150))
+    last_message_at = db.Column(db.DateTime)
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+    
+    # Relationships
+    user = db.relationship('User', backref='contacts')
+    
+    def get_last_message(self):
+        """Get the last message sent to this contact"""
+        return MessageHistory.query.filter_by(
+            user_id=self.user_id, 
+            recipient=self.phone_number
+        ).order_by(MessageHistory.created_at.desc()).first()
+    
+    def get_message_count(self):
+        """Get total messages sent to this contact"""
+        return MessageHistory.query.filter_by(
+            user_id=self.user_id, 
+            recipient=self.phone_number
+        ).count()
+
+
 class MessageHistory(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
     recipient = db.Column(db.String(32), nullable=False)
+    recipient_name = db.Column(db.String(100))  # Optional contact name
     template_id = db.Column(db.Integer, db.ForeignKey('template.id'), nullable=False)
+    message_content = db.Column(db.Text)  # Store the actual message content sent
+    message_type = db.Column(db.Enum('template', 'text', 'media'), default='template')
     meta_message_id = db.Column(db.String(128))
     status = db.Column(db.String(32), default='sent')  # sent, delivered, read, failed, etc.
     scheduled_message_id = db.Column(db.Integer, db.ForeignKey('scheduled_message.id'))  # Link to scheduled message if applicable
     created_at = db.Column(db.DateTime, server_default=db.func.now())
+    
+    # Relationships
+    template = db.relationship('Template', backref='messages')
+    user = db.relationship('User', backref='sent_messages')
+    
+    def get_contact(self):
+        """Get or create contact for this message"""
+        contact = Contact.query.filter_by(
+            user_id=self.user_id, 
+            phone_number=self.recipient
+        ).first()
+        
+        if not contact:
+            contact = Contact(
+                user_id=self.user_id,
+                phone_number=self.recipient,
+                name=self.recipient_name,
+                last_message_at=self.created_at
+            )
+            db.session.add(contact)
+            db.session.commit()
+        else:
+            # Update last message time
+            contact.last_message_at = self.created_at
+            if self.recipient_name and not contact.name:
+                contact.name = self.recipient_name
+            db.session.commit()
+        
+        return contact

@@ -1,0 +1,1076 @@
+2025-08-08 23:17:09,596 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:17:09,597 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:17:09,653 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:17:09,655 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:17:22,804 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/__init__.py', reloading
+2025-08-08 23:17:23,402 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:17:23,402 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:17:23,410 - app - INFO - 📊 Database initialized
+2025-08-08 23:17:23,410 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:17:23,455 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:17:23,457 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:17:23,457 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:17:23,460 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:17:23,462 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:17:29,547 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/__init__.py', reloading
+2025-08-08 23:17:29,996 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:17:29,996 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:17:30,006 - app - INFO - 📊 Database initialized
+2025-08-08 23:17:30,006 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:17:30,051 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:17:30,054 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:17:30,054 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:17:30,057 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:17:30,059 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:17:52,278 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:17:52,890 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:17:52,890 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:17:52,901 - app - INFO - 📊 Database initialized
+2025-08-08 23:17:52,901 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:17:53,096 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:17:53,099 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:17:53,099 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:17:53,105 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:17:53,109 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:18:01,229 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:18:01,902 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:18:01,903 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:18:01,913 - app - INFO - 📊 Database initialized
+2025-08-08 23:18:01,913 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:18:02,061 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:18:02,065 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:18:02,065 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:18:02,086 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:18:02,089 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:18:21,289 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:18:21,884 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:18:21,884 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:18:21,895 - app - INFO - 📊 Database initialized
+2025-08-08 23:18:21,895 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:18:21,952 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:18:21,954 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:18:21,954 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:18:21,959 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:18:21,961 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:18:27,166 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:18:27,166 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:18:27,248 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/
+2025-08-08 23:18:27,249 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:27] "GET / HTTP/1.1" 200 -
+2025-08-08 23:18:27,305 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:18:27,312 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:18:27,313 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:27] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:18:29,380 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:18:29,416 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:18:29,417 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:29] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:18:29,463 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:18:29,464 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:18:29,464 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:29] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:18:34,075 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:18:35,022 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:18:35,022 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:18:35,075 - app - INFO - 📊 Database initialized
+2025-08-08 23:18:35,076 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:18:35,267 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:18:35,271 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:18:35,271 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:18:35,277 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:18:35,279 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:18:39,336 - app - INFO - 📥 GET http://127.0.0.1:5001/schedule-messages - IP: 127.0.0.1
+2025-08-08 23:18:39,425 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/schedule-messages
+2025-08-08 23:18:39,426 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:39] "GET /schedule-messages HTTP/1.1" 200 -
+2025-08-08 23:18:39,470 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:18:39,476 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:18:39,477 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:39] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:18:41,952 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:18:41,952 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:18:41,962 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/
+2025-08-08 23:18:41,963 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:41] "GET / HTTP/1.1" 200 -
+2025-08-08 23:18:42,021 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:18:42,022 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:18:42,022 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:42] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:18:44,306 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:18:44,353 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:18:44,355 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:44] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:18:44,424 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:18:44,426 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:18:44,426 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:44] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:18:45,384 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/admin_routes.py', reloading
+2025-08-08 23:18:45,968 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:18:45,968 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:18:45,977 - app - INFO - 📊 Database initialized
+2025-08-08 23:18:45,977 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:18:46,025 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:18:46,029 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:18:46,030 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:18:46,033 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:18:46,035 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:18:48,944 - app - INFO - 📥 GET http://127.0.0.1:5001/bulk-messages - IP: 127.0.0.1
+2025-08-08 23:18:49,042 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/bulk-messages
+2025-08-08 23:18:49,044 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:49] "GET /bulk-messages HTTP/1.1" 200 -
+2025-08-08 23:18:49,122 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:18:49,131 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:18:49,132 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:18:49] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:18:57,122 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/admin_routes.py', reloading
+2025-08-08 23:18:57,526 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:18:57,526 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:18:57,534 - app - INFO - 📊 Database initialized
+2025-08-08 23:18:57,534 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:18:57,576 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:18:57,579 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:18:57,579 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:18:57,582 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:18:57,584 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:19:06,669 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/admin_routes.py', reloading
+2025-08-08 23:19:07,345 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:19:07,345 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:19:07,357 - app - INFO - 📊 Database initialized
+2025-08-08 23:19:07,357 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:19:07,408 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:19:07,413 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:19:07,413 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:19:07,416 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:19:07,418 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:19:23,553 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/admin_routes.py', reloading
+2025-08-08 23:19:24,272 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:19:24,272 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:19:24,283 - app - INFO - 📊 Database initialized
+2025-08-08 23:19:24,283 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:19:24,347 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:19:24,350 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:19:24,350 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:19:24,355 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:19:24,356 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:19:38,478 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/api_routes.py', reloading
+2025-08-08 23:19:38,836 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:19:38,836 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:19:38,845 - app - INFO - 📊 Database initialized
+2025-08-08 23:19:38,845 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:19:38,887 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:19:38,889 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:19:38,889 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:19:38,894 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:19:38,895 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:19:50,997 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/api_routes.py', reloading
+2025-08-08 23:19:51,736 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:19:51,736 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:19:51,746 - app - INFO - 📊 Database initialized
+2025-08-08 23:19:51,746 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:19:51,877 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:19:51,880 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:19:51,880 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:19:51,885 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:19:51,887 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:19:54,575 - app - INFO - 📥 GET http://127.0.0.1:5001/send-messages - IP: 127.0.0.1
+2025-08-08 23:19:54,669 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/send-messages
+2025-08-08 23:19:54,672 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:19:54] "GET /send-messages HTTP/1.1" 200 -
+2025-08-08 23:19:54,731 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:19:54,737 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:19:54,738 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:19:54] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:19:57,366 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:19:57,384 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:19:57,397 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/
+2025-08-08 23:19:57,398 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:19:57] "GET / HTTP/1.1" 200 -
+2025-08-08 23:19:57,451 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:19:57,452 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:19:57,453 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:19:57] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:19:59,479 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:19:59,530 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:19:59,532 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:19:59] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:19:59,619 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:19:59,621 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:19:59,622 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:19:59] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:20:02,303 - app - INFO - 📥 GET http://127.0.0.1:5001/send-messages - IP: 127.0.0.1
+2025-08-08 23:20:02,313 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/send-messages
+2025-08-08 23:20:02,315 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:20:02] "GET /send-messages HTTP/1.1" 200 -
+2025-08-08 23:20:02,405 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:20:02,406 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:20:02,407 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:20:02] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:20:03,009 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/api_routes.py', reloading
+2025-08-08 23:20:03,754 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:20:03,755 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:20:03,769 - app - INFO - 📊 Database initialized
+2025-08-08 23:20:03,769 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:20:03,871 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:20:03,874 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:20:03,875 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:20:03,880 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:20:03,881 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:20:11,971 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/run.py', reloading
+2025-08-08 23:20:12,480 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:20:12,480 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:20:12,491 - app - INFO - 📊 Database initialized
+2025-08-08 23:20:12,491 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:20:12,649 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:20:12,657 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:20:12,657 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:20:12,657 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:20:12,657 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:20:12,665 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:20:12,668 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:20:41,918 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/utils/logger.py', reloading
+2025-08-08 23:20:42,439 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:20:42,440 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:20:42,453 - app - INFO - 📊 Database initialized
+2025-08-08 23:20:42,453 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:20:42,500 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:20:42,502 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:20:42,503 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:20:42,503 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:20:42,503 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:20:42,507 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:20:42,509 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:21:14,778 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:21:15,319 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:21:15,319 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:21:15,328 - app - INFO - 📊 Database initialized
+2025-08-08 23:21:15,328 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:21:15,509 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:21:15,514 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:21:15,514 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:21:15,515 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:21:15,515 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:21:15,523 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:21:15,525 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:21:28,679 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:21:29,451 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:21:29,452 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:21:29,498 - app - INFO - 📊 Database initialized
+2025-08-08 23:21:29,499 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:21:29,653 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:21:29,662 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:21:29,663 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:21:29,663 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:21:29,664 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:21:29,671 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:21:29,675 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:21:55,961 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/test_logging.py', reloading
+2025-08-08 23:21:56,506 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:21:56,506 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:21:56,515 - app - INFO - 📊 Database initialized
+2025-08-08 23:21:56,516 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:21:56,564 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:21:56,566 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:21:56,566 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:21:56,566 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:21:56,566 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:21:56,571 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:21:56,573 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:22:18,581 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:22:19,340 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:22:19,341 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:22:19,362 - app - INFO - 📊 Database initialized
+2025-08-08 23:22:19,362 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:22:19,416 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:22:19,419 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:22:19,419 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:22:19,419 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:22:19,419 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:22:19,422 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:22:19,424 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:22:52,743 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/demo_logging.py', reloading
+2025-08-08 23:22:53,134 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:22:53,134 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:22:53,143 - app - INFO - 📊 Database initialized
+2025-08-08 23:22:53,143 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:22:53,187 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:22:53,189 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:22:53,189 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:22:53,189 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:22:53,189 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:22:53,193 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:22:53,196 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:23:17,392 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/logging_config.py', reloading
+2025-08-08 23:23:17,804 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:23:17,804 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:23:17,813 - app - INFO - 📊 Database initialized
+2025-08-08 23:23:17,813 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:23:17,857 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:23:17,860 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:23:17,860 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:23:17,860 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:23:17,860 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:23:17,864 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:23:17,865 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:23:27,954 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/run.py', reloading
+2025-08-08 23:29:06,859 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:29:06,859 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:29:06,867 - app - INFO - 📊 Database initialized
+2025-08-08 23:29:06,867 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:29:06,911 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:29:06,915 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:29:06,915 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:29:06,916 - __main__ - INFO - � Startoing Flask application on port 5001...
+2025-08-08 23:29:06,916 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:29:06,922 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:29:06,924 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:29:51,389 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/run.py', reloading
+2025-08-08 23:29:51,732 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:29:51,732 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:29:51,740 - app - INFO - 📊 Database initialized
+2025-08-08 23:29:51,740 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:29:51,782 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:29:51,784 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:29:51,784 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:29:51,784 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:29:51,784 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:29:51,788 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:29:51,789 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:33:02,705 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:33:02,706 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:33:02,718 - app - INFO - 📊 Database initialized
+2025-08-08 23:33:02,718 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:33:02,785 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:33:02,788 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:33:02,788 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:33:12,417 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:33:12,417 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:33:12,425 - app - INFO - 📊 Database initialized
+2025-08-08 23:33:12,425 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:33:12,473 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:33:12,476 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:33:12,476 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:33:12,476 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:33:12,477 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:33:21,618 - app - INFO - 📥 GET http://127.0.0.1:5001/send-messages - IP: 127.0.0.1
+2025-08-08 23:33:21,691 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/send-messages
+2025-08-08 23:33:21,693 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:33:21] "GET /send-messages HTTP/1.1" 200 -
+2025-08-08 23:33:21,728 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:33:21,733 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:33:21,734 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:33:21] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:33:23,692 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:33:23,692 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:33:23,711 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/
+2025-08-08 23:33:23,714 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:33:23] "GET / HTTP/1.1" 200 -
+2025-08-08 23:33:23,796 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:33:23,801 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:33:23,802 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:33:23] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:34:16,305 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:34:17,065 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:34:17,065 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:34:17,105 - app - INFO - 📊 Database initialized
+2025-08-08 23:34:17,106 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:34:17,251 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:34:17,254 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:34:17,254 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:34:17,254 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:34:17,254 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:34:17,260 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:34:17,262 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:34:26,367 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:34:26,936 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:34:26,936 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:34:26,973 - app - INFO - 📊 Database initialized
+2025-08-08 23:34:26,973 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:34:27,145 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:34:27,150 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:34:27,150 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:34:27,150 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:34:27,150 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:34:27,159 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:34:27,161 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:34:38,270 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:34:38,897 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:34:38,897 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:34:38,906 - app - INFO - 📊 Database initialized
+2025-08-08 23:34:38,906 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:34:38,959 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:34:38,961 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:34:38,962 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:34:38,962 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:34:38,962 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:34:38,966 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:34:38,968 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:35:02,929 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:35:02,930 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:35:02,977 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-08 23:35:02,977 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-08 23:35:02,978 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:02] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-08 23:35:02,984 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:35:02,986 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:35:02,990 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-08 23:35:02,995 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-08 23:35:03,027 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:35:03,028 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:03] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:35:03,055 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:03,061 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:03,061 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:03] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:05,947 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:35:05,947 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:35:05,950 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-08 23:35:05,950 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-08 23:35:05,951 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:05] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-08 23:35:05,958 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:35:05,961 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:35:05,963 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-08 23:35:05,965 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-08 23:35:05,968 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:35:05,969 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:05] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:35:06,016 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:06,017 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:06,017 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:06] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:06,879 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:35:06,879 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:35:06,882 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-08 23:35:06,883 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-08 23:35:06,884 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:06] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-08 23:35:06,891 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:35:06,893 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:35:06,895 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-08 23:35:06,896 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-08 23:35:06,899 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:35:06,900 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:06] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:35:06,928 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:06,929 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:06,930 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:06] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:10,775 - app - INFO - 📥 GET http://127.0.0.1:5001/logout - IP: 127.0.0.1
+2025-08-08 23:35:10,779 - app.routes - INFO - 🚪 User logout: test@restaurant.com (ID: 1)
+2025-08-08 23:35:10,779 - app.routes - INFO - ✅ User logged out successfully
+2025-08-08 23:35:10,780 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/logout
+2025-08-08 23:35:10,782 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:10] "[32mGET /logout HTTP/1.1[0m" 302 -
+2025-08-08 23:35:10,791 - app - INFO - 📥 GET http://127.0.0.1:5001/login - IP: 127.0.0.1
+2025-08-08 23:35:10,792 - app.routes - INFO - 🔐 Login page accessed
+2025-08-08 23:35:10,802 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/login
+2025-08-08 23:35:10,803 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:10] "GET /login HTTP/1.1" 200 -
+2025-08-08 23:35:10,874 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:10,875 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:10,876 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:10] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:14,926 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:35:14,926 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:35:14,933 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/
+2025-08-08 23:35:14,933 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:14] "GET / HTTP/1.1" 200 -
+2025-08-08 23:35:14,976 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:14,977 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:14,978 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:14] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:16,355 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:35:16,355 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:35:16,356 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/
+2025-08-08 23:35:16,357 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:16] "GET / HTTP/1.1" 200 -
+2025-08-08 23:35:16,385 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:16,386 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:16,386 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:16] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:23,070 - app - INFO - 📥 GET http://127.0.0.1:5001/register - IP: 127.0.0.1
+2025-08-08 23:35:23,070 - app.routes - INFO - 📝 Registration page accessed
+2025-08-08 23:35:23,082 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/register
+2025-08-08 23:35:23,083 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:23] "GET /register HTTP/1.1" 200 -
+2025-08-08 23:35:23,138 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:23,139 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:23,139 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:23] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:28,878 - app - INFO - 📥 GET http://127.0.0.1:5001/login - IP: 127.0.0.1
+2025-08-08 23:35:28,879 - app.routes - INFO - 🔐 Login page accessed
+2025-08-08 23:35:28,881 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/login
+2025-08-08 23:35:28,881 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:28] "GET /login HTTP/1.1" 200 -
+2025-08-08 23:35:28,928 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:28,929 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:28,930 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:28] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:31,479 - app - INFO - 📥 GET http://127.0.0.1:5001/pricing - IP: 127.0.0.1
+2025-08-08 23:35:31,493 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/pricing
+2025-08-08 23:35:31,494 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:31] "GET /pricing HTTP/1.1" 200 -
+2025-08-08 23:35:31,543 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:31,544 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:31,545 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:31] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:36,177 - app - INFO - 📥 GET http://127.0.0.1:5001/register - IP: 127.0.0.1
+2025-08-08 23:35:36,177 - app.routes - INFO - 📝 Registration page accessed
+2025-08-08 23:35:36,179 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/register
+2025-08-08 23:35:36,179 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:36] "GET /register HTTP/1.1" 200 -
+2025-08-08 23:35:36,232 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:36,233 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:36,234 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:36] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:38,755 - app - INFO - 📥 GET http://127.0.0.1:5001/login - IP: 127.0.0.1
+2025-08-08 23:35:38,755 - app.routes - INFO - 🔐 Login page accessed
+2025-08-08 23:35:38,757 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/login
+2025-08-08 23:35:38,757 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:38] "GET /login HTTP/1.1" 200 -
+2025-08-08 23:35:38,820 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:38,821 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:38,822 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:38] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:45,717 - app - INFO - 📥 POST http://127.0.0.1:5001/login - IP: 127.0.0.1
+2025-08-08 23:35:45,717 - app.routes - INFO - 🔐 Login page accessed
+2025-08-08 23:35:45,720 - app.routes - INFO - 🔐 Login attempt for email: test@restaurant.com
+2025-08-08 23:35:45,833 - app.routes - INFO - ✅ User logged in successfully: test@restaurant.com (ID: 1)
+2025-08-08 23:35:45,833 - app - INFO - 📤 Response: 302 for POST http://127.0.0.1:5001/login
+2025-08-08 23:35:45,834 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:45] "[32mPOST /login HTTP/1.1[0m" 302 -
+2025-08-08 23:35:45,838 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:35:45,839 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:35:45,840 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-08 23:35:45,840 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-08 23:35:45,842 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:35:45,842 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:45] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:35:45,880 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:45,882 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:45,883 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:45] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:35:49,503 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:35:49,504 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:35:49,506 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-08 23:35:49,507 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-08 23:35:49,508 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:49] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-08 23:35:49,517 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:35:49,519 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:35:49,521 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-08 23:35:49,524 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-08 23:35:49,527 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:35:49,529 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:49] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:35:49,574 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:35:49,575 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:35:49,575 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:35:49] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:36:15,858 - app - INFO - 📥 GET http://127.0.0.1:5001/schedule-messages - IP: 127.0.0.1
+2025-08-08 23:36:15,886 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/schedule-messages
+2025-08-08 23:36:15,888 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:15] "GET /schedule-messages HTTP/1.1" 200 -
+2025-08-08 23:36:15,940 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:36:15,942 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:36:15,943 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:15] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:36:24,690 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:36:24,691 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:36:24,695 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-08 23:36:24,696 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-08 23:36:24,698 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:24] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-08 23:36:24,716 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:36:24,721 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:36:24,724 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-08 23:36:24,728 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-08 23:36:24,734 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:36:24,736 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:24] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:36:24,844 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:36:24,845 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:36:24,846 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:24] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:36:28,690 - app - INFO - 📥 GET http://127.0.0.1:5001/bulk-messages - IP: 127.0.0.1
+2025-08-08 23:36:28,720 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/bulk-messages
+2025-08-08 23:36:28,722 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:28] "GET /bulk-messages HTTP/1.1" 200 -
+2025-08-08 23:36:28,770 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:36:28,772 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:36:28,773 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:28] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:36:52,560 - app - INFO - 📥 GET http://127.0.0.1:5001/send-messages - IP: 127.0.0.1
+2025-08-08 23:36:52,595 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/send-messages
+2025-08-08 23:36:52,597 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:52] "GET /send-messages HTTP/1.1" 200 -
+2025-08-08 23:36:52,668 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:36:52,669 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:36:52,670 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:52] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:36:58,705 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:36:58,705 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:36:58,707 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-08 23:36:58,707 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-08 23:36:58,708 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:58] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-08 23:36:58,717 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:36:58,720 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:36:58,722 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-08 23:36:58,724 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-08 23:36:58,728 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:36:58,729 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:58] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:36:58,780 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:36:58,781 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:36:58,782 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:36:58] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:38:44,090 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/models.py', reloading
+2025-08-08 23:38:44,867 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:38:44,867 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:38:44,875 - app - INFO - 📊 Database initialized
+2025-08-08 23:38:44,875 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:38:44,938 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:38:44,940 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:38:44,940 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:38:44,940 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:38:44,940 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:38:44,947 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:38:44,949 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:39:31,468 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/models.py', reloading
+2025-08-08 23:39:32,175 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:39:32,175 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:39:32,186 - app - INFO - 📊 Database initialized
+2025-08-08 23:39:32,186 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:39:32,336 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:39:32,340 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:39:32,341 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:39:32,341 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:39:32,341 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:39:32,364 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:39:32,367 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:40:17,874 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:40:18,959 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:40:18,960 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:40:18,989 - app - INFO - 📊 Database initialized
+2025-08-08 23:40:18,989 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:40:19,115 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:40:19,118 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:40:19,118 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:40:19,118 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:40:19,118 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:40:19,122 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:40:19,124 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:43:45,277 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:43:45,745 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:43:45,745 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:43:45,754 - app - INFO - 📊 Database initialized
+2025-08-08 23:43:45,754 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:43:45,868 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:43:45,872 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:43:45,872 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:43:45,872 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:43:45,872 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:43:45,896 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:43:45,899 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:44:00,029 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-08 23:44:00,534 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:44:00,534 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:44:00,543 - app - INFO - 📊 Database initialized
+2025-08-08 23:44:00,543 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:44:00,648 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:44:00,651 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:44:00,651 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:44:00,651 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:44:00,651 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:44:00,659 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:44:00,662 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:48:18,900 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/test_inbox_functionality.py', reloading
+2025-08-08 23:48:19,467 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:48:19,467 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:48:19,476 - app - INFO - 📊 Database initialized
+2025-08-08 23:48:19,476 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:48:19,522 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:48:19,525 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:48:19,525 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:48:19,525 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:48:19,525 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:48:19,528 - werkzeug - WARNING -  * Debugger is active!
+2025-08-08 23:48:19,533 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-08 23:49:23,907 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:49:23,907 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:49:23,916 - app - INFO - 📊 Database initialized
+2025-08-08 23:49:23,916 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:49:23,968 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:49:23,974 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:49:23,974 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:49:28,257 - app - INFO - 🚀 Flask application starting up...
+2025-08-08 23:49:28,257 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-08 23:49:28,265 - app - INFO - 📊 Database initialized
+2025-08-08 23:49:28,265 - app - INFO - 🔐 Login manager initialized
+2025-08-08 23:49:28,311 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-08 23:49:28,314 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-08 23:49:28,314 - app - INFO - ✨ Flask application setup complete!
+2025-08-08 23:49:28,314 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-08 23:49:28,314 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-08 23:49:36,068 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:49:36,121 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:49:36,124 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-08 23:49:36,128 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-08 23:49:36,159 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:49:36,160 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:49:36] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:49:36,186 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:49:36,193 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:49:36,193 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:49:36] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:49:46,924 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox - IP: 127.0.0.1
+2025-08-08 23:49:46,928 - app.routes - INFO - 📥 Inbox accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:49:46,942 - app.routes - INFO - 📥 Found 1 contacts for user 1
+2025-08-08 23:49:46,960 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox
+2025-08-08 23:49:46,962 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:49:46] "GET /inbox HTTP/1.1" 200 -
+2025-08-08 23:49:47,033 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:49:47,034 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:49:47,035 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:49:47] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:49:49,312 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox/chat/916200930282 - IP: 127.0.0.1
+2025-08-08 23:49:49,316 - app.routes - INFO - 💬 Chat opened with 916200930282 by user: test@restaurant.com
+2025-08-08 23:49:49,326 - app.routes - INFO - 💬 Loaded 8 messages for conversation with 916200930282
+2025-08-08 23:49:49,341 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox/chat/916200930282
+2025-08-08 23:49:49,342 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:49:49] "GET /inbox/chat/916200930282 HTTP/1.1" 200 -
+2025-08-08 23:49:49,392 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:49:49,393 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:49:49,394 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:49:49] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:50:07,976 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox - IP: 127.0.0.1
+2025-08-08 23:50:07,979 - app.routes - INFO - 📥 Inbox accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:50:07,983 - app.routes - INFO - 📥 Found 1 contacts for user 1
+2025-08-08 23:50:07,984 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox
+2025-08-08 23:50:07,985 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:50:07] "GET /inbox HTTP/1.1" 200 -
+2025-08-08 23:50:08,042 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:50:08,043 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:50:08,043 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:50:08] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:50:12,915 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:50:12,916 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:50:12,918 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-08 23:50:12,918 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-08 23:50:12,920 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:50:12] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-08 23:50:12,927 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:50:12,929 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:50:12,930 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-08 23:50:12,932 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-08 23:50:12,934 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:50:12,935 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:50:12] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:50:12,971 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:50:12,972 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:50:12,973 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:50:12] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:54:41,146 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox - IP: 127.0.0.1
+2025-08-08 23:54:41,149 - app.routes - INFO - 📥 Inbox accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:54:41,153 - app.routes - INFO - 📥 Found 1 contacts for user 1
+2025-08-08 23:54:41,155 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox
+2025-08-08 23:54:41,156 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:41] "GET /inbox HTTP/1.1" 200 -
+2025-08-08 23:54:41,223 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:54:41,225 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:54:41,225 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:41] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:54:46,360 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox/chat/916200930282 - IP: 127.0.0.1
+2025-08-08 23:54:46,363 - app.routes - INFO - 💬 Chat opened with 916200930282 by user: test@restaurant.com
+2025-08-08 23:54:46,370 - app.routes - INFO - 💬 Loaded 8 messages for conversation with 916200930282
+2025-08-08 23:54:46,372 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox/chat/916200930282
+2025-08-08 23:54:46,373 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:46] "GET /inbox/chat/916200930282 HTTP/1.1" 200 -
+2025-08-08 23:54:46,421 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:54:46,422 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:54:46,423 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:46] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:54:54,129 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox - IP: 127.0.0.1
+2025-08-08 23:54:54,132 - app.routes - INFO - 📥 Inbox accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:54:54,134 - app.routes - INFO - 📥 Found 1 contacts for user 1
+2025-08-08 23:54:54,135 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox
+2025-08-08 23:54:54,136 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:54] "GET /inbox HTTP/1.1" 200 -
+2025-08-08 23:54:54,194 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:54:54,195 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:54:54,196 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:54] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:54:55,450 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox/chat/916200930282 - IP: 127.0.0.1
+2025-08-08 23:54:55,454 - app.routes - INFO - 💬 Chat opened with 916200930282 by user: test@restaurant.com
+2025-08-08 23:54:55,462 - app.routes - INFO - 💬 Loaded 8 messages for conversation with 916200930282
+2025-08-08 23:54:55,464 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox/chat/916200930282
+2025-08-08 23:54:55,465 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:55] "GET /inbox/chat/916200930282 HTTP/1.1" 200 -
+2025-08-08 23:54:55,530 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:54:55,531 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:54:55,532 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:55] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:54:56,556 - app - INFO - 📥 GET http://127.0.0.1:5001/send-messages - IP: 127.0.0.1
+2025-08-08 23:54:56,585 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/send-messages
+2025-08-08 23:54:56,587 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:56] "GET /send-messages HTTP/1.1" 200 -
+2025-08-08 23:54:56,656 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:54:56,657 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:54:56,658 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:56] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:54:59,321 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-08 23:54:59,322 - app.routes - INFO - 🏠 Home page accessed
+2025-08-08 23:54:59,324 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-08 23:54:59,324 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-08 23:54:59,325 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:59] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-08 23:54:59,333 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-08 23:54:59,336 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:54:59,339 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-08 23:54:59,341 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-08 23:54:59,345 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-08 23:54:59,346 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:59] "GET /dashboard HTTP/1.1" 200 -
+2025-08-08 23:54:59,389 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:54:59,390 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:54:59,390 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:54:59] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:55:10,989 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox - IP: 127.0.0.1
+2025-08-08 23:55:10,992 - app.routes - INFO - 📥 Inbox accessed by user: test@restaurant.com (ID: 1)
+2025-08-08 23:55:10,997 - app.routes - INFO - 📥 Found 1 contacts for user 1
+2025-08-08 23:55:10,999 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox
+2025-08-08 23:55:11,000 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:55:11] "GET /inbox HTTP/1.1" 200 -
+2025-08-08 23:55:11,087 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:55:11,089 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:55:11,089 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:55:11] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:55:12,396 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox/chat/916200930282 - IP: 127.0.0.1
+2025-08-08 23:55:12,399 - app.routes - INFO - 💬 Chat opened with 916200930282 by user: test@restaurant.com
+2025-08-08 23:55:12,409 - app.routes - INFO - 💬 Loaded 8 messages for conversation with 916200930282
+2025-08-08 23:55:12,411 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox/chat/916200930282
+2025-08-08 23:55:12,412 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:55:12] "GET /inbox/chat/916200930282 HTTP/1.1" 200 -
+2025-08-08 23:55:12,479 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-08 23:55:12,480 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-08 23:55:12,481 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:55:12] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-08 23:55:33,599 - app - INFO - 📥 POST http://127.0.0.1:5001/inbox/send-quick-message - IP: 127.0.0.1
+2025-08-08 23:55:33,607 - app.routes - INFO - 📤 Quick message sending: 916200930282 using template hello_world
+2025-08-08 23:55:34,052 - app.routes - ERROR - ❌ Failed to send quick message: 401 - {"error":{"message":"Error validating access token: Session has expired on Friday, 08-Aug-25 11:00:00 PDT. The current time is Friday, 08-Aug-25 11:25:33 PDT.","type":"OAuthException","code":190,"error_subcode":463,"fbtrace_id":"AN46sijS8LTjW4mFImOumJE"}}
+2025-08-08 23:55:34,053 - app.routes - ERROR - ❌ Error sending quick message: name 'jsonify' is not defined
+2025-08-08 23:55:34,089 - werkzeug - INFO - 127.0.0.1 - - [08/Aug/2025 23:55:34] "[35m[1mPOST /inbox/send-quick-message HTTP/1.1[0m" 500 -
+2025-08-09 00:00:33,137 - app - INFO - 📥 POST http://127.0.0.1:5001/inbox/send-quick-message - IP: 127.0.0.1
+2025-08-09 00:00:33,142 - app.routes - INFO - 📤 Quick message sending: 916200930282 using template hello_world
+2025-08-09 00:00:35,034 - app.routes - INFO - ✅ Quick message sent successfully to 916200930282
+2025-08-09 00:00:35,034 - app.routes - ERROR - ❌ Error sending quick message: name 'jsonify' is not defined
+2025-08-09 00:00:35,046 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:00:35] "[35m[1mPOST /inbox/send-quick-message HTTP/1.1[0m" 500 -
+2025-08-09 00:01:42,071 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-09 00:01:43,176 - app - INFO - 🚀 Flask application starting up...
+2025-08-09 00:01:43,177 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-09 00:01:43,230 - app - INFO - 📊 Database initialized
+2025-08-09 00:01:43,230 - app - INFO - 🔐 Login manager initialized
+2025-08-09 00:01:43,479 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-09 00:01:43,491 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-09 00:01:43,492 - app - INFO - ✨ Flask application setup complete!
+2025-08-09 00:01:43,492 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-09 00:01:43,492 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-09 00:01:43,508 - werkzeug - WARNING -  * Debugger is active!
+2025-08-09 00:01:43,515 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-09 00:03:06,227 - app - INFO - 📥 POST http://127.0.0.1:5001/inbox/send-quick-message - IP: 127.0.0.1
+2025-08-09 00:03:06,323 - app.routes - INFO - 📤 Quick message sending: 916200930282 using template hello_world
+2025-08-09 00:03:07,789 - app.routes - INFO - ✅ Quick message sent successfully to 916200930282
+2025-08-09 00:03:07,791 - app - INFO - 📤 Response: 200 for POST http://127.0.0.1:5001/inbox/send-quick-message
+2025-08-09 00:03:07,792 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:03:07] "POST /inbox/send-quick-message HTTP/1.1" 200 -
+2025-08-09 00:03:10,453 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox/chat/916200930282 - IP: 127.0.0.1
+2025-08-09 00:03:10,456 - app.routes - INFO - 💬 Chat opened with 916200930282 by user: test@restaurant.com
+2025-08-09 00:03:10,472 - app.routes - INFO - 💬 Loaded 10 messages for conversation with 916200930282
+2025-08-09 00:03:10,514 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox/chat/916200930282
+2025-08-09 00:03:10,516 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:03:10] "GET /inbox/chat/916200930282 HTTP/1.1" 200 -
+2025-08-09 00:03:10,565 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:03:10,572 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:03:10,573 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:03:10] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:18:17,797 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/models.py', reloading
+2025-08-09 00:18:18,505 - app - INFO - 🚀 Flask application starting up...
+2025-08-09 00:18:18,505 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-09 00:18:18,535 - app - INFO - 📊 Database initialized
+2025-08-09 00:18:18,535 - app - INFO - 🔐 Login manager initialized
+2025-08-09 00:18:18,600 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-09 00:18:18,603 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-09 00:18:18,603 - app - INFO - ✨ Flask application setup complete!
+2025-08-09 00:18:18,603 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-09 00:18:18,603 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-09 00:18:18,607 - werkzeug - WARNING -  * Debugger is active!
+2025-08-09 00:18:18,609 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-09 00:19:39,487 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-09 00:19:40,862 - app - INFO - 🚀 Flask application starting up...
+2025-08-09 00:19:40,863 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-09 00:19:40,923 - app - INFO - 📊 Database initialized
+2025-08-09 00:19:40,923 - app - INFO - 🔐 Login manager initialized
+2025-08-09 00:19:41,044 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-09 00:19:41,046 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-09 00:19:41,046 - app - INFO - ✨ Flask application setup complete!
+2025-08-09 00:19:41,046 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-09 00:19:41,046 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-09 00:19:41,050 - werkzeug - WARNING -  * Debugger is active!
+2025-08-09 00:19:41,052 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-09 00:20:33,339 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-09 00:20:33,339 - app.routes - INFO - 🏠 Home page accessed
+2025-08-09 00:20:33,418 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-09 00:20:33,419 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-09 00:20:33,421 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:20:33] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-09 00:20:33,428 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-09 00:20:33,432 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:20:33,436 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-09 00:20:33,442 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-09 00:20:33,513 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:20:33] "[35m[1mGET /dashboard HTTP/1.1[0m" 500 -
+2025-08-09 00:20:33,599 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:20:33] "GET /dashboard?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-08-09 00:20:33,600 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:20:33] "GET /dashboard?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-08-09 00:20:33,642 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:20:33] "GET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-08-09 00:20:33,671 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:20:33] "[36mGET /dashboard?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-09 00:20:36,595 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-09 00:20:37,328 - app - INFO - 🚀 Flask application starting up...
+2025-08-09 00:20:37,328 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-09 00:20:37,349 - app - INFO - 📊 Database initialized
+2025-08-09 00:20:37,350 - app - INFO - 🔐 Login manager initialized
+2025-08-09 00:20:37,452 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-09 00:20:37,455 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-09 00:20:37,455 - app - INFO - ✨ Flask application setup complete!
+2025-08-09 00:20:37,455 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-09 00:20:37,455 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-09 00:20:37,460 - werkzeug - WARNING -  * Debugger is active!
+2025-08-09 00:20:37,462 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-09 00:21:19,925 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-09 00:21:20,731 - app - INFO - 🚀 Flask application starting up...
+2025-08-09 00:21:20,731 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-09 00:21:20,740 - app - INFO - 📊 Database initialized
+2025-08-09 00:21:20,740 - app - INFO - 🔐 Login manager initialized
+2025-08-09 00:21:20,796 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-09 00:21:20,809 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-09 00:21:20,810 - app - INFO - ✨ Flask application setup complete!
+2025-08-09 00:21:20,810 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-09 00:21:20,811 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-09 00:21:20,820 - werkzeug - WARNING -  * Debugger is active!
+2025-08-09 00:21:20,822 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-09 00:22:10,304 - werkzeug - INFO -  * Detected change in '/home/hrash-raj/test/convoxio/app/routes.py', reloading
+2025-08-09 00:22:11,191 - app - INFO - 🚀 Flask application starting up...
+2025-08-09 00:22:11,191 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-09 00:22:11,200 - app - INFO - 📊 Database initialized
+2025-08-09 00:22:11,200 - app - INFO - 🔐 Login manager initialized
+2025-08-09 00:22:11,254 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-09 00:22:11,257 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-09 00:22:11,258 - app - INFO - ✨ Flask application setup complete!
+2025-08-09 00:22:11,258 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-09 00:22:11,258 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-09 00:22:11,261 - werkzeug - WARNING -  * Debugger is active!
+2025-08-09 00:22:11,263 - werkzeug - INFO -  * Debugger PIN: 162-260-262
+2025-08-09 00:24:46,560 - app - INFO - 🚀 Flask application starting up...
+2025-08-09 00:24:46,561 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-09 00:24:46,570 - app - INFO - 📊 Database initialized
+2025-08-09 00:24:46,570 - app - INFO - 🔐 Login manager initialized
+2025-08-09 00:24:46,616 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-09 00:24:46,618 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-09 00:24:46,618 - app - INFO - ✨ Flask application setup complete!
+2025-08-09 00:24:46,618 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-09 00:24:46,618 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-09 00:24:46,622 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.10:5001
+2025-08-09 00:24:46,622 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-08-09 00:24:46,622 - werkzeug - INFO -  * Restarting with stat
+2025-08-09 00:24:46,886 - app - INFO - 🚀 Flask application starting up...
+2025-08-09 00:24:46,886 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-09 00:24:46,914 - app - INFO - 📊 Database initialized
+2025-08-09 00:24:46,914 - app - INFO - 🔐 Login manager initialized
+2025-08-09 00:24:47,079 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-09 00:24:47,084 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-09 00:24:47,084 - app - INFO - ✨ Flask application setup complete!
+2025-08-09 00:24:47,084 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-09 00:24:47,084 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-09 00:24:47,094 - werkzeug - WARNING -  * Debugger is active!
+2025-08-09 00:24:47,099 - werkzeug - INFO -  * Debugger PIN: 128-638-457
+2025-08-09 00:24:51,952 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-09 00:24:52,007 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:24:52,011 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-09 00:24:52,015 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-09 00:24:52,047 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-09 00:24:52,048 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:24:52] "GET /dashboard HTTP/1.1" 200 -
+2025-08-09 00:24:52,087 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:24:52,094 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:24:52,094 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:24:52] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:24:56,085 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox - IP: 127.0.0.1
+2025-08-09 00:24:56,088 - app.routes - INFO - 📥 Inbox accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:24:56,103 - app.routes - INFO - 📥 Found 1 contacts for user 1
+2025-08-09 00:24:56,118 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox
+2025-08-09 00:24:56,119 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:24:56] "GET /inbox HTTP/1.1" 200 -
+2025-08-09 00:24:56,170 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:24:56,171 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:24:56,172 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:24:56] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:24:59,054 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox/chat/916200930282 - IP: 127.0.0.1
+2025-08-09 00:24:59,058 - app.routes - INFO - 💬 Chat opened with 916200930282 by user: test@restaurant.com
+2025-08-09 00:24:59,071 - app.routes - INFO - 💬 Loaded 10 messages for conversation with 916200930282
+2025-08-09 00:24:59,099 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox/chat/916200930282
+2025-08-09 00:24:59,101 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:24:59] "GET /inbox/chat/916200930282 HTTP/1.1" 200 -
+2025-08-09 00:24:59,184 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:24:59,185 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:24:59,186 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:24:59] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:00,653 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox - IP: 127.0.0.1
+2025-08-09 00:25:00,655 - app.routes - INFO - 📥 Inbox accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:25:00,658 - app.routes - INFO - 📥 Found 1 contacts for user 1
+2025-08-09 00:25:00,659 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox
+2025-08-09 00:25:00,660 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:00] "GET /inbox HTTP/1.1" 200 -
+2025-08-09 00:25:00,706 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:00,707 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:00,708 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:00] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:02,929 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-09 00:25:02,930 - app.routes - INFO - 🏠 Home page accessed
+2025-08-09 00:25:02,932 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-09 00:25:02,933 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-09 00:25:02,934 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:02] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-09 00:25:02,942 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-09 00:25:02,945 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:25:02,947 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-09 00:25:02,950 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-09 00:25:02,954 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-09 00:25:02,956 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:02] "GET /dashboard HTTP/1.1" 200 -
+2025-08-09 00:25:03,023 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:03,024 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:03,025 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:03] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:04,484 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-09 00:25:04,486 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:25:04,488 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-09 00:25:04,490 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-09 00:25:04,493 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-09 00:25:04,494 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:04] "GET /dashboard HTTP/1.1" 200 -
+2025-08-09 00:25:04,542 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:04,543 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:04,543 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:04] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:05,781 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-09 00:25:05,784 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:25:05,785 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-09 00:25:05,788 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-09 00:25:05,792 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-09 00:25:05,793 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:05] "GET /dashboard HTTP/1.1" 200 -
+2025-08-09 00:25:05,834 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:05,835 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:05,835 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:05] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:07,913 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-09 00:25:07,913 - app.routes - INFO - 🏠 Home page accessed
+2025-08-09 00:25:07,916 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-09 00:25:07,917 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-09 00:25:07,918 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:07] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-09 00:25:07,929 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-09 00:25:07,933 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:25:07,935 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-09 00:25:07,939 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-09 00:25:07,943 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-09 00:25:07,944 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:07] "GET /dashboard HTTP/1.1" 200 -
+2025-08-09 00:25:07,999 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:08,000 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:08,001 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:08] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:09,863 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-09 00:25:09,863 - app.routes - INFO - 🏠 Home page accessed
+2025-08-09 00:25:09,866 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-09 00:25:09,866 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-09 00:25:09,868 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:09] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-09 00:25:09,876 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-09 00:25:09,880 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:25:09,882 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-09 00:25:09,884 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-09 00:25:09,888 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-09 00:25:09,890 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:09] "GET /dashboard HTTP/1.1" 200 -
+2025-08-09 00:25:09,961 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:09,963 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:09,964 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:09] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:11,412 - app - INFO - 📥 GET http://127.0.0.1:5001/subscription - IP: 127.0.0.1
+2025-08-09 00:25:11,491 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/subscription
+2025-08-09 00:25:11,494 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:11] "GET /subscription HTTP/1.1" 200 -
+2025-08-09 00:25:11,568 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:11,570 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:11,571 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:11] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:19,025 - app - INFO - 📥 GET http://127.0.0.1:5001/inbox - IP: 127.0.0.1
+2025-08-09 00:25:19,029 - app.routes - INFO - 📥 Inbox accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:25:19,036 - app.routes - INFO - 📥 Found 1 contacts for user 1
+2025-08-09 00:25:19,038 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/inbox
+2025-08-09 00:25:19,040 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:19] "GET /inbox HTTP/1.1" 200 -
+2025-08-09 00:25:19,130 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:19,131 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:19,132 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:19] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:20,818 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-09 00:25:20,821 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:25:20,822 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-09 00:25:20,825 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-09 00:25:20,830 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-09 00:25:20,831 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:20] "GET /dashboard HTTP/1.1" 200 -
+2025-08-09 00:25:20,892 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:20,893 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:20,894 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:20] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:25,409 - app - INFO - 📥 GET http://127.0.0.1:5001/analytics - IP: 127.0.0.1
+2025-08-09 00:25:25,569 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:25] "[35m[1mGET /analytics HTTP/1.1[0m" 500 -
+2025-08-09 00:25:25,646 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:25] "GET /analytics?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-08-09 00:25:25,649 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:25] "GET /analytics?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-08-09 00:25:25,686 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:25] "GET /analytics?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-08-09 00:25:25,711 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:25] "[36mGET /analytics?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-08-09 00:25:32,362 - app - INFO - 📥 GET http://127.0.0.1:5001/message-history - IP: 127.0.0.1
+2025-08-09 00:25:32,422 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/message-history
+2025-08-09 00:25:32,424 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:32] "GET /message-history HTTP/1.1" 200 -
+2025-08-09 00:25:32,488 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:32,489 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:32,490 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:32] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:55,382 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-09 00:25:55,384 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:25:55,386 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-09 00:25:55,388 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-09 00:25:55,390 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-09 00:25:55,391 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:55] "GET /dashboard HTTP/1.1" 200 -
+2025-08-09 00:25:55,462 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:55,463 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:55,464 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:55] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:57,428 - app - INFO - 📥 GET http://127.0.0.1:5001/message-history - IP: 127.0.0.1
+2025-08-09 00:25:57,440 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/message-history
+2025-08-09 00:25:57,441 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:57] "GET /message-history HTTP/1.1" 200 -
+2025-08-09 00:25:57,501 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:57,503 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:57,504 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:57] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:25:58,970 - app - INFO - 📥 GET http://127.0.0.1:5001/send-messages - IP: 127.0.0.1
+2025-08-09 00:25:59,008 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/send-messages
+2025-08-09 00:25:59,010 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:59] "GET /send-messages HTTP/1.1" 200 -
+2025-08-09 00:25:59,094 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:25:59,095 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:25:59,096 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:25:59] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:26:01,419 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-09 00:26:01,421 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:26:01,423 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-09 00:26:01,426 - app.routes - INFO - 📱 User messaging capability: [<Template 8>, <Template 9>, <Template 10>] (Templates: 3)
+2025-08-09 00:26:01,430 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-09 00:26:01,431 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:26:01] "GET /dashboard HTTP/1.1" 200 -
+2025-08-09 00:26:01,490 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:26:01,491 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:26:01,492 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:26:01] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:26:05,647 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard/templates - IP: 127.0.0.1
+2025-08-09 00:26:05,650 - app.routes - INFO - 📝 Template management accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:26:05,691 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard/templates
+2025-08-09 00:26:05,692 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:26:05] "GET /dashboard/templates HTTP/1.1" 200 -
+2025-08-09 00:26:05,757 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:26:05,758 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:26:05,759 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:26:05] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-09 00:30:07,103 - app - INFO - 📥 GET http://127.0.0.1:5001/ - IP: 127.0.0.1
+2025-08-09 00:30:07,104 - app.routes - INFO - 🏠 Home page accessed
+2025-08-09 00:30:07,106 - app.routes - INFO - 🔄 Logged-in user redirected to dashboard: test@restaurant.com
+2025-08-09 00:30:07,107 - app - INFO - 📤 Response: 302 for GET http://127.0.0.1:5001/
+2025-08-09 00:30:07,108 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:30:07] "[32mGET / HTTP/1.1[0m" 302 -
+2025-08-09 00:30:07,117 - app - INFO - 📥 GET http://127.0.0.1:5001/dashboard - IP: 127.0.0.1
+2025-08-09 00:30:07,121 - app.routes - INFO - 📊 Dashboard accessed by user: test@restaurant.com (ID: 1)
+2025-08-09 00:30:07,124 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Verified
+2025-08-09 00:30:07,127 - app.routes - INFO - 📱 User messaging capability: [<Template 8>] (Templates: 1)
+2025-08-09 00:30:07,133 - app - INFO - 📤 Response: 200 for GET http://127.0.0.1:5001/dashboard
+2025-08-09 00:30:07,134 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:30:07] "GET /dashboard HTTP/1.1" 200 -
+2025-08-09 00:30:07,195 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
+2025-08-09 00:30:07,196 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
+2025-08-09 00:30:07,196 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:30:07] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -

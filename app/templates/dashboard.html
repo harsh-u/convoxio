@@ -97,6 +97,26 @@
       </div>
     </div>
 
+    <!-- Inbox -->
+    <div class="col-md-6 col-lg-3">
+      <div class="card h-100 text-center p-4">
+        <div class="feature-icon mx-auto mb-3">
+          <i class="bi bi-chat-dots-fill"></i>
+        </div>
+        <h5 class="fw-bold mb-3">Inbox</h5>
+        <p class="text-muted mb-4">View conversations with your customers</p>
+        {% if can_send %}
+        <a href="{{ url_for('main.inbox') }}" class="btn btn-primary">
+          <i class="bi bi-chat-dots me-2"></i>View Conversations
+        </a>
+        {% else %}
+        <button class="btn btn-outline-secondary" disabled>
+          Complete Setup First
+        </button>
+        {% endif %}
+      </div>
+    </div>
+
     <!-- Templates -->
     <div class="col-md-6 col-lg-4">
       <div class="card h-100 text-center p-4">
@@ -107,11 +127,8 @@
         <p class="text-muted mb-4">Create and manage your message templates</p>
         <div class="d-grid gap-2">
           {% if onboarding_status == 'Verified' %}
-          <a href="{{ url_for('main.template_library') }}" class="btn btn-primary">
-            <i class="bi bi-collection me-2"></i>Browse Templates
-          </a>
-          <a href="{{ url_for('main.manage_templates') }}" class="btn btn-outline-primary">
-            <i class="bi bi-gear me-2"></i>Manage My Templates
+          <a href="{{ url_for('main.manage_templates') }}" class="btn btn-primary">
+            <i class="bi bi-gear me-2"></i>Manage Templates
           </a>
           {% else %}
           <button class="btn btn-outline-secondary" disabled>

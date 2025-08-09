@@ -1,8 +1,12 @@
+import logging
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from app.models import User, Upload, SubscriptionPlan, UserSubscription, Payment, MessageHistory, Template
 from app import db
 from datetime import datetime, timedelta
 from sqlalchemy import func, and_
+
+# Create logger for admin routes
+logger = logging.getLogger(__name__)
 
 admin = Blueprint('admin', __name__)
 
@@ -11,16 +15,21 @@ ADMIN_PASSWORD = "admin123"  # You can hash it or add proper admin login later
 
 @admin.route('/admin/login', methods=['GET', 'POST'])
 def admin_login():
+    logger.info("👑 Admin login page accessed")
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
+        logger.info(f"👑 Admin login attempt for email: {email}")
         if email == ADMIN_EMAIL and password == ADMIN_PASSWORD:
+            logger.info("✅ Admin login successful")
             return redirect(url_for('admin.admin_dashboard'))
+        logger.warning(f"❌ Failed admin login attempt for email: {email}")
         flash('Invalid admin credentials', 'danger')
     return render_template('admin_login.html')
 
 @admin.route('/admin/dashboard')
 def admin_dashboard():
+    logger.info("👑 Admin dashboard accessed")
     # Get key metrics for dashboard
     total_users = User.query.count()
     active_subscriptions = UserSubscription.query.filter_by(status='active').count()
@@ -28,6 +37,8 @@ def admin_dashboard():
     messages_sent_today = MessageHistory.query.filter(
         MessageHistory.created_at >= datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     ).count()
+    
+    logger.info(f"📊 Dashboard metrics - Users: {total_users}, Active Subs: {active_subscriptions}, Revenue: ${total_revenue}, Messages Today: {messages_sent_today}")
     
     # Recent activity
     recent_users = User.query.order_by(User.created_at.desc()).limit(5).all()
