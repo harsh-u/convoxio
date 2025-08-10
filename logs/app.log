@@ -1,0 +1,7 @@
+2025-08-08 23:23:28,408 - app - INFO - create_app:29 - 🚀 Flask application starting up...
+2025-08-08 23:23:28,408 - app - INFO - create_app:33 - ✅ CORS enabled for React frontend
+2025-08-08 23:23:28,416 - app - INFO - create_app:36 - 📊 Database initialized
+2025-08-08 23:23:28,416 - app - INFO - create_app:40 - 🔐 Login manager initialized
+2025-08-08 23:23:28,490 - app - INFO - create_app:49 - 🌐 Main routes blueprint registered
+2025-08-08 23:23:28,495 - app - INFO - create_app:53 - 👑 Admin routes blueprint registered
+2025-08-08 23:23:28,495 - app - INFO - create_app:65 - ✨ Flask application setup complete!

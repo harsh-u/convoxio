@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Analytics - WaBridge{% endblock %}
+{% block title %}Analytics - Convoxio{% endblock %}
 
 {% block content %}
 <div class="container">
@@ -237,8 +237,8 @@
           Quick Actions
         </h6>
         <div class="d-grid gap-2">
-          <a href="{{ url_for('main.template_library') }}" class="btn btn-outline-primary btn-sm">
-            <i class="bi bi-collection me-2"></i>Browse New Templates
+          <a href="{{ url_for('main.manage_templates') }}" class="btn btn-outline-primary btn-sm">
+            <i class="bi bi-plus me-2"></i>Create New Templates
           </a>
           <a href="{{ url_for('main.bulk_messages') }}" class="btn btn-outline-success btn-sm">
             <i class="bi bi-broadcast me-2"></i>Send Bulk Messages

@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+
+{% block title %}Inbox - Convoxio{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h2><i class="fas fa-inbox"></i> Inbox</h2>
+                <div>
+                    <a href="{{ url_for('main.send_messages') }}" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Send New Message
+                    </a>
+                    <a href="{{ url_for('main.dashboard') }}" class="btn btn-outline-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Dashboard
+                    </a>
+                </div>
+            </div>
+
+            {% if contacts_with_messages %}
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="mb-0">
+                                <i class="fas fa-comments"></i> Conversations
+                                <span class="badge badge-primary ml-2">{{ contacts_with_messages|length }}</span>
+                            </h5>
+                        </div>
+                        <div class="card-body p-0">
+                            <div class="list-group list-group-flush">
+                                {% for contact, message_count, last_message_time in contacts_with_messages %}
+                                <a href="{{ url_for('main.chat_with_contact', phone_number=contact.phone_number) }}" 
+                                   class="list-group-item list-group-item-action">
+                                    <div class="d-flex w-100 justify-content-between align-items-center">
+                                        <div class="d-flex align-items-center">
+                                            <div class="contact-avatar mr-3">
+                                                <div class="avatar-circle">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <h6 class="mb-1">
+                                                    {{ contact.name or contact.phone_number }}
+                                                </h6>
+                                                <p class="mb-1 text-muted small">
+                                                    <i class="fas fa-phone"></i> {{ contact.phone_number }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="text-right">
+                                            <small class="text-muted">
+                                                {% if last_message_time %}
+                                                    {{ last_message_time.strftime('%b %d, %Y at %I:%M %p') }}
+                                                {% else %}
+                                                    No messages
+                                                {% endif %}
+                                            </small>
+                                            <div class="mt-1">
+                                                <span class="badge badge-info">
+                                                    {{ message_count or 0 }} messages
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body text-center py-5">
+                            <i class="fas fa-inbox fa-4x text-muted mb-3"></i>
+                            <h4 class="text-muted">No Conversations Yet</h4>
+                            <p class="text-muted mb-4">
+                                You haven't sent any messages yet. Start by sending your first WhatsApp message!
+                            </p>
+                            <a href="{{ url_for('main.send_messages') }}" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane"></i> Send Your First Message
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<style>
+.contact-avatar {
+    width: 50px;
+    height: 50px;
+}
+
+.avatar-circle {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+}
+
+.list-group-item:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+.list-group-item {
+    border-left: none;
+    border-right: none;
+    padding: 1rem 1.5rem;
+}
+
+.list-group-item:first-child {
+    border-top: none;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.badge-info {
+    background-color: #17a2b8;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+</style>
+{% endblock %}

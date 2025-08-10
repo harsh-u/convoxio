@@ -1,3 +1,4 @@
+import logging
 from flask import Blueprint, request, jsonify, session, current_app
 from flask_login import login_user, logout_user, login_required, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -10,6 +11,9 @@ from app.models import User, Upload, Template, MessageHistory
 from app.forms import RegisterForm, LoginForm, UploadForm, WhatsAppMessageForm, TemplateForm
 from app import login_manager
 
+# Create logger for API routes
+logger = logging.getLogger(__name__)
+
 api = Blueprint('api', __name__)
 
 @login_manager.user_loader
@@ -19,8 +23,10 @@ def load_user(user_id):
 @api.route('/register', methods=['POST'])
 def register():
     data = request.get_json()
+    logger.info(f"🔗 API registration attempt for email: {data.get('email', 'N/A')}")
     
     if User.query.filter_by(email=data['email']).first():
+        logger.warning(f"⚠️ API registration failed - email already exists: {data['email']}")
         return jsonify({'error': 'Email already registered'}), 400
     
     user = User(
@@ -29,16 +35,19 @@ def register():
     )
     db.session.add(user)
     db.session.commit()
+    logger.info(f"✅ API user registered successfully: {user.email} (ID: {user.id})")
     
     return jsonify({'message': 'Registration successful', 'user_id': user.id}), 201
 
 @api.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
+    logger.info(f"🔗 API login attempt for email: {data.get('email', 'N/A')}")
     user = User.query.filter_by(email=data['email']).first()
     
     if user and check_password_hash(user.password, data['password']):
         login_user(user)
+        logger.info(f"✅ API user logged in successfully: {user.email} (ID: {user.id})")
         return jsonify({
             'message': 'Login successful',
             'user': {
@@ -48,6 +57,7 @@ def login():
             }
         })
     
+    logger.warning(f"❌ Failed API login attempt for email: {data.get('email', 'N/A')}")
     return jsonify({'error': 'Invalid credentials'}), 401
 
 @api.route('/logout', methods=['POST'])

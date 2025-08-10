@@ -1,4 +1,5 @@
 import os
+import logging
 
 class Config:
     SECRET_KEY = 'your-secret-key-change-in-production'
@@ -8,6 +9,10 @@ class Config:
     UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), 'uploads')
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # Max 16MB file
     ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg'}
+    
+    # Logging configuration
+    LOG_LEVEL = logging.INFO
+    LOG_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     
     # Meta configuration
     META_APP_ID = '2012311039173242'

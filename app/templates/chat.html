@@ -1,0 +1,308 @@
+{% extends "base.html" %}
+
+{% block title %}Chat with {{ contact.name or contact.phone_number }} - Convoxio{% endblock %}
+
+{% block content %}
+<div class="container-fluid mt-4">
+    <div class="row">
+        <div class="col-12">
+            <!-- Chat Header -->
+            <div class="card mb-3">
+                <div class="card-header bg-primary text-white">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex align-items-center">
+                            <a href="{{ url_for('main.inbox') }}" class="btn btn-outline-light btn-sm mr-3">
+                                <i class="fas fa-arrow-left"></i>
+                            </a>
+                            <div class="contact-avatar mr-3">
+                                <div class="avatar-circle-white">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">{{ contact.name or contact.phone_number }}</h5>
+                                <small class="text-light">
+                                    <i class="fas fa-phone"></i> {{ contact.phone_number }}
+                                </small>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="badge badge-light">
+                                {{ messages|length }} messages
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="card">
+                <div class="card-body p-0">
+                    <div class="chat-container" id="chatContainer">
+                        {% if messages %}
+                            {% for message in messages %}
+                            <div class="message-item sent-message">
+                                <div class="message-content">
+                                    <div class="message-header">
+                                        <small class="text-muted">
+                                            <i class="fas fa-paper-plane"></i> 
+                                            Sent via {{ message.template.name if message.template else 'Template' }}
+                                        </small>
+                                        <small class="text-muted ml-2">
+                                            {{ message.created_at.strftime('%b %d, %Y at %I:%M %p') }}
+                                        </small>
+                                    </div>
+                                    <div class="message-text">
+                                        {{ message.message_content or message.template.content if message.template else 'Message content not available' }}
+                                    </div>
+                                    <div class="message-status">
+                                        <small class="text-muted">
+                                            <i class="fas fa-check-circle text-success"></i> {{ message.status.title() }}
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                        <div class="text-center py-5">
+                            <i class="fas fa-comments fa-3x text-muted mb-3"></i>
+                            <h5 class="text-muted">No messages yet</h5>
+                            <p class="text-muted">Start the conversation by sending a message below.</p>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Success/Error Notification -->
+            <div id="notification" class="alert" style="display: none; position: fixed; top: 20px; right: 20px; z-index: 1050; min-width: 300px;">
+                <span id="notificationMessage"></span>
+            </div>
+
+            <!-- Quick Send Section -->
+            {% if templates %}
+            <div class="card mt-3">
+                <div class="card-header">
+                    <h6 class="mb-0">
+                        <i class="fas fa-bolt"></i> Quick Send Template
+                    </h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <select class="form-control" id="quickTemplateSelect">
+                                <option value="">Select a template to send...</option>
+                                {% for template in templates %}
+                                <option value="{{ template.id }}" data-content="{{ template.content }}">
+                                    {{ template.name }} ({{ template.language }})
+                                </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-primary btn-block" id="quickSendBtn" disabled>
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </div>
+                    </div>
+                    <div class="mt-3" id="templatePreview" style="display: none;">
+                        <div class="alert alert-info">
+                            <strong>Preview:</strong>
+                            <div id="templateContent"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Action Buttons -->
+            <div class="card mt-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <a href="{{ url_for('main.send_messages') }}" class="btn btn-outline-primary btn-block">
+                                <i class="fas fa-plus"></i> Send New Message
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <a href="{{ url_for('main.inbox') }}" class="btn btn-outline-secondary btn-block">
+                                <i class="fas fa-inbox"></i> Back to Inbox
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.chat-container {
+    max-height: 500px;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.message-item {
+    margin-bottom: 1rem;
+}
+
+.sent-message .message-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 1rem;
+    border-radius: 15px 15px 5px 15px;
+    margin-left: auto;
+    max-width: 80%;
+    position: relative;
+}
+
+.message-header {
+    font-size: 0.8rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.message-text {
+    font-size: 1rem;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+}
+
+.message-status {
+    font-size: 0.75rem;
+    text-align: right;
+    opacity: 0.8;
+}
+
+.contact-avatar {
+    width: 40px;
+    height: 40px;
+}
+
+.avatar-circle-white {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 16px;
+}
+
+.card {
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+#quickSendBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    border-color: #bee5eb;
+    color: #0c5460;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const templateSelect = document.getElementById('quickTemplateSelect');
+    const quickSendBtn = document.getElementById('quickSendBtn');
+    const templatePreview = document.getElementById('templatePreview');
+    const templateContent = document.getElementById('templateContent');
+    const chatContainer = document.getElementById('chatContainer');
+    const notification = document.getElementById('notification');
+    const notificationMessage = document.getElementById('notificationMessage');
+
+    // Scroll to bottom of chat
+    chatContainer.scrollTop = chatContainer.scrollHeight;
+
+    // Function to show notification
+    function showNotification(message, type = 'success') {
+        notification.className = `alert alert-${type}`;
+        notificationMessage.innerHTML = message;
+        notification.style.display = 'block';
+        
+        // Auto-hide after 3 seconds
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 3000);
+    }
+
+    // Handle template selection
+    templateSelect.addEventListener('change', function() {
+        const selectedOption = this.options[this.selectedIndex];
+        const templateId = this.value;
+        const content = selectedOption.getAttribute('data-content');
+
+        if (templateId) {
+            quickSendBtn.disabled = false;
+            templatePreview.style.display = 'block';
+            templateContent.textContent = content;
+        } else {
+            quickSendBtn.disabled = true;
+            templatePreview.style.display = 'none';
+        }
+    });
+
+    // Handle quick send
+    quickSendBtn.addEventListener('click', function() {
+        const templateId = templateSelect.value;
+        const phoneNumber = '{{ contact.phone_number }}';
+
+        if (!templateId) {
+            showNotification('<i class="fas fa-exclamation-triangle"></i> Please select a template first.', 'warning');
+            return;
+        }
+
+        // Disable button and show loading
+        quickSendBtn.disabled = true;
+        quickSendBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+
+        // Send message via AJAX
+        fetch('{{ url_for("main.send_quick_message") }}', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                phone_number: phoneNumber,
+                template_id: templateId
+            })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Show success notification
+                showNotification('<i class="fas fa-check-circle"></i> Message sent successfully!', 'success');
+                
+                // Reset form
+                templateSelect.value = '';
+                templatePreview.style.display = 'none';
+                
+                // Reload page after a short delay to show new message
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1500);
+            } else {
+                showNotification('<i class="fas fa-exclamation-circle"></i> Error: ' + (data.error || 'Failed to send message'), 'danger');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            showNotification('<i class="fas fa-exclamation-circle"></i> An error occurred while sending the message.', 'danger');
+        })
+        .finally(() => {
+            // Re-enable button
+            quickSendBtn.disabled = false;
+            quickSendBtn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+        });
+    });
+});
+</script>
+{% endblock %}

@@ -1,15 +1,19 @@
 import os
-from flask import Blueprint, render_template, redirect, url_for, request, flash, current_app as app
+import logging
+from flask import Blueprint, render_template, redirect, url_for, request, flash, current_app as app, jsonify
 from flask_login import login_user, login_required, logout_user, current_user
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.utils import secure_filename
 import requests                                 
 from app import db, login_manager
-from app.models import User, Upload, Template, MessageHistory
+from app.models import User, Upload, Template, MessageHistory, Contact
 from app.forms import RegisterForm, LoginForm, UploadForm, WhatsAppMessageForm, TemplateForm
 from config import Config
 import urllib.parse
 from wtforms import SelectField
+
+# Create logger for routes
+logger = logging.getLogger(__name__)
 
 main = Blueprint('main', __name__)
 
@@ -19,14 +23,27 @@ def load_user(user_id):
 
 @main.route('/')
 def index():
+    logger.info("🏠 Home page accessed")
+    # If user is already logged in, redirect to dashboard
+    if current_user.is_authenticated:
+        logger.info(f"🔄 Logged-in user redirected to dashboard: {current_user.email}")
+        return redirect(url_for('main.dashboard'))
     return render_template('index.html')
 
 @main.route('/register', methods=['GET', 'POST'])
 def register():
+    logger.info("📝 Registration page accessed")
+    # If user is already logged in, redirect to dashboard
+    if current_user.is_authenticated:
+        logger.info(f"🔄 Logged-in user redirected from register to dashboard: {current_user.email}")
+        return redirect(url_for('main.dashboard'))
+    
     form = RegisterForm()
     if form.validate_on_submit():
+        logger.info(f"📝 Registration attempt for email: {form.email.data}")
         existing_user = User.query.filter_by(email=form.email.data).first()
         if existing_user:
+            logger.warning(f"⚠️ Registration failed - email already exists: {form.email.data}")
             flash('Email already registered. Please use a different email or login.', 'danger')
             return redirect(url_for('main.register'))
         
@@ -40,32 +57,46 @@ def register():
         )
         db.session.add(user)
         db.session.commit()
+        logger.info(f"✅ New user registered successfully: {user.email} (ID: {user.id})")
         
         # Auto-login the user after registration
         login_user(user)
-        flash('Welcome to WaBridge! Let\'s get your account set up.', 'success')
+        logger.info(f"🔐 User auto-logged in after registration: {user.email}")
+        flash('Welcome to Convoxio! Let\'s get your account set up.', 'success')
         return redirect(url_for('main.dashboard'))
     return render_template('register.html', form=form)
 
 @main.route('/login', methods=['GET', 'POST'])
 def login():
+    logger.info("🔐 Login page accessed")
+    # If user is already logged in, redirect to dashboard
+    if current_user.is_authenticated:
+        logger.info(f"🔄 Logged-in user redirected from login to dashboard: {current_user.email}")
+        return redirect(url_for('main.dashboard'))
+    
     form = LoginForm()
     if form.validate_on_submit():
+        logger.info(f"🔐 Login attempt for email: {form.email.data}")
         user = User.query.filter_by(email=form.email.data).first()
         if user and check_password_hash(user.password, form.password.data):
             login_user(user)
+            logger.info(f"✅ User logged in successfully: {user.email} (ID: {user.id})")
             return redirect(url_for('main.dashboard'))
+        logger.warning(f"❌ Failed login attempt for email: {form.email.data}")
         flash('Invalid credentials', 'danger')
     return render_template('login.html', form=form)
 
 @main.route('/dashboard')
 @login_required
 def dashboard():
+    logger.info(f"📊 Dashboard accessed by user: {current_user.email} (ID: {current_user.id})")
     uploads = Upload.query.filter_by(user_id=current_user.id).all()
     has_pan = any(u.filetype == 'PAN' for u in uploads)
     has_gst = any(u.filetype == 'GST' for u in uploads)
     docs_uploaded = has_pan and has_gst
     onboarding_status = current_user.onboarding_status
+    
+    logger.info(f"📋 User status - Docs uploaded: {docs_uploaded}, Onboarding: {onboarding_status}")
     
     # Check if user can send messages
     approved_templates = Template.query.filter_by(user_id=current_user.id, status='Approved').all()
@@ -73,6 +104,8 @@ def dashboard():
                 current_user.whatsapp_access_token and 
                 current_user.phone_number_id and 
                 approved_templates)
+    
+    logger.info(f"📱 User messaging capability: {can_send} (Templates: {len(approved_templates)})")
     
     # Get recent message history
     message_history = MessageHistory.query.filter_by(user_id=current_user.id).order_by(MessageHistory.created_at.desc()).limit(10).all()
@@ -86,8 +119,10 @@ def dashboard():
 @main.route('/dashboard/templates', methods=['GET', 'POST'])
 @login_required
 def manage_templates():
+    logger.info(f"📝 Template management accessed by user: {current_user.email} (ID: {current_user.id})")
     form = TemplateForm()
     if form.validate_on_submit():
+        logger.info(f"📝 New template submission: {form.name.data} by user {current_user.id}")
         # Build components array for Meta API
         components = []
         # Header
@@ -158,7 +193,9 @@ def manage_templates():
 @main.route('/logout')
 @login_required
 def logout():
+    logger.info(f"🚪 User logout: {current_user.email} (ID: {current_user.id})")
     logout_user()
+    logger.info("✅ User logged out successfully")
     return redirect(url_for('main.login'))
 
 @main.route('/verify-phone', methods=['GET', 'POST'])
@@ -523,15 +560,37 @@ def send_messages():
         else:
             flash(f"Failed to send message: {response.status_code} — {response.text}", "danger")
         
-        # Save message history
+        # Save message history with content
         history = MessageHistory(
             user_id=current_user.id,
             recipient=recipient,
             template_id=template_obj.id,
+            message_content=template_obj.content,
+            message_type='template',
             meta_message_id=meta_message_id,
             status='sent'
         )
         db.session.add(history)
+        
+        # Create or update contact
+        contact = Contact.query.filter_by(
+            user_id=current_user.id,
+            phone_number=recipient
+        ).first()
+        
+        if not contact:
+            contact = Contact(
+                user_id=current_user.id,
+                phone_number=recipient,
+                name=recipient,  # You can enhance this to get actual names
+                last_message_at=history.created_at
+            )
+            db.session.add(contact)
+            logger.info(f"📇 New contact created: {recipient} for user {current_user.id}")
+        else:
+            contact.last_message_at = history.created_at
+            logger.info(f"📇 Contact updated: {recipient} for user {current_user.id}")
+        
         db.session.commit()
         
         return redirect(url_for('main.send_messages'))
@@ -540,6 +599,222 @@ def send_messages():
     recent_messages = MessageHistory.query.filter_by(user_id=current_user.id).order_by(MessageHistory.created_at.desc()).limit(5).all()
     
     return render_template('send_messages.html', form=msg_form, templates=approved_templates, recent_messages=recent_messages)
+
+@main.route('/inbox')
+@login_required
+def inbox():
+    """Display inbox with all contacts and their conversations"""
+    if current_user.onboarding_status != 'Verified':
+        flash('Please complete WhatsApp setup first.', 'warning')
+        return redirect(url_for('main.dashboard'))
+    
+    logger.info(f"📥 Inbox accessed by user: {current_user.email} (ID: {current_user.id})")
+    
+    # Get all contacts with their last message, ordered by most recent
+    from sqlalchemy import func
+    contacts_with_messages = db.session.query(
+        Contact,
+        func.count(MessageHistory.id).label('message_count'),
+        func.max(MessageHistory.created_at).label('last_message_time')
+    ).outerjoin(
+        MessageHistory, 
+        (Contact.phone_number == MessageHistory.recipient) & 
+        (Contact.user_id == MessageHistory.user_id)
+    ).filter(
+        Contact.user_id == current_user.id
+    ).group_by(Contact.id).order_by(
+        func.max(MessageHistory.created_at).desc()
+    ).all()
+    
+    # If no contacts exist, create them from message history
+    if not contacts_with_messages:
+        # Get unique recipients from message history
+        recipients = db.session.query(
+            MessageHistory.recipient,
+            MessageHistory.recipient_name,
+            func.max(MessageHistory.created_at).label('last_message_time'),
+            func.count(MessageHistory.id).label('message_count')
+        ).filter_by(user_id=current_user.id).group_by(
+            MessageHistory.recipient
+        ).order_by(func.max(MessageHistory.created_at).desc()).all()
+        
+        # Create contacts for each recipient
+        for recipient_data in recipients:
+            existing_contact = Contact.query.filter_by(
+                user_id=current_user.id,
+                phone_number=recipient_data.recipient
+            ).first()
+            
+            if not existing_contact:
+                contact = Contact(
+                    user_id=current_user.id,
+                    phone_number=recipient_data.recipient,
+                    name=recipient_data.recipient_name or recipient_data.recipient,
+                    last_message_at=recipient_data.last_message_time
+                )
+                db.session.add(contact)
+        
+        db.session.commit()
+        
+        # Re-query contacts
+        contacts_with_messages = db.session.query(
+            Contact,
+            func.count(MessageHistory.id).label('message_count'),
+            func.max(MessageHistory.created_at).label('last_message_time')
+        ).outerjoin(
+            MessageHistory, 
+            (Contact.phone_number == MessageHistory.recipient) & 
+            (Contact.user_id == MessageHistory.user_id)
+        ).filter(
+            Contact.user_id == current_user.id
+        ).group_by(Contact.id).order_by(
+            func.max(MessageHistory.created_at).desc()
+        ).all()
+    
+    logger.info(f"📥 Found {len(contacts_with_messages)} contacts for user {current_user.id}")
+    
+    return render_template('inbox.html', contacts_with_messages=contacts_with_messages)
+
+@main.route('/inbox/chat/<phone_number>')
+@login_required
+def chat_with_contact(phone_number):
+    """Display chat conversation with a specific contact"""
+    if current_user.onboarding_status != 'Verified':
+        flash('Please complete WhatsApp setup first.', 'warning')
+        return redirect(url_for('main.dashboard'))
+    
+    logger.info(f"💬 Chat opened with {phone_number} by user: {current_user.email}")
+    
+    # Get or create contact
+    contact = Contact.query.filter_by(
+        user_id=current_user.id,
+        phone_number=phone_number
+    ).first()
+    
+    if not contact:
+        # Create contact if it doesn't exist
+        first_message = MessageHistory.query.filter_by(
+            user_id=current_user.id,
+            recipient=phone_number
+        ).first()
+        
+        if first_message:
+            contact = Contact(
+                user_id=current_user.id,
+                phone_number=phone_number,
+                name=first_message.recipient_name or phone_number,
+                last_message_at=first_message.created_at
+            )
+            db.session.add(contact)
+            db.session.commit()
+        else:
+            flash('No conversation found with this contact.', 'warning')
+            return redirect(url_for('main.inbox'))
+    
+    # Get all messages with this contact, ordered by time
+    messages = MessageHistory.query.filter_by(
+        user_id=current_user.id,
+        recipient=phone_number
+    ).order_by(MessageHistory.created_at.asc()).all()
+    
+    # Get approved templates for quick sending
+    approved_templates = Template.query.filter_by(
+        user_id=current_user.id, 
+        status='Approved'
+    ).all()
+    
+    logger.info(f"💬 Loaded {len(messages)} messages for conversation with {phone_number}")
+    
+    return render_template('chat.html', 
+                         contact=contact, 
+                         messages=messages, 
+                         templates=approved_templates)
+
+@main.route('/inbox/send-quick-message', methods=['POST'])
+@login_required
+def send_quick_message():
+    """Send a quick message from the chat interface"""
+    if current_user.onboarding_status != 'Verified':
+        return jsonify({'error': 'Please complete WhatsApp setup first.'}), 400
+    
+    data = request.get_json()
+    phone_number = data.get('phone_number')
+    template_id = data.get('template_id')
+    
+    if not phone_number or not template_id:
+        return jsonify({'error': 'Phone number and template are required.'}), 400
+    
+    # Check message limit
+    if not current_user.can_send_message():
+        return jsonify({'error': 'Monthly message limit reached.'}), 400
+    
+    # Get template
+    template = Template.query.filter_by(
+        id=template_id,
+        user_id=current_user.id,
+        status='Approved'
+    ).first()
+    
+    if not template:
+        return jsonify({'error': 'Invalid template selected.'}), 400
+    
+    logger.info(f"📤 Quick message sending: {phone_number} using template {template.name}")
+    
+    # Send message via WhatsApp API
+    try:
+        url = f"https://graph.facebook.com/v19.0/{current_user.phone_number_id}/messages"
+        headers = {
+            "Authorization": f"Bearer {current_user.whatsapp_access_token}",
+            "Content-Type": "application/json"
+        }
+        
+        payload = {
+            "messaging_product": "whatsapp",
+            "to": phone_number,
+            "type": "template",
+            "template": {
+                "name": template.name,
+                "language": {"code": template.language}
+            }
+        }
+        
+        response = requests.post(url, headers=headers, json=payload)
+        
+        if response.status_code == 200:
+            # Save message history
+            message_history = MessageHistory(
+                user_id=current_user.id,
+                recipient=phone_number,
+                template_id=template.id,
+                message_content=template.content,
+                message_type='template',
+                status='sent'
+            )
+            db.session.add(message_history)
+            
+            # Update user's message count
+            current_user.messages_sent_this_month += 1
+            
+            # Update contact's last message time
+            contact = Contact.query.filter_by(
+                user_id=current_user.id,
+                phone_number=phone_number
+            ).first()
+            
+            if contact:
+                contact.last_message_at = message_history.created_at
+            
+            db.session.commit()
+            
+            logger.info(f"✅ Quick message sent successfully to {phone_number}")
+            return jsonify({'success': True, 'message': 'Message sent successfully!'})
+        else:
+            logger.error(f"❌ Failed to send quick message: {response.status_code} - {response.text}")
+            return jsonify({'error': f'Failed to send message: {response.text}'}), 400
+            
+    except Exception as e:
+        logger.error(f"❌ Error sending quick message: {str(e)}")
+        return jsonify({'error': 'An error occurred while sending the message.'}), 500
 
 @main.route('/message-history')
 @login_required
@@ -555,85 +830,7 @@ def message_history():
     
     return render_template('message_history.html', messages=messages)
 
-@main.route('/template-library')
-@login_required
-def template_library():
-    category = request.args.get('category', 'all')
-    
-    # Get all categories for filter
-    from app.models import TemplateLibrary
-    categories = db.session.query(TemplateLibrary.category).distinct().all()
-    categories = [cat[0] for cat in categories]
-    
-    # Filter templates by category
-    if category == 'all':
-        templates = TemplateLibrary.query.filter_by(is_active=True).all()
-    else:
-        templates = TemplateLibrary.query.filter_by(category=category, is_active=True).all()
-    
-    return render_template('template_library.html', templates=templates, categories=categories, selected_category=category)
 
-@main.route('/use-template/<int:template_id>')
-@login_required
-def use_template(template_id):
-    from app.models import TemplateLibrary
-    library_template = TemplateLibrary.query.get_or_404(template_id)
-    
-    # Create a new template for the user based on the library template
-    new_template = Template(
-        user_id=current_user.id,
-        name=f"{library_template.name}_{current_user.id}",
-        language=library_template.language,
-        content=library_template.content,
-        header_type=library_template.header_type,
-        header_text=library_template.header_text,
-        footer_text=library_template.footer_text,
-        status='Pending'
-    )
-    
-    # If user has WhatsApp connected, submit to Meta
-    if current_user.whatsapp_access_token and current_user.waba_id:
-        try:
-            # Build components for Meta API
-            components = []
-            
-            # Header
-            if library_template.header_type == 'TEXT' and library_template.header_text:
-                components.append({"type": "HEADER", "format": "TEXT", "text": library_template.header_text})
-            
-            # Body (always required)
-            components.append({"type": "BODY", "text": library_template.content})
-            
-            # Footer
-            if library_template.footer_text:
-                components.append({"type": "FOOTER", "text": library_template.footer_text})
-            
-            # Submit to Meta
-            url = f"https://graph.facebook.com/v19.0/{current_user.waba_id}/message_templates"
-            headers = {"Authorization": f"Bearer {current_user.whatsapp_access_token}"}
-            payload = {
-                "name": new_template.name,
-                "language": {"code": new_template.language},
-                "components": components,
-                "category": "TRANSACTIONAL"
-            }
-            
-            response = requests.post(url, headers=headers, json=payload)
-            if response.status_code == 200:
-                resp_json = response.json()
-                new_template.meta_template_id = resp_json.get("id")
-                flash(f'Template "{library_template.name}" added and submitted for approval!', 'success')
-            else:
-                flash(f"Template added but Meta submission failed: {response.text}", 'warning')
-        except Exception as e:
-            flash(f"Template added but Meta submission failed: {e}", 'warning')
-    else:
-        flash(f'Template "{library_template.name}" added! Complete WhatsApp setup to use it.', 'info')
-    
-    db.session.add(new_template)
-    db.session.commit()
-    
-    return redirect(url_for('main.manage_templates'))
 
 @main.route('/bulk-messages', methods=['GET', 'POST'])
 @login_required
@@ -645,7 +842,7 @@ def bulk_messages():
     approved_templates = Template.query.filter_by(user_id=current_user.id, status='Approved').all()
     if not approved_templates:
         flash('No approved templates found. Please create templates first.', 'warning')
-        return redirect(url_for('main.template_library'))
+        return redirect(url_for('main.manage_templates'))
     
     from app.forms import BulkMessageForm
     form = BulkMessageForm()
@@ -780,7 +977,7 @@ def schedule_messages():
     approved_templates = Template.query.filter_by(user_id=current_user.id, status='Approved').all()
     if not approved_templates:
         flash('No approved templates found. Please create templates first.', 'warning')
-        return redirect(url_for('main.template_library'))
+        return redirect(url_for('main.manage_templates'))
     
     from app.forms import ScheduleMessageForm
     form = ScheduleMessageForm()
@@ -1234,22 +1431,25 @@ def assign_dedicated_whatsapp_number(user_id, business_name):
     return assigned_number['phone_id']
 
 def auto_create_starter_templates(user_id):
-    """Automatically create basic templates for new users"""
-    from app.models import TemplateLibrary
+    """Create basic starter templates for new users"""
+    # Create a basic welcome template for new users
+    welcome_template = Template(
+        user_id=user_id,
+        name=f"welcome_message_{user_id}",
+        language='en_US',
+        content="Welcome to our service! We're excited to have you on board.",
+        status='Approved',  # Auto-approve for demo
+        header_type='NONE'
+    )
+    db.session.add(welcome_template)
     
-    # Get 3 most popular templates from library
-    popular_templates = TemplateLibrary.query.filter_by(is_active=True).limit(3).all()
-    
-    for lib_template in popular_templates:
-        # Create approved template for user (skip Meta approval for demo)
-        user_template = Template(
-            user_id=user_id,
-            name=f"{lib_template.name.replace(' ', '_').lower()}_{user_id}",
-            language='en_US',
-            content=lib_template.content,
-            status='Approved',  # Auto-approve for demo
-            header_type=lib_template.header_type,
-            header_text=lib_template.header_text,
-            footer_text=lib_template.footer_text
-        )
-        db.session.add(user_template)
+    # Create a basic thank you template
+    thank_you_template = Template(
+        user_id=user_id,
+        name=f"thank_you_{user_id}",
+        language='en_US',
+        content="Thank you for your business! We appreciate your support.",
+        status='Approved',  # Auto-approve for demo
+        header_type='NONE'
+    )
+    db.session.add(thank_you_template)
