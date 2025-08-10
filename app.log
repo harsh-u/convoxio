@@ -1074,3 +1074,14 @@
 2025-08-09 00:30:07,195 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
 2025-08-09 00:30:07,196 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
 2025-08-09 00:30:07,196 - werkzeug - INFO - 127.0.0.1 - - [09/Aug/2025 00:30:07] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-08-10 09:58:24,480 - app - INFO - 🚀 Flask application starting up...
+2025-08-10 09:58:24,480 - app - INFO - ✅ CORS enabled for React frontend
+2025-08-10 09:58:24,506 - app - INFO - 📊 Database initialized
+2025-08-10 09:58:24,506 - app - INFO - 🔐 Login manager initialized
+2025-08-10 09:58:24,671 - app - INFO - 🌐 Main routes blueprint registered
+2025-08-10 09:58:24,682 - app - INFO - 👑 Admin routes blueprint registered
+2025-08-10 09:58:24,683 - app - INFO - ✨ Flask application setup complete!
+2025-08-10 09:58:24,683 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-08-10 09:58:24,683 - __main__ - INFO - 🔧 Debug mode: ON
+2025-08-10 09:58:24,695 - werkzeug - WARNING -  * Debugger is active!
+2025-08-10 09:58:24,700 - werkzeug - INFO -  * Debugger PIN: 491-785-851
