@@ -2,63 +2,130 @@
 {% block title %}Sign In - Convoxio{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-6 col-lg-5">
-      <div class="card p-5 fade-in">
-        <div class="text-center mb-4">
-          <i class="bi bi-box-arrow-in-right text-primary" style="font-size: 3rem;"></i>
-          <h2 class="fw-bold mt-3 mb-2">Welcome Back</h2>
-          <p class="text-muted">Sign in to your Convoxio account</p>
-        </div>
-
-        <form method="POST" class="needs-validation" novalidate>
-          {{ form.hidden_tag() }}
-          
-          <div class="mb-4">
-            {{ form.email.label(class_="form-label fw-semibold") }}
-            {{ form.email(class_="form-control form-control-lg", placeholder="your@business-email.com") }}
-          </div>
-          
-          <div class="mb-4">
-            {{ form.password.label(class_="form-label fw-semibold") }}
-            {{ form.password(class_="form-control form-control-lg", placeholder="Enter your password") }}
-          </div>
-
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="rememberMe">
-              <label class="form-check-label" for="rememberMe">
-                Remember me
-              </label>
+<div class="min-vh-100 d-flex align-items-center" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 col-md-7">
+        <!-- Main Login Card -->
+        <div class="card border-0 shadow-lg">
+          <div class="card-body p-5">
+            <!-- Header -->
+            <div class="text-center mb-5">
+              <div class="feature-icon mx-auto mb-4" style="width: 80px; height: 80px;">
+                <i class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i>
+              </div>
+              <h1 class="h3 fw-bold mb-2">Welcome Back</h1>
+              <p class="text-muted">Sign in to your WhatsApp Business account</p>
             </div>
-            <a href="#" class="text-decoration-none small">Forgot password?</a>
+
+            <!-- Login Form -->
+            <form method="POST" class="needs-validation" novalidate>
+              {{ form.hidden_tag() }}
+              
+              <div class="mb-4">
+                {{ form.email.label(class_="form-label fw-semibold") }}
+                <div class="input-group">
+                  <span class="input-group-text bg-light border-end-0">
+                    <i class="bi bi-envelope text-muted"></i>
+                  </span>
+                  {{ form.email(class_="form-control border-start-0", placeholder="your@business-email.com", style="padding-left: 0;") }}
+                </div>
+              </div>
+              
+              <div class="mb-4">
+                {{ form.password.label(class_="form-label fw-semibold") }}
+                <div class="input-group">
+                  <span class="input-group-text bg-light border-end-0">
+                    <i class="bi bi-lock text-muted"></i>
+                  </span>
+                  {{ form.password(class_="form-control border-start-0", placeholder="Enter your password", style="padding-left: 0;") }}
+                </div>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center mb-4">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="rememberMe">
+                  <label class="form-check-label text-muted" for="rememberMe">
+                    Remember me
+                  </label>
+                </div>
+                <a href="#" class="text-decoration-none small text-primary">Forgot password?</a>
+              </div>
+              
+              <div class="d-grid mb-4">
+                {{ form.submit(class_="btn btn-primary btn-lg py-3", value="Sign In to Dashboard") }}
+              </div>
+            </form>
+            
+            <!-- Divider -->
+            <div class="position-relative text-center mb-4">
+              <hr class="my-4">
+              <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted small">
+                New to Convoxio?
+              </span>
+            </div>
+            
+            <!-- Register Link -->
+            <div class="text-center">
+              <a href="{{ url_for('main.register') }}" class="btn btn-outline-primary btn-lg w-100">
+                <i class="bi bi-person-plus me-2"></i>
+                Create Free Account
+              </a>
+            </div>
           </div>
-          
-          <div class="d-grid mb-3">
-            {{ form.submit(class_="btn btn-primary btn-lg", value="Sign In") }}
-          </div>
-        </form>
-        
-        <hr class="my-4">
-        
-        <div class="text-center">
-          <p class="mb-0">Don't have an account yet?</p>
-          <a href="{{ url_for('main.register') }}" class="btn btn-outline-primary mt-2">
-            <i class="bi bi-person-plus me-2"></i>
-            Create Free Account
-          </a>
         </div>
-      </div>
-      
-      <!-- Help section -->
-      <div class="text-center mt-4">
-        <small class="text-muted">
-          <i class="bi bi-question-circle me-1"></i>
-          Need help? <a href="#" class="text-decoration-none">Contact Support</a>
-        </small>
+        
+        <!-- Features Preview -->
+        <div class="row g-3 mt-4">
+          <div class="col-4">
+            <div class="text-center">
+              <div class="feature-icon mx-auto mb-2" style="width: 50px; height: 50px;">
+                <i class="bi bi-whatsapp" style="font-size: 1.25rem;"></i>
+              </div>
+              <small class="text-muted">WhatsApp Business</small>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="text-center">
+              <div class="feature-icon mx-auto mb-2" style="width: 50px; height: 50px;">
+                <i class="bi bi-graph-up" style="font-size: 1.25rem;"></i>
+              </div>
+              <small class="text-muted">Analytics</small>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="text-center">
+              <div class="feature-icon mx-auto mb-2" style="width: 50px; height: 50px;">
+                <i class="bi bi-shield-check" style="font-size: 1.25rem;"></i>
+              </div>
+              <small class="text-muted">Secure</small>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Help Section -->
+        <div class="text-center mt-4">
+          <small class="text-muted">
+            <i class="bi bi-question-circle me-1"></i>
+            Need help? <a href="#" class="text-decoration-none text-primary">Contact Support</a>
+          </small>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  .input-group-text {
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+  }
+  
+  .input-group .form-control {
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+  
+  .input-group .form-control:focus {
+    box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.1);
+  }
+</style>
 {% endblock %}

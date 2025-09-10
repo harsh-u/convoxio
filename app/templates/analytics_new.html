@@ -1,0 +1,514 @@
+{% extends 'base.html' %}
+{% block title %}Analytics Dashboard - Convoxio{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <!-- Header Section -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          <h1 class="display-6 fw-bold mb-2">Analytics Dashboard</h1>
+          <p class="text-muted mb-0">Track your WhatsApp messaging performance and customer engagement insights</p>
+        </div>
+        <div class="d-flex gap-2">
+          <button class="btn btn-outline-secondary" disabled>
+            <i class="bi bi-download me-2"></i>Export Report
+          </button>
+          <a href="{{ url_for('main.dashboard') }}" class="btn btn-outline-primary">
+            <i class="bi bi-arrow-left me-2"></i>Back to Dashboard
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Key Metrics Cards -->
+  <div class="row g-4 mb-5">
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 h-100">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="feature-icon" style="background: rgba(37, 211, 102, 0.1);">
+              <i class="bi bi-send-fill text-success"></i>
+            </div>
+            <div class="text-end">
+              <div class="small text-success fw-semibold">
+                <i class="bi bi-arrow-up me-1"></i>+{{ messages_this_month }}
+              </div>
+            </div>
+          </div>
+          <h2 class="fw-bold mb-1">{{ total_messages or 0 }}</h2>
+          <p class="text-muted mb-0">Total Messages</p>
+          <small class="text-muted">{{ messages_this_month or 0 }} sent this month</small>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 h-100">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="feature-icon" style="background: rgba(40, 167, 69, 0.1);">
+              <i class="bi bi-check-circle-fill text-success"></i>
+            </div>
+            <div class="text-end">
+              <div class="small text-success fw-semibold">Excellent</div>
+            </div>
+          </div>
+          <h2 class="fw-bold mb-1">{{ "%.1f"|format(delivery_rate or 0) }}%</h2>
+          <p class="text-muted mb-0">Delivery Rate</p>
+          <small class="text-muted">Messages successfully delivered</small>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 h-100">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="feature-icon" style="background: rgba(23, 162, 184, 0.1);">
+              <i class="bi bi-eye-fill text-info"></i>
+            </div>
+            <div class="text-end">
+              <div class="small text-info fw-semibold">
+                {% if read_rate > 70 %}Great{% elif read_rate > 40 %}Good{% else %}Needs Work{% endif %}
+              </div>
+            </div>
+          </div>
+          <h2 class="fw-bold mb-1">{{ "%.1f"|format(read_rate or 0) }}%</h2>
+          <p class="text-muted mb-0">Read Rate</p>
+          <small class="text-muted">Messages opened by customers</small>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-6">
+      <div class="card border-0 h-100">
+        <div class="card-body p-4">
+          <div class="d-flex align-items-center justify-content-between mb-3">
+            <div class="feature-icon" style="background: rgba(255, 193, 7, 0.1);">
+              <i class="bi bi-hourglass-split text-warning"></i>
+            </div>
+            <div class="text-end">
+              <div class="small text-muted">This month</div>
+            </div>
+          </div>
+          <h2 class="fw-bold mb-1">{{ remaining_messages or 0 }}</h2>
+          <p class="text-muted mb-0">Messages Left</p>
+          <small class="text-muted">Out of {{ current_user.message_limit or 1000 }} limit</small>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Charts Section -->
+  <div class="row g-4 mb-5">
+    <!-- Daily Activity Chart -->
+    <div class="col-lg-8">
+      <div class="card border-0 h-100">
+        <div class="card-header bg-transparent border-0 pb-0">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="fw-bold mb-1">
+                <i class="bi bi-graph-up me-2 text-primary"></i>
+                Daily Message Activity
+              </h5>
+              <p class="text-muted mb-0">Your messaging patterns over the last 7 days</p>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Last 7 Days
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Last 7 Days</a></li>
+                <li><a class="dropdown-item" href="#">Last 30 Days</a></li>
+                <li><a class="dropdown-item" href="#">Last 90 Days</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="chart-container" style="height: 300px;">
+            <canvas id="dailyChart"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message Status Breakdown -->
+    <div class="col-lg-4">
+      <div class="card border-0 h-100">
+        <div class="card-header bg-transparent border-0 pb-0">
+          <h5 class="fw-bold mb-1">
+            <i class="bi bi-pie-chart me-2 text-primary"></i>
+            Message Status
+          </h5>
+          <p class="text-muted mb-0">Breakdown of message delivery status</p>
+        </div>
+        <div class="card-body">
+          <div class="chart-container mb-4" style="height: 200px;">
+            <canvas id="statusChart"></canvas>
+          </div>
+          
+          <!-- Status Legend -->
+          <div class="status-legend">
+            {% for status, count in status_stats %}
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <div class="d-flex align-items-center">
+                <div class="rounded-circle me-3
+                  {% if status == 'delivered' %}bg-success
+                  {% elif status == 'read' %}bg-info
+                  {% elif status == 'sent' %}bg-warning
+                  {% elif status == 'failed' %}bg-danger
+                  {% else %}bg-secondary{% endif %}" 
+                  style="width: 12px; height: 12px;"></div>
+                <span class="text-muted">{{ status.title() }}</span>
+              </div>
+              <div class="text-end">
+                <div class="fw-bold">{{ count }}</div>
+                <small class="text-muted">{{ "%.1f"|format((count / total_messages * 100) if total_messages > 0 else 0) }}%</small>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Template Performance -->
+  <div class="row mb-5">
+    <div class="col-12">
+      <div class="card border-0">
+        <div class="card-header bg-transparent border-0 pb-0">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5 class="fw-bold mb-1">
+                <i class="bi bi-file-text me-2 text-primary"></i>
+                Template Performance
+              </h5>
+              <p class="text-muted mb-0">Your most effective message templates</p>
+            </div>
+            <a href="{{ url_for('main.manage_templates') }}" class="btn btn-outline-primary">
+              <i class="bi bi-plus me-2"></i>Create Template
+            </a>
+          </div>
+        </div>
+        <div class="card-body">
+          {% if template_stats %}
+          <div class="table-responsive">
+            <table class="table table-hover align-middle">
+              <thead>
+                <tr>
+                  <th class="border-0 fw-bold">Template</th>
+                  <th class="border-0 fw-bold">Usage</th>
+                  <th class="border-0 fw-bold">Performance</th>
+                  <th class="border-0 fw-bold">Trend</th>
+                  <th class="border-0 fw-bold">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for template_name, usage_count in template_stats %}
+                <tr>
+                  <td class="py-3">
+                    <div class="d-flex align-items-center">
+                      <div class="feature-icon me-3" style="width: 40px; height: 40px;">
+                        <i class="bi bi-file-text text-primary" style="font-size: 1rem;"></i>
+                      </div>
+                      <div>
+                        <div class="fw-semibold">{{ template_name }}</div>
+                        <small class="text-muted">Message template</small>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3">
+                    <div class="fw-bold">{{ usage_count }}</div>
+                    <small class="text-muted">messages sent</small>
+                  </td>
+                  <td class="py-3">
+                    <div class="progress mb-1" style="height: 6px;">
+                      <div class="progress-bar bg-success" 
+                           style="width: {{ (usage_count / template_stats[0][1] * 100)|round }}%"></div>
+                    </div>
+                    <small class="text-muted">{{ (usage_count / template_stats[0][1] * 100)|round }}% of top performer</small>
+                  </td>
+                  <td class="py-3">
+                    <span class="badge badge-success">
+                      <i class="bi bi-arrow-up me-1"></i>+12%
+                    </span>
+                  </td>
+                  <td class="py-3">
+                    <div class="dropdown">
+                      <button class="btn btn-outline-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                        Actions
+                      </button>
+                      <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-eye me-2"></i>View Details</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-pencil me-2"></i>Edit Template</a></li>
+                        <li><a class="dropdown-item" href="#"><i class="bi bi-copy me-2"></i>Duplicate</a></li>
+                      </ul>
+                    </div>
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+          {% else %}
+          <div class="text-center py-5">
+            <div class="feature-icon mx-auto mb-4" style="width: 80px; height: 80px;">
+              <i class="bi bi-file-text text-muted" style="font-size: 2rem;"></i>
+            </div>
+            <h6 class="fw-bold mb-2">No Template Data Yet</h6>
+            <p class="text-muted mb-4">Start sending messages to see template performance analytics</p>
+            <div class="d-flex gap-2 justify-content-center">
+              <a href="{{ url_for('main.manage_templates') }}" class="btn btn-primary">
+                <i class="bi bi-plus me-2"></i>Create Template
+              </a>
+              <a href="{{ url_for('main.send_messages') }}" class="btn btn-outline-primary">
+                <i class="bi bi-send me-2"></i>Send Message
+              </a>
+            </div>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Insights and Actions -->
+  <div class="row g-4">
+    <div class="col-lg-6">
+      <div class="card border-0 h-100">
+        <div class="card-header bg-transparent border-0 pb-0">
+          <h5 class="fw-bold mb-1">
+            <i class="bi bi-lightbulb me-2 text-warning"></i>
+            Smart Insights
+          </h5>
+          <p class="text-muted mb-0">AI-powered recommendations to improve your messaging</p>
+        </div>
+        <div class="card-body">
+          <div class="insights-list">
+            {% if delivery_rate < 80 %}
+            <div class="insight-item mb-4">
+              <div class="d-flex align-items-start">
+                <div class="feature-icon me-3" style="width: 40px; height: 40px; background: rgba(255, 193, 7, 0.1);">
+                  <i class="bi bi-exclamation-triangle text-warning" style="font-size: 1rem;"></i>
+                </div>
+                <div>
+                  <h6 class="fw-semibold mb-1">Improve Delivery Rate</h6>
+                  <p class="text-muted mb-2">Your delivery rate is {{ "%.1f"|format(delivery_rate) }}%. Check phone number formats and validity.</p>
+                  <a href="#" class="btn btn-outline-warning btn-sm">Learn More</a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            
+            {% if read_rate < 30 %}
+            <div class="insight-item mb-4">
+              <div class="d-flex align-items-start">
+                <div class="feature-icon me-3" style="width: 40px; height: 40px; background: rgba(23, 162, 184, 0.1);">
+                  <i class="bi bi-clock text-info" style="font-size: 1rem;"></i>
+                </div>
+                <div>
+                  <h6 class="fw-semibold mb-1">Optimize Send Times</h6>
+                  <p class="text-muted mb-2">Try sending messages during business hours (10 AM - 6 PM) for better engagement.</p>
+                  <a href="#" class="btn btn-outline-info btn-sm">View Best Times</a>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+            
+            <div class="insight-item mb-4">
+              <div class="d-flex align-items-start">
+                <div class="feature-icon me-3" style="width: 40px; height: 40px; background: rgba(37, 211, 102, 0.1);">
+                  <i class="bi bi-people text-success" style="font-size: 1rem;"></i>
+                </div>
+                <div>
+                  <h6 class="fw-semibold mb-1">Personalize Messages</h6>
+                  <p class="text-muted mb-2">Use customer names and personalized content to increase engagement by up to 40%.</p>
+                  <a href="#" class="btn btn-outline-success btn-sm">Learn Personalization</a>
+                </div>
+              </div>
+            </div>
+            
+            <div class="insight-item">
+              <div class="d-flex align-items-start">
+                <div class="feature-icon me-3" style="width: 40px; height: 40px; background: rgba(52, 152, 219, 0.1);">
+                  <i class="bi bi-graph-up text-primary" style="font-size: 1rem;"></i>
+                </div>
+                <div>
+                  <h6 class="fw-semibold mb-1">Peak Performance</h6>
+                  <p class="text-muted mb-2">Messages sent between 10 AM - 2 PM have 25% higher read rates.</p>
+                  <a href="#" class="btn btn-outline-primary btn-sm">Schedule Messages</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-lg-6">
+      <div class="card border-0 h-100">
+        <div class="card-header bg-transparent border-0 pb-0">
+          <h5 class="fw-bold mb-1">
+            <i class="bi bi-rocket me-2 text-success"></i>
+            Quick Actions
+          </h5>
+          <p class="text-muted mb-0">Boost your messaging performance with these actions</p>
+        </div>
+        <div class="card-body">
+          <div class="d-grid gap-3">
+            <a href="{{ url_for('main.manage_templates') }}" class="btn btn-outline-primary btn-lg text-start">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-plus-circle me-3 fs-4"></i>
+                <div>
+                  <div class="fw-semibold">Create New Templates</div>
+                  <small class="text-muted">Build engaging message templates</small>
+                </div>
+              </div>
+            </a>
+            
+            <a href="{{ url_for('main.bulk_messages') }}" class="btn btn-outline-success btn-lg text-start">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-broadcast me-3 fs-4"></i>
+                <div>
+                  <div class="fw-semibold">Send Bulk Messages</div>
+                  <small class="text-muted">Reach multiple customers at once</small>
+                </div>
+              </div>
+            </a>
+            
+            <a href="{{ url_for('main.schedule_messages') }}" class="btn btn-outline-info btn-lg text-start">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-clock me-3 fs-4"></i>
+                <div>
+                  <div class="fw-semibold">Schedule Messages</div>
+                  <small class="text-muted">Send at optimal times</small>
+                </div>
+              </div>
+            </a>
+            
+            {% if not current_user.is_verified %}
+            <a href="{{ url_for('main.business_verification') }}" class="btn btn-outline-warning btn-lg text-start">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-shield-check me-3 fs-4"></i>
+                <div>
+                  <div class="fw-semibold">Verify Business</div>
+                  <small class="text-muted">Increase message limits</small>
+                </div>
+              </div>
+            </a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chart.js -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Daily Activity Chart
+    const dailyCtx = document.getElementById('dailyChart').getContext('2d');
+    const dailyData = {{ daily_stats | tojsonfilter }};
+    
+    new Chart(dailyCtx, {
+        type: 'line',
+        data: {
+            labels: dailyData.map(d => d.day),
+            datasets: [{
+                label: 'Messages Sent',
+                data: dailyData.map(d => d.count),
+                borderColor: 'rgb(37, 211, 102)',
+                backgroundColor: 'rgba(37, 211, 102, 0.1)',
+                tension: 0.4,
+                fill: true,
+                pointBackgroundColor: 'rgb(37, 211, 102)',
+                pointBorderColor: '#fff',
+                pointBorderWidth: 2,
+                pointRadius: 6,
+                pointHoverRadius: 8
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    titleColor: '#fff',
+                    bodyColor: '#fff',
+                    borderColor: 'rgb(37, 211, 102)',
+                    borderWidth: 1
+                }
+            },
+            scales: {
+                x: {
+                    grid: {
+                        display: false
+                    }
+                },
+                y: {
+                    beginAtZero: true,
+                    ticks: {
+                        stepSize: 1
+                    },
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.05)'
+                    }
+                }
+            }
+        }
+    });
+
+    // Status Pie Chart
+    const statusCtx = document.getElementById('statusChart').getContext('2d');
+    const statusData = {{ status_stats | tojsonfilter }};
+    
+    const colors = {
+        'delivered': '#198754',
+        'read': '#0dcaf0',
+        'sent': '#ffc107',
+        'failed': '#dc3545',
+        'pending': '#6c757d'
+    };
+    
+    new Chart(statusCtx, {
+        type: 'doughnut',
+        data: {
+            labels: statusData.map(s => s[0].charAt(0).toUpperCase() + s[0].slice(1)),
+            datasets: [{
+                data: statusData.map(s => s[1]),
+                backgroundColor: statusData.map(s => colors[s[0]] || '#6c757d'),
+                borderWidth: 3,
+                borderColor: '#fff',
+                hoverBorderWidth: 4
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: 'rgba(0, 0, 0, 0.8)',
+                    titleColor: '#fff',
+                    bodyColor: '#fff'
+                }
+            },
+            cutout: '60%'
+        }
+    });
+});
+</script>
+{% endblock %}

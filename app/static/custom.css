@@ -2,39 +2,317 @@
 .fade-in {
   animation: fadeIn 1s ease;
 }
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
+
 .btn-main {
   background: #25d366;
   color: #fff;
   border: none;
   transition: background 0.2s, transform 0.2s;
 }
+
 .btn-main:hover, .btn-main:focus {
   background: #128c7e;
   color: #fff;
   transform: translateY(-2px) scale(1.03);
   box-shadow: 0 4px 16px rgba(18,140,126,0.10);
 }
+
 .card {
   transition: box-shadow 0.2s, transform 0.2s;
 }
+
 .card:hover {
   box-shadow: 0 8px 32px rgba(37,211,102,0.10);
   transform: translateY(-2px) scale(1.01);
 }
+
 input:focus, select:focus, textarea:focus {
   outline: none !important;
   border-color: #25d366 !important;
   box-shadow: 0 0 0 0.2rem rgba(37,211,102,.15) !important;
 }
+
 ::-webkit-scrollbar {
   width: 8px;
   background: #f7f9fa;
 }
+
 ::-webkit-scrollbar-thumb {
   background: #e0e0e0;
   border-radius: 4px;
+}
+
+/* Fix for text spacing and readability */
+.display-5 {
+  line-height: 1.2;
+  word-spacing: 0.1em;
+}
+
+.lead {
+  line-height: 1.6;
+  margin-bottom: 1.5rem !important;
+}
+
+.card-body h1, .card-body h2, .card-body h3, .card-body h4, .card-body h5, .card-body h6 {
+  margin-bottom: 0.75rem;
+}
+
+.card-body p {
+  margin-bottom: 1rem;
+}
+
+.card-body small {
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* Ensure proper spacing in hero section */
+.bg-gradient .card-body {
+  padding: 3rem !important;
+}
+
+.bg-gradient h1 {
+  margin-bottom: 1.5rem !important;
+  line-height: 1.3;
+}
+
+.bg-gradient p.lead {
+  margin-bottom: 2rem !important;
+  font-size: 1.1rem;
+}
+
+/* Fix for status indicators */
+.d-flex.align-items-center {
+  margin-bottom: 1rem;
+}
+
+.d-flex.align-items-center h6 {
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+}
+
+.d-flex.align-items-center small {
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+/* Messages left indicator */
+.rounded-pill {
+  padding: 1rem 1.5rem !important;
+}
+
+.rounded-pill .h3 {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem !important;
+}
+
+.rounded-pill small {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+/* Pulse animation for hero section */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+}
+
+/* Hero section improvements */
+.min-vh-100 {
+  padding: 2rem 0;
+}
+
+.display-3 {
+  line-height: 1.2;
+  margin-bottom: 2rem !important;
+}
+
+.display-3 span {
+  margin-top: 0.5rem;
+}
+
+/* Feature cards spacing */
+.container#features {
+  padding: 4rem 0;
+}
+
+.container#features .row {
+  margin-bottom: 3rem;
+}
+
+.container#features .card {
+  padding: 2rem;
+  height: 100%;
+}
+
+.container#features .feature-icon {
+  margin-bottom: 1.5rem;
+}
+
+.container#features h4 {
+  margin-bottom: 1rem;
+}
+
+.container#features p {
+  line-height: 1.6;
+}
+
+/* Step numbers styling */
+.step-number {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+/* Pricing cards */
+.card.border-primary {
+  border-width: 2px !important;
+  position: relative;
+  transform: scale(1.05);
+}
+
+.badge.bg-primary {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* CTA section */
+.card.bg-primary {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) !important;
+  border: none;
+  padding: 3rem !important;
+}
+
+/* Force proper spacing for dashboard elements */
+.dashboard-hero h1 {
+  margin-bottom: 1.5rem !important;
+  line-height: 1.3 !important;
+  word-spacing: 0.1em !important;
+}
+
+.dashboard-hero p.lead {
+  margin-bottom: 2rem !important;
+  opacity: 0.9 !important;
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+}
+
+.dashboard-hero .d-flex {
+  margin-bottom: 1rem !important;
+}
+
+.dashboard-hero h6 {
+  margin-bottom: 0.25rem !important;
+  font-weight: 600 !important;
+  line-height: 1.4 !important;
+}
+
+.dashboard-hero small {
+  opacity: 0.75 !important;
+  display: block !important;
+  line-height: 1.4 !important;
+  margin-top: 0.25rem !important;
+}
+
+.dashboard-hero .bi {
+  margin-right: 1rem !important;
+}
+
+.messages-left-container {
+  padding: 1rem 1.5rem !important;
+  margin-top: 1rem !important;
+}
+
+.messages-left-container .h3 {
+  margin-bottom: 0.25rem !important;
+  font-size: 1.75rem !important;
+  line-height: 1.2 !important;
+}
+
+.messages-left-container small {
+  opacity: 0.9 !important;
+  font-size: 0.875rem !important;
+  display: block !important;
+  margin-top: 0.25rem !important;
+}
+
+/* Ensure text doesn't concatenate */
+* {
+  word-spacing: normal !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  word-spacing: 0.05em !important;
+  letter-spacing: 0.01em !important;
+}
+
+p, small, span {
+  word-spacing: 0.02em !important;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .bg-gradient .card-body {
+    padding: 2rem !important;
+  }
+  
+  .display-5 {
+    font-size: 2rem;
+  }
+  
+  .display-3 {
+    font-size: 2.5rem;
+  }
+  
+  .col-lg-4.text-lg-end {
+    text-align: center !important;
+    margin-top: 1.5rem;
+  }
+  
+  .min-vh-100 {
+    min-height: auto !important;
+    padding: 3rem 0;
+  }
+  
+  .d-flex.flex-column.flex-sm-row {
+    flex-direction: column !important;
+  }
+  
+  .container#features {
+    padding: 2rem 0;
+  }
+  
+  .card.border-primary {
+    transform: none;
+  }
+  
+  .dashboard-hero h1 {
+    font-size: 2rem !important;
+  }
+  
+  .dashboard-hero p.lead {
+    font-size: 1rem !important;
+  }
 }

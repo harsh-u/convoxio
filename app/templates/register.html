@@ -2,118 +2,234 @@
 {% block title %}Get Started - Convoxio{% endblock %}
 
 {% block content %}
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-md-8 col-lg-6">
-      
-      <!-- Progress Steps -->
-      <div class="step-indicator mb-4">
-        <div class="step active">
-          <div class="step-number">1</div>
-          <span>Account</span>
-        </div>
-        <div class="step pending">
-          <div class="step-number">2</div>
-          <span>Verify</span>
-        </div>
-        <div class="step pending">
-          <div class="step-number">3</div>
-          <span>Start Messaging</span>
-        </div>
-      </div>
-
-      <div class="card p-5 fade-in">
-        <div class="text-center mb-4">
-          <i class="bi bi-person-plus-fill text-primary" style="font-size: 3rem;"></i>
-          <h2 class="fw-bold mt-3 mb-2">Create Your Account</h2>
-          <p class="text-muted">Join thousands of businesses already using WhatsApp to connect with customers</p>
-        </div>
-
-        <form method="POST" class="needs-validation" novalidate>
-          {{ form.hidden_tag() }}
-          
-          <div class="mb-4">
-            {{ form.business_name.label(class_="form-label fw-semibold") }}
-            {{ form.business_name(class_="form-control form-control-lg", placeholder="Your Business Name") }}
-            <div class="form-text">
-              <i class="bi bi-info-circle me-1"></i>
-              This will appear in your WhatsApp messages to customers
-            </div>
-          </div>
-          
-          <div class="mb-4">
-            {{ form.email.label(class_="form-label fw-semibold") }}
-            {{ form.email(class_="form-control form-control-lg", placeholder="your@business-email.com") }}
-            <div class="form-text">
-              <i class="bi bi-info-circle me-1"></i>
-              We'll use this to send you important updates about your account
-            </div>
-          </div>
-          
-          <div class="mb-4">
-            {{ form.phone_number.label(class_="form-label fw-semibold") }}
-            {{ form.phone_number(class_="form-control form-control-lg", placeholder="919876543210") }}
-            <div class="form-text">
-              <i class="bi bi-whatsapp me-1"></i>
-              Include country code (e.g., 91 for India). This will be your WhatsApp Business number
-            </div>
-          </div>
-          
-          <div class="mb-4">
-            {{ form.password.label(class_="form-label fw-semibold") }}
-            {{ form.password(class_="form-control form-control-lg", placeholder="Create a secure password") }}
-            <div class="form-text">
-              <i class="bi bi-shield-check me-1"></i>
-              Minimum 6 characters required
-            </div>
-          </div>
-
-          <!-- Benefits reminder -->
-          <div class="bg-light rounded-3 p-3 mb-4">
-            <h6 class="fw-bold mb-2">
-              <i class="bi bi-gift text-primary me-2"></i>
-              What you get with your free account:
-            </h6>
-            <ul class="list-unstyled mb-0 small">
-              <li class="mb-1"><i class="bi bi-check text-success me-2"></i>100 free WhatsApp messages</li>
-              <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Access to message templates</li>
-              <li class="mb-1"><i class="bi bi-check text-success me-2"></i>Delivery tracking & analytics</li>
-              <li class="mb-0"><i class="bi bi-check text-success me-2"></i>24/7 customer support</li>
-            </ul>
-          </div>
-          
-          <div class="d-grid mb-3">
-            {{ form.submit(class_="btn btn-primary btn-lg", value="Create Account & Continue") }}
-          </div>
-          
-          <div class="text-center">
-            <small class="text-muted">
-              By creating an account, you agree to our 
-              <a href="#" class="text-decoration-none">Terms of Service</a> and 
-              <a href="#" class="text-decoration-none">Privacy Policy</a>
-            </small>
-          </div>
-        </form>
+<div class="min-vh-100 d-flex align-items-center" style="background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 col-xl-7">
         
-        <hr class="my-4">
-        
-        <div class="text-center">
-          <p class="mb-0">Already have an account?</p>
-          <a href="{{ url_for('main.login') }}" class="btn btn-outline-primary mt-2">
-            <i class="bi bi-box-arrow-in-right me-2"></i>
-            Sign In Instead
-          </a>
+        <!-- Progress Steps -->
+        <div class="d-flex justify-content-center mb-5">
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center me-4">
+              <div class="rounded-circle d-flex align-items-center justify-content-center me-2" 
+                   style="width: 40px; height: 40px; background: var(--primary); color: white;">
+                <span class="fw-bold">1</span>
+              </div>
+              <span class="fw-semibold text-primary">Account</span>
+            </div>
+            <div class="border-top" style="width: 50px; margin: 0 1rem;"></div>
+            <div class="d-flex align-items-center me-4">
+              <div class="rounded-circle d-flex align-items-center justify-content-center me-2" 
+                   style="width: 40px; height: 40px; background: var(--border-light); color: var(--text-muted);">
+                <span class="fw-bold">2</span>
+              </div>
+              <span class="text-muted">Verify</span>
+            </div>
+            <div class="border-top" style="width: 50px; margin: 0 1rem;"></div>
+            <div class="d-flex align-items-center">
+              <div class="rounded-circle d-flex align-items-center justify-content-center me-2" 
+                   style="width: 40px; height: 40px; background: var(--border-light); color: var(--text-muted);">
+                <span class="fw-bold">3</span>
+              </div>
+              <span class="text-muted">Start Messaging</span>
+            </div>
+          </div>
         </div>
-      </div>
-      
-      <!-- Trust indicators -->
-      <div class="text-center mt-4">
-        <small class="text-muted">
-          <i class="bi bi-shield-fill-check text-success me-1"></i>
-          Trusted by 10,000+ small businesses across India
-        </small>
+
+        <!-- Main Registration Card -->
+        <div class="card border-0 shadow-lg">
+          <div class="card-body p-5">
+            <!-- Header -->
+            <div class="text-center mb-5">
+              <div class="feature-icon mx-auto mb-4" style="width: 80px; height: 80px;">
+                <i class="bi bi-person-plus-fill" style="font-size: 2rem;"></i>
+              </div>
+              <h1 class="h3 fw-bold mb-2">Create Your Business Account</h1>
+              <p class="text-muted">Join thousands of businesses using WhatsApp to grow their customer relationships</p>
+            </div>
+
+            <!-- Registration Form -->
+            <form method="POST" class="needs-validation" novalidate>
+              {{ form.hidden_tag() }}
+              
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="mb-4">
+                    {{ form.business_name.label(class_="form-label fw-semibold") }}
+                    <div class="input-group">
+                      <span class="input-group-text bg-light border-end-0">
+                        <i class="bi bi-building text-muted"></i>
+                      </span>
+                      {{ form.business_name(class_="form-control border-start-0", placeholder="Your Business Name", style="padding-left: 0;") }}
+                    </div>
+                    <div class="form-text">
+                      <i class="bi bi-info-circle me-1"></i>
+                      This will appear in your WhatsApp messages
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="mb-4">
+                    {{ form.email.label(class_="form-label fw-semibold") }}
+                    <div class="input-group">
+                      <span class="input-group-text bg-light border-end-0">
+                        <i class="bi bi-envelope text-muted"></i>
+                      </span>
+                      {{ form.email(class_="form-control border-start-0", placeholder="your@business-email.com", style="padding-left: 0;") }}
+                    </div>
+                    <div class="form-text">
+                      <i class="bi bi-info-circle me-1"></i>
+                      We'll send important updates here
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="row g-4">
+                <div class="col-md-6">
+                  <div class="mb-4">
+                    {{ form.phone_number.label(class_="form-label fw-semibold") }}
+                    <div class="input-group">
+                      <span class="input-group-text bg-light border-end-0">
+                        <i class="bi bi-whatsapp text-success"></i>
+                      </span>
+                      {{ form.phone_number(class_="form-control border-start-0", placeholder="919876543210", style="padding-left: 0;") }}
+                    </div>
+                    <div class="form-text">
+                      <i class="bi bi-whatsapp me-1"></i>
+                      Include country code (e.g., 91 for India)
+                    </div>
+                  </div>
+                </div>
+                
+                <div class="col-md-6">
+                  <div class="mb-4">
+                    {{ form.password.label(class_="form-label fw-semibold") }}
+                    <div class="input-group">
+                      <span class="input-group-text bg-light border-end-0">
+                        <i class="bi bi-lock text-muted"></i>
+                      </span>
+                      {{ form.password(class_="form-control border-start-0", placeholder="Create a secure password", style="padding-left: 0;") }}
+                    </div>
+                    <div class="form-text">
+                      <i class="bi bi-shield-check me-1"></i>
+                      Minimum 6 characters required
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Benefits Section -->
+              <div class="card bg-light border-0 mb-4">
+                <div class="card-body p-4">
+                  <h6 class="fw-bold mb-3 d-flex align-items-center">
+                    <i class="bi bi-gift text-primary me-2"></i>
+                    What you get with your free account:
+                  </h6>
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <small>1,000 free WhatsApp messages</small>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <small>Rich message templates</small>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <small>Real-time delivery tracking</small>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="d-flex align-items-center">
+                        <i class="bi bi-check-circle-fill text-success me-2"></i>
+                        <small>Advanced analytics dashboard</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="d-grid mb-4">
+                {{ form.submit(class_="btn btn-primary btn-lg py-3", value="Create Account & Start Free Trial") }}
+              </div>
+              
+              <div class="text-center mb-4">
+                <small class="text-muted">
+                  By creating an account, you agree to our 
+                  <a href="#" class="text-decoration-none text-primary">Terms of Service</a> and 
+                  <a href="#" class="text-decoration-none text-primary">Privacy Policy</a>
+                </small>
+              </div>
+            </form>
+            
+            <!-- Divider -->
+            <div class="position-relative text-center mb-4">
+              <hr class="my-4">
+              <span class="position-absolute top-50 start-50 translate-middle bg-white px-3 text-muted small">
+                Already have an account?
+              </span>
+            </div>
+            
+            <!-- Login Link -->
+            <div class="text-center">
+              <a href="{{ url_for('main.login') }}" class="btn btn-outline-primary btn-lg w-100">
+                <i class="bi bi-box-arrow-in-right me-2"></i>
+                Sign In Instead
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Trust Indicators -->
+        <div class="row g-3 mt-4">
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="feature-icon mx-auto mb-2" style="width: 50px; height: 50px;">
+                <i class="bi bi-shield-fill-check text-success" style="font-size: 1.25rem;"></i>
+              </div>
+              <small class="text-muted">Secure & Trusted</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="feature-icon mx-auto mb-2" style="width: 50px; height: 50px;">
+                <i class="bi bi-people-fill text-primary" style="font-size: 1.25rem;"></i>
+              </div>
+              <small class="text-muted">10,000+ Businesses</small>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="text-center">
+              <div class="feature-icon mx-auto mb-2" style="width: 50px; height: 50px;">
+                <i class="bi bi-headset text-info" style="font-size: 1.25rem;"></i>
+              </div>
+              <small class="text-muted">24/7 Support</small>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  .input-group-text {
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+  }
+  
+  .input-group .form-control {
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+  
+  .input-group .form-control:focus {
+    box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.1);
+  }
+</style>
 {% endblock %} 

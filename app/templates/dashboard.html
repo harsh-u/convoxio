@@ -2,137 +2,216 @@
 {% block title %}Dashboard - Convoxio{% endblock %}
 
 {% block content %}
-<div class="container">
-  <!-- Welcome Header -->
-  <div class="row mb-4">
+<div class="container py-4">
+  <!-- Hero Section -->
+  <div class="row mb-5">
     <div class="col-12">
-      <div class="d-flex justify-content-between align-items-center">
-        <div>
-          <h1 class="fw-bold mb-1">Welcome back!</h1>
-          <p class="text-muted mb-0">{{ current_user.email }}</p>
-        </div>
-        <div class="d-flex gap-2">
-          <a href="{{ url_for('main.logout') }}" class="btn btn-outline-secondary">
-            <i class="bi bi-box-arrow-right me-1"></i>Logout
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Status Overview -->
-  <div class="row mb-4">
-    <div class="col-12">
-      <div class="card bg-light border-0 p-4">
-        <div class="row align-items-center">
-          <div class="col-md-8">
-            <h5 class="fw-bold mb-2">Account Status</h5>
-            {% if onboarding_status == 'Verified' %}
-            <p class="text-success mb-0">
-              <i class="bi bi-check-circle-fill me-2"></i>
-              Your WhatsApp Business account is active and ready to send messages!
-            </p>
-            {% elif onboarding_status == 'In Progress' %}
-            <p class="text-warning mb-0">
-              <i class="bi bi-clock-fill me-2"></i>
-              WhatsApp setup is in progress. Complete the steps below to start messaging.
-            </p>
-            {% else %}
-            <p class="text-info mb-0">
-              <i class="bi bi-info-circle-fill me-2"></i>
-              Let's get your WhatsApp Business account set up in just a few steps.
-            </p>
-            {% endif %}
-          </div>
-          <div class="col-md-4 text-end">
-            <span
-              class="badge bg-{{ 'success' if onboarding_status == 'Verified' else 'warning' if onboarding_status == 'In Progress' else 'info' }} fs-6 px-3 py-2">
-              {{ onboarding_status }}
-            </span>
+      <div class="card border-0" style="background: linear-gradient(135deg, #25d366 0%, #128c7e 100%); color: white;">
+        <div class="card-body p-5 dashboard-hero">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h1 class="display-5 fw-bold text-white" style="margin-bottom: 1.5rem; line-height: 1.3; color: white !important;">
+                Welcome back, {{ current_user.business_name or 'there' }}! 👋
+              </h1>
+              <p class="lead text-white" style="margin-bottom: 2rem; opacity: 0.9; font-size: 1.1rem; color: white !important;">
+                {{ current_user.email }}
+              </p>
+              
+              {% if onboarding_status == 'Verified' %}
+              <div class="d-flex align-items-center text-white" style="margin-bottom: 1rem;">
+                <i class="bi bi-check-circle-fill fs-4 text-white" style="margin-right: 1rem; color: white !important;"></i>
+                <div>
+                  <h6 class="text-white" style="margin-bottom: 0.25rem; font-weight: 600; color: white !important;">Your WhatsApp Business is Active</h6>
+                  <small class="text-white" style="opacity: 0.75; display: block; color: white !important;">Ready to send messages to your customers</small>
+                </div>
+              </div>
+              {% elif onboarding_status == 'In Progress' %}
+              <div class="d-flex align-items-center text-white" style="margin-bottom: 1rem;">
+                <i class="bi bi-clock-fill fs-4 text-warning" style="margin-right: 1rem; color: #ffc107 !important;"></i>
+                <div>
+                  <h6 class="text-white" style="margin-bottom: 0.25rem; font-weight: 600; color: white !important;">Setup In Progress</h6>
+                  <small class="text-white" style="opacity: 0.75; display: block; color: white !important;">Complete the steps below to start messaging</small>
+                </div>
+              </div>
+              {% else %}
+              <div class="d-flex align-items-center text-white" style="margin-bottom: 1rem;">
+                <i class="bi bi-info-circle-fill fs-4 text-info" style="margin-right: 1rem; color: #17a2b8 !important;"></i>
+                <div>
+                  <h6 class="text-white" style="margin-bottom: 0.25rem; font-weight: 600; color: white !important;">Let's Get Started</h6>
+                  <small class="text-white" style="opacity: 0.75; display: block; color: white !important;">Set up your WhatsApp Business account in just a few steps</small>
+                </div>
+              </div>
+              {% endif %}
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Quick Actions -->
+  <!-- Quick Stats -->
+  {% if onboarding_status == 'Verified' %}
+  <div class="row g-4 mb-5">
+    <div class="col-md-3">
+      <div class="card border-0 h-100">
+        <div class="card-body text-center p-4">
+          <div class="feature-icon mx-auto mb-3" style="background: rgba(37, 211, 102, 0.1);">
+            <i class="bi bi-send-fill text-success"></i>
+          </div>
+          <h3 class="fw-bold text-success mb-1">{{ current_user.messages_sent_this_month }}</h3>
+          <p class="text-muted mb-0">Messages Sent</p>
+          <small class="text-muted">This month</small>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="card border-0 h-100">
+        <div class="card-body text-center p-4">
+          <div class="feature-icon mx-auto mb-3" style="background: rgba(52, 152, 219, 0.1);">
+            <i class="bi bi-file-text-fill text-info"></i>
+          </div>
+          <h3 class="fw-bold text-info mb-1">{{ approved_template_count or 0 }}</h3>
+          <p class="text-muted mb-0">Active Templates</p>
+          <small class="text-muted">Ready to use</small>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="card border-0 h-100">
+        <div class="card-body text-center p-4">
+          <div class="feature-icon mx-auto mb-3" style="background: rgba(243, 156, 18, 0.1);">
+            <i class="bi bi-people-fill text-warning"></i>
+          </div>
+          <h3 class="fw-bold text-warning mb-1">{{ contact_count or 0 }}</h3>
+          <p class="text-muted mb-0">Contacts</p>
+          <small class="text-muted">In your database</small>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-3">
+      <div class="card border-0 h-100">
+        <div class="card-body text-center p-4">
+          <div class="feature-icon mx-auto mb-3" style="background: rgba(155, 89, 182, 0.1);">
+            <i class="bi bi-graph-up-arrow text-primary"></i>
+          </div>
+          <h3 class="fw-bold text-primary mb-1">95%</h3>
+          <p class="text-muted mb-0">Delivery Rate</p>
+          <small class="text-muted">Last 30 days</small>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Main Actions Grid -->
   <div class="row g-4 mb-5">
     <!-- Send Message -->
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100 text-center p-4">
-        <div class="feature-icon mx-auto mb-3">
-          <i class="bi bi-send-fill"></i>
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 h-100 text-center">
+        <div class="card-body p-4">
+          <div class="feature-icon mx-auto mb-4">
+            <i class="bi bi-send-fill"></i>
+          </div>
+          <h5 class="fw-bold mb-3">Send Message</h5>
+          <p class="text-muted mb-4">Send WhatsApp messages to individual customers with personalized templates</p>
+          {% if can_send %}
+          <a href="{{ url_for('main.send_messages') }}" class="btn btn-primary btn-lg w-100">
+            <i class="bi bi-send me-2"></i>Send Now
+          </a>
+          {% else %}
+          <button class="btn btn-outline-secondary btn-lg w-100" disabled>
+            <i class="bi bi-lock me-2"></i>Complete Setup First
+          </button>
+          {% endif %}
         </div>
-        <h5 class="fw-bold mb-3">Send Message</h5>
-        <p class="text-muted mb-4">Send WhatsApp messages to individual customers</p>
-        {% if can_send %}
-        <a href="{{ url_for('main.send_messages') }}" class="btn btn-primary">
-          <i class="bi bi-send me-2"></i>Send Now
-        </a>
-        {% else %}
-        <button class="btn btn-outline-secondary" disabled>
-          Complete Setup First
-        </button>
-        {% endif %}
       </div>
     </div>
 
     <!-- Bulk Messages -->
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100 text-center p-4">
-        <div class="feature-icon mx-auto mb-3">
-          <i class="bi bi-broadcast"></i>
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 h-100 text-center">
+        <div class="card-body p-4">
+          <div class="feature-icon mx-auto mb-4">
+            <i class="bi bi-broadcast"></i>
+          </div>
+          <h5 class="fw-bold mb-3">Bulk Messages</h5>
+          <p class="text-muted mb-4">Send messages to multiple customers at once using CSV uploads or manual entry</p>
+          {% if can_send %}
+          <a href="{{ url_for('main.bulk_messages') }}" class="btn btn-warning btn-lg w-100">
+            <i class="bi bi-broadcast me-2"></i>Send Bulk
+          </a>
+          {% else %}
+          <button class="btn btn-outline-secondary btn-lg w-100" disabled>
+            <i class="bi bi-lock me-2"></i>Complete Setup First
+          </button>
+          {% endif %}
         </div>
-        <h5 class="fw-bold mb-3">Bulk Messages</h5>
-        <p class="text-muted mb-4">Send messages to multiple customers at once</p>
-        {% if can_send %}
-        <a href="{{ url_for('main.bulk_messages') }}" class="btn btn-primary">
-          <i class="bi bi-broadcast me-2"></i>Send Bulk
-        </a>
-        {% else %}
-        <button class="btn btn-outline-secondary" disabled>
-          Complete Setup First
-        </button>
-        {% endif %}
-      </div>
-    </div>
-
-    <!-- Inbox -->
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100 text-center p-4">
-        <div class="feature-icon mx-auto mb-3">
-          <i class="bi bi-chat-dots-fill"></i>
-        </div>
-        <h5 class="fw-bold mb-3">Inbox</h5>
-        <p class="text-muted mb-4">View conversations with your customers</p>
-        {% if can_send %}
-        <a href="{{ url_for('main.inbox') }}" class="btn btn-primary">
-          <i class="bi bi-chat-dots me-2"></i>View Conversations
-        </a>
-        {% else %}
-        <button class="btn btn-outline-secondary" disabled>
-          Complete Setup First
-        </button>
-        {% endif %}
       </div>
     </div>
 
     <!-- Templates -->
-    <div class="col-md-6 col-lg-4">
-      <div class="card h-100 text-center p-4">
-        <div class="feature-icon mx-auto mb-3">
-          <i class="bi bi-file-text-fill"></i>
-        </div>
-        <h5 class="fw-bold mb-3">Message Templates</h5>
-        <p class="text-muted mb-4">Create and manage your message templates</p>
-        <div class="d-grid gap-2">
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 h-100 text-center">
+        <div class="card-body p-4">
+          <div class="feature-icon mx-auto mb-4">
+            <i class="bi bi-file-text-fill"></i>
+          </div>
+          <h5 class="fw-bold mb-3">Message Templates</h5>
+          <p class="text-muted mb-4">Create and manage your WhatsApp message templates with rich formatting</p>
           {% if onboarding_status == 'Verified' %}
-          <a href="{{ url_for('main.manage_templates') }}" class="btn btn-primary">
+          <a href="{{ url_for('main.manage_templates') }}" class="btn btn-info btn-lg w-100">
             <i class="bi bi-gear me-2"></i>Manage Templates
           </a>
           {% else %}
-          <button class="btn btn-outline-secondary" disabled>
-            Complete Setup First
+          <button class="btn btn-outline-secondary btn-lg w-100" disabled>
+            <i class="bi bi-lock me-2"></i>Complete Setup First
+          </button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Inbox -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 h-100 text-center">
+        <div class="card-body p-4">
+          <div class="feature-icon mx-auto mb-4">
+            <i class="bi bi-chat-dots-fill"></i>
+          </div>
+          <h5 class="fw-bold mb-3">Inbox</h5>
+          <p class="text-muted mb-4">View and manage conversations with your customers in one place</p>
+          {% if can_send %}
+          <a href="{{ url_for('main.inbox') }}" class="btn btn-success btn-lg w-100">
+            <i class="bi bi-chat-dots me-2"></i>View Conversations
+          </a>
+          {% else %}
+          <button class="btn btn-outline-secondary btn-lg w-100" disabled>
+            <i class="bi bi-lock me-2"></i>Complete Setup First
+          </button>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <!-- Analytics -->
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 h-100 text-center">
+        <div class="card-body p-4">
+          <div class="feature-icon mx-auto mb-4">
+            <i class="bi bi-graph-up"></i>
+          </div>
+          <h5 class="fw-bold mb-3">Analytics</h5>
+          <p class="text-muted mb-4">View detailed insights, performance metrics, and delivery statistics</p>
+          {% if onboarding_status == 'Verified' %}
+          <a href="{{ url_for('main.analytics') }}" class="btn btn-primary btn-lg w-100">
+            <i class="bi bi-graph-up me-2"></i>View Analytics
+          </a>
+          {% else %}
+          <button class="btn btn-outline-secondary btn-lg w-100" disabled>
+            <i class="bi bi-lock me-2"></i>Complete Setup First
           </button>
           {% endif %}
         </div>
@@ -140,44 +219,21 @@
     </div>
 
     <!-- Schedule Messages -->
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100 text-center p-4">
-        <div class="feature-icon mx-auto mb-3">
-          <i class="bi bi-clock"></i>
-        </div>
-        <h5 class="fw-bold mb-3">Schedule Messages</h5>
-        <p class="text-muted mb-4">Schedule messages to be sent at specific times</p>
-        {% if can_send %}
-        <a href="{{ url_for('main.schedule_messages') }}" class="btn btn-primary">
-          <i class="bi bi-clock me-2"></i>Schedule
-        </a>
-        {% else %}
-        <button class="btn btn-outline-secondary" disabled>
-          Complete Setup First
-        </button>
-        {% endif %}
-      </div>
-    </div>
-
-    <!-- Analytics -->
-    <div class="col-md-6 col-lg-3">
-      <div class="card h-100 text-center p-4">
-        <div class="feature-icon mx-auto mb-3">
-          <i class="bi bi-graph-up"></i>
-        </div>
-        <h5 class="fw-bold mb-3">Analytics</h5>
-        <p class="text-muted mb-4">View detailed insights and performance metrics</p>
-        <div class="d-grid gap-2">
-          {% if onboarding_status == 'Verified' %}
-          <a href="{{ url_for('main.analytics') }}" class="btn btn-primary">
-            <i class="bi bi-graph-up me-2"></i>View Analytics
-          </a>
-          <a href="{{ url_for('main.message_history') }}" class="btn btn-outline-primary btn-sm">
-            <i class="bi bi-clock-history me-1"></i>Message History
+    <div class="col-lg-4 col-md-6">
+      <div class="card border-0 h-100 text-center">
+        <div class="card-body p-4">
+          <div class="feature-icon mx-auto mb-4">
+            <i class="bi bi-clock"></i>
+          </div>
+          <h5 class="fw-bold mb-3">Schedule Messages</h5>
+          <p class="text-muted mb-4">Schedule messages to be sent at specific times for better engagement</p>
+          {% if can_send %}
+          <a href="{{ url_for('main.schedule_messages') }}" class="btn btn-secondary btn-lg w-100">
+            <i class="bi bi-clock me-2"></i>Schedule
           </a>
           {% else %}
-          <button class="btn btn-outline-secondary" disabled>
-            Complete Setup First
+          <button class="btn btn-outline-secondary btn-lg w-100" disabled>
+            <i class="bi bi-lock me-2"></i>Complete Setup First
           </button>
           {% endif %}
         </div>
@@ -185,63 +241,79 @@
     </div>
   </div>
 
-  <!-- Setup Steps (only show if not verified) -->
+  <!-- Setup Progress (only show if not verified) -->
   {% if onboarding_status != 'Verified' %}
-  <div class="row">
+  <div class="row mb-5">
     <div class="col-12">
-      <div class="card p-4">
-        <h4 class="fw-bold mb-4">
-          <i class="bi bi-list-check me-2"></i>
-          Complete Your Setup
-        </h4>
-
-        <!-- Step 1: Documents (simplified - make optional) -->
-        <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
-          <div class="step-number me-3 {{ 'bg-success' if docs_uploaded else 'bg-secondary' }}">
-            {% if docs_uploaded %}
-            <i class="bi bi-check"></i>
-            {% else %}
-            1
-            {% endif %}
-          </div>
-          <div class="flex-grow-1">
-            <h6 class="fw-bold mb-2">Business Verification (Optional)</h6>
-            <p class="text-muted mb-3">Upload business documents for higher message limits</p>
-            {% if not docs_uploaded %}
-            <a href="{{ url_for('main.business_verification') }}" class="btn btn-outline-primary btn-sm">
-              <i class="bi bi-upload me-1"></i>Upload Documents
-            </a>
-            <button class="btn btn-link btn-sm text-muted">Skip for now</button>
-            {% else %}
-            <span class="badge bg-success">
-              <i class="bi bi-check me-1"></i>Documents uploaded
-            </span>
-            {% endif %}
-          </div>
+      <div class="card border-0">
+        <div class="card-header bg-transparent border-0 pb-0">
+          <h4 class="fw-bold mb-0">
+            <i class="bi bi-list-check me-2 text-primary"></i>
+            Complete Your Setup
+          </h4>
+          <p class="text-muted mb-0">Get your WhatsApp Business account ready in just a few steps</p>
         </div>
-
-        <!-- Step 2: WhatsApp Setup -->
-        <div class="d-flex align-items-start mb-4">
-          <div
-            class="step-number me-3 {{ 'bg-success' if onboarding_status == 'Verified' else 'bg-primary' if onboarding_status == 'In Progress' else 'bg-secondary' }}">
-            {% if onboarding_status == 'Verified' %}
-            <i class="bi bi-check"></i>
-            {% else %}
-            2
-            {% endif %}
+        <div class="card-body p-4">
+          <!-- Progress Bar -->
+          <div class="progress mb-4" style="height: 8px;">
+            <div class="progress-bar" style="width: {{ '100' if onboarding_status == 'Verified' else '50' if onboarding_status == 'In Progress' else '25' }}%"></div>
           </div>
-          <div class="flex-grow-1">
-            <h6 class="fw-bold mb-2">Connect WhatsApp Business</h6>
-            <p class="text-muted mb-3">Link your WhatsApp Business account to start messaging</p>
-            {% if onboarding_status != 'Verified' %}
-            <a href="{{ url_for('main.simple_setup') }}" class="btn btn-primary">
-              <i class="bi bi-whatsapp me-2"></i>Connect WhatsApp
-            </a>
-            {% else %}
-            <span class="badge bg-success">
-              <i class="bi bi-check me-1"></i>WhatsApp connected
-            </span>
-            {% endif %}
+
+          <!-- Step 1: Documents (Optional) -->
+          <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
+            <div class="me-4">
+              <div class="rounded-circle d-flex align-items-center justify-content-center" 
+                   style="width: 50px; height: 50px; background: {{ 'var(--success)' if docs_uploaded else 'var(--border-light)' }}; color: {{ 'white' if docs_uploaded else 'var(--text-muted)' }};">
+                {% if docs_uploaded %}
+                <i class="bi bi-check-lg fw-bold"></i>
+                {% else %}
+                <span class="fw-bold">1</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="flex-grow-1">
+              <h6 class="fw-bold mb-2">Business Verification</h6>
+              <p class="text-muted mb-3">Upload business documents for higher message limits and enhanced credibility</p>
+              {% if not docs_uploaded %}
+              <div class="d-flex gap-2">
+                <a href="{{ url_for('main.business_verification') }}" class="btn btn-outline-primary">
+                  <i class="bi bi-upload me-2"></i>Upload Documents
+                </a>
+                <button class="btn btn-link text-muted">Skip for now</button>
+              </div>
+              {% else %}
+              <span class="badge badge-success">
+                <i class="bi bi-check me-1"></i>Documents Uploaded
+              </span>
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- Step 2: WhatsApp Setup -->
+          <div class="d-flex align-items-start">
+            <div class="me-4">
+              <div class="rounded-circle d-flex align-items-center justify-content-center" 
+                   style="width: 50px; height: 50px; background: {{ 'var(--success)' if onboarding_status == 'Verified' else 'var(--primary)' if onboarding_status == 'In Progress' else 'var(--border-light)' }}; color: white;">
+                {% if onboarding_status == 'Verified' %}
+                <i class="bi bi-check-lg fw-bold"></i>
+                {% else %}
+                <span class="fw-bold">2</span>
+                {% endif %}
+              </div>
+            </div>
+            <div class="flex-grow-1">
+              <h6 class="fw-bold mb-2">Connect WhatsApp Business</h6>
+              <p class="text-muted mb-3">Link your WhatsApp Business account to start sending messages to customers</p>
+              {% if onboarding_status != 'Verified' %}
+              <a href="{{ url_for('main.simple_setup') }}" class="btn btn-primary btn-lg">
+                <i class="bi bi-whatsapp me-2"></i>Connect WhatsApp
+              </a>
+              {% else %}
+              <span class="badge badge-success">
+                <i class="bi bi-check me-1"></i>WhatsApp Connected
+              </span>
+              {% endif %}
+            </div>
           </div>
         </div>
       </div>
@@ -249,52 +321,76 @@
   </div>
   {% endif %}
 
-  <!-- Recent Activity (only show if verified) -->
+  <!-- Recent Activity -->
   {% if onboarding_status == 'Verified' and message_history %}
-  <div class="row mt-5">
+  <div class="row">
     <div class="col-12">
-      <div class="card p-4">
-        <div class="d-flex justify-content-between align-items-center mb-4">
-          <h5 class="fw-bold mb-0">
-            <i class="bi bi-clock-history me-2"></i>
-            Recent Messages
-          </h5>
-          <a href="{{ url_for('main.message_history') }}" class="btn btn-outline-primary btn-sm">
-            View All
+      <div class="card border-0">
+        <div class="card-header bg-transparent border-0 d-flex justify-content-between align-items-center">
+          <div>
+            <h5 class="fw-bold mb-1">
+              <i class="bi bi-clock-history me-2 text-primary"></i>
+              Recent Messages
+            </h5>
+            <p class="text-muted mb-0">Your latest WhatsApp message activity</p>
+          </div>
+          <a href="{{ url_for('main.message_history') }}" class="btn btn-outline-primary">
+            <i class="bi bi-arrow-right me-2"></i>View All
           </a>
         </div>
-
-        <div class="table-responsive">
-          <table class="table table-hover align-middle">
-            <thead class="table-light">
-              <tr>
-                <th>Recipient</th>
-                <th>Template</th>
-                <th>Status</th>
-                <th>Sent</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for msg in message_history[:5] %}
-              <tr>
-                <td>{{ msg.recipient }}</td>
-                <td>Template #{{ msg.template_id }}</td>
-                <td>
-                  {% if msg.status == 'delivered' %}
-                  <span class="badge bg-success">Delivered</span>
-                  {% elif msg.status == 'read' %}
-                  <span class="badge bg-info">Read</span>
-                  {% elif msg.status == 'failed' %}
-                  <span class="badge bg-danger">Failed</span>
-                  {% else %}
-                  <span class="badge bg-secondary">{{ msg.status|capitalize }}</span>
-                  {% endif %}
-                </td>
-                <td class="text-muted">{{ msg.created_at.strftime('%b %d, %Y') }}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
+        <div class="card-body p-0">
+          <div class="table-responsive">
+            <table class="table table-hover mb-0">
+              <thead>
+                <tr>
+                  <th class="border-0 fw-bold">Recipient</th>
+                  <th class="border-0 fw-bold">Template</th>
+                  <th class="border-0 fw-bold">Status</th>
+                  <th class="border-0 fw-bold">Sent</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for msg in message_history[:5] %}
+                <tr>
+                  <td class="py-3">
+                    <div class="d-flex align-items-center">
+                      <div class="rounded-circle bg-primary bg-opacity-10 d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px;">
+                        <i class="bi bi-person-fill text-primary"></i>
+                      </div>
+                      <div>
+                        <div class="fw-semibold">{{ msg.recipient_name or msg.recipient }}</div>
+                        {% if msg.recipient_name %}
+                        <small class="text-muted">{{ msg.recipient }}</small>
+                        {% endif %}
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-3">
+                    <span class="badge bg-light text-dark">{{ msg.template.name if msg.template else 'Template #' + msg.template_id|string }}</span>
+                  </td>
+                  <td class="py-3">
+                    {% if msg.status == 'delivered' %}
+                    <span class="badge badge-success">
+                      <i class="bi bi-check-circle me-1"></i>Delivered
+                    </span>
+                    {% elif msg.status == 'read' %}
+                    <span class="badge badge-info">
+                      <i class="bi bi-eye me-1"></i>Read
+                    </span>
+                    {% elif msg.status == 'failed' %}
+                    <span class="badge badge-danger">
+                      <i class="bi bi-x-circle me-1"></i>Failed
+                    </span>
+                    {% else %}
+                    <span class="badge badge-secondary">{{ msg.status|capitalize }}</span>
+                    {% endif %}
+                  </td>
+                  <td class="py-3 text-muted">{{ msg.created_at.strftime('%b %d, %Y at %I:%M %p') }}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
