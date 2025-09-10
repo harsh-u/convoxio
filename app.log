@@ -84,3 +84,448 @@
 2025-08-10 19:31:11,153 - app - INFO - 📥 GET http://127.0.0.1:5001/static/custom.css - IP: 127.0.0.1
 2025-08-10 19:31:11,155 - app - INFO - 📤 Response: 304 for GET http://127.0.0.1:5001/static/custom.css
 2025-08-10 19:31:11,156 - werkzeug - INFO - 127.0.0.1 - - [10/Aug/2025 19:31:11] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:18:55,449 - app - INFO - 🚀 Flask application starting up...
+2025-09-06 23:18:55,449 - app - INFO - ✅ CORS enabled for React frontend
+2025-09-06 23:18:55,482 - app - INFO - 📊 Database initialized
+2025-09-06 23:18:55,483 - app - INFO - 🔐 Login manager initialized
+2025-09-06 23:18:55,712 - app - INFO - 🌐 Main routes blueprint registered
+2025-09-06 23:18:55,726 - app - INFO - 👑 Admin routes blueprint registered
+2025-09-06 23:18:55,803 - app - INFO - 🔗 API blueprints registered
+2025-09-06 23:18:55,804 - app - INFO - ✨ Flask application setup complete!
+2025-09-06 23:18:55,804 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-09-06 23:18:55,804 - __main__ - INFO - 🔧 Debug mode: ON
+2025-09-06 23:18:55,827 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.10:5001
+2025-09-06 23:18:55,828 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-09-06 23:18:55,831 - werkzeug - INFO -  * Restarting with stat
+2025-09-06 23:18:56,540 - app - INFO - 🚀 Flask application starting up...
+2025-09-06 23:18:56,540 - app - INFO - ✅ CORS enabled for React frontend
+2025-09-06 23:18:56,565 - app - INFO - 📊 Database initialized
+2025-09-06 23:18:56,565 - app - INFO - 🔐 Login manager initialized
+2025-09-06 23:18:56,708 - app - INFO - 🌐 Main routes blueprint registered
+2025-09-06 23:18:56,716 - app - INFO - 👑 Admin routes blueprint registered
+2025-09-06 23:18:56,737 - app - INFO - 🔗 API blueprints registered
+2025-09-06 23:18:56,737 - app - INFO - ✨ Flask application setup complete!
+2025-09-06 23:18:56,737 - __main__ - INFO - 🚀 Starting Flask application on port 5001...
+2025-09-06 23:18:56,737 - __main__ - INFO - 🔧 Debug mode: ON
+2025-09-06 23:18:56,752 - werkzeug - WARNING -  * Debugger is active!
+2025-09-06 23:18:56,767 - werkzeug - INFO -  * Debugger PIN: 100-357-143
+2025-09-06 23:19:30,994 - app - INFO - 📥 GET http://localhost:5001/ - IP: 127.0.0.1
+2025-09-06 23:19:30,995 - app.routes - INFO - 🏠 Home page accessed
+2025-09-06 23:19:31,035 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/
+2025-09-06 23:19:31,036 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:31] "GET / HTTP/1.1" 200 -
+2025-09-06 23:19:31,117 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:19:31,127 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:19:31,128 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:31] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:19:31,774 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:19:31,775 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:19:31,776 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:31] "GET /static/manifest.json HTTP/1.1" 200 -
+2025-09-06 23:19:31,778 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:19:31,780 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:19:31,781 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:31] "GET /static/icons/favicon.ico HTTP/1.1" 200 -
+2025-09-06 23:19:31,796 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:19:31,798 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:19:31,799 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:31] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:19:31,813 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon-32x32.png - IP: 127.0.0.1
+2025-09-06 23:19:31,814 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/static/icons/favicon-32x32.png
+2025-09-06 23:19:31,815 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:31] "GET /static/icons/favicon-32x32.png HTTP/1.1" 200 -
+2025-09-06 23:19:36,160 - app - INFO - 📥 GET http://localhost:5001/login - IP: 127.0.0.1
+2025-09-06 23:19:36,161 - app.routes - INFO - 🔐 Login page accessed
+2025-09-06 23:19:36,178 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/login
+2025-09-06 23:19:36,179 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:36] "GET /login HTTP/1.1" 200 -
+2025-09-06 23:19:36,246 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:19:36,248 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:19:36,248 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:36] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:19:36,314 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:19:36,317 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:19:36,318 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:19:36,319 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:36] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:19:36,320 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:19:36,323 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:36] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:19:36,347 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:19:36,349 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:19:36,349 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:36] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:19:38,880 - app - INFO - 📥 POST http://localhost:5001/login - IP: 127.0.0.1
+2025-09-06 23:19:38,880 - app.routes - INFO - 🔐 Login page accessed
+2025-09-06 23:19:38,883 - app.routes - INFO - 🔐 Login attempt for email: test@restaurant.com
+2025-09-06 23:19:39,226 - app.routes - WARNING - ❌ Failed login attempt for email: test@restaurant.com
+2025-09-06 23:19:39,229 - app - INFO - 📤 Response: 200 for POST http://localhost:5001/login
+2025-09-06 23:19:39,231 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:39] "POST /login HTTP/1.1" 200 -
+2025-09-06 23:19:39,277 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:19:39,278 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:19:39,279 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:39] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:19:39,326 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:19:39,327 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:19:39,328 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:39] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:19:39,347 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:19:39,348 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:19:39,349 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:39] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:19:39,363 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:19:39,365 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:19:39,366 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:39] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:19:48,208 - app - INFO - 📥 POST http://localhost:5001/login - IP: 127.0.0.1
+2025-09-06 23:19:48,209 - app.routes - INFO - 🔐 Login page accessed
+2025-09-06 23:19:48,213 - app - INFO - 📤 Response: 200 for POST http://localhost:5001/login
+2025-09-06 23:19:48,215 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:48] "POST /login HTTP/1.1" 200 -
+2025-09-06 23:19:48,272 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:19:48,273 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:19:48,274 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:48] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:19:48,318 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:19:48,320 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:19:48,321 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:48] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:19:48,344 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:19:48,346 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:19:48,347 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:48] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:19:48,362 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:19:48,364 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:19:48,365 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:19:48] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:21:50,558 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:21:50,559 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:21:50,560 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:21:50] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:21:50,574 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:21:50,575 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:21:50,576 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:21:50] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:21:53,621 - app - INFO - 📥 GET http://localhost:5001/register - IP: 127.0.0.1
+2025-09-06 23:21:53,622 - app.routes - INFO - 📝 Registration page accessed
+2025-09-06 23:21:53,644 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/register
+2025-09-06 23:21:53,645 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:21:53] "GET /register HTTP/1.1" 200 -
+2025-09-06 23:21:53,704 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:21:53,705 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:21:53,706 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:21:53] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:21:53,754 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:21:53,755 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:21:53,755 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:21:53] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:21:53,784 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:21:53,786 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:21:53,786 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:21:53] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:21:53,800 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:21:53,802 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:21:53,802 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:21:53] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:21:58,745 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:21:58,746 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:21:58,746 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:21:58] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:21:58,769 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:21:58,770 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:21:58,771 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:21:58] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:21:58,786 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:21:58,788 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:21:58,789 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:21:58] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:26:35,501 - app - INFO - 📥 POST http://localhost:5001/login - IP: 127.0.0.1
+2025-09-06 23:26:35,502 - app.routes - INFO - 🔐 Login page accessed
+2025-09-06 23:26:35,504 - app.routes - INFO - 🔐 Login attempt for email: test@restaurant.com
+2025-09-06 23:26:35,755 - app.routes - WARNING - ❌ Failed login attempt for email: test@restaurant.com
+2025-09-06 23:26:35,756 - app - INFO - 📤 Response: 200 for POST http://localhost:5001/login
+2025-09-06 23:26:35,758 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:26:35] "POST /login HTTP/1.1" 200 -
+2025-09-06 23:26:35,806 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:26:35,807 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:26:35,808 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:26:35] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:26:35,853 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:26:35,855 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:26:35,856 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:26:35] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:26:35,879 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:26:35,880 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:26:35,881 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:26:35] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:26:35,894 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:26:35,895 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:26:35,896 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:26:35] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:26:40,601 - app - INFO - 📥 POST http://localhost:5001/login - IP: 127.0.0.1
+2025-09-06 23:26:40,601 - app.routes - INFO - 🔐 Login page accessed
+2025-09-06 23:26:40,603 - app.routes - INFO - 🔐 Login attempt for email: test@restaurant.com
+2025-09-06 23:26:40,840 - app.routes - WARNING - ❌ Failed login attempt for email: test@restaurant.com
+2025-09-06 23:26:40,841 - app - INFO - 📤 Response: 200 for POST http://localhost:5001/login
+2025-09-06 23:26:40,843 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:26:40] "POST /login HTTP/1.1" 200 -
+2025-09-06 23:26:40,895 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:26:40,897 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:26:40,898 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:26:40] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:26:40,945 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:26:40,948 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:26:40,949 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:26:40,950 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:26:40] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:26:40,951 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:26:40,954 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:26:40] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:26:40,978 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:26:40,979 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:26:40,981 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:26:40] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:27:22,885 - app - INFO - 📥 POST http://localhost:5001/login - IP: 127.0.0.1
+2025-09-06 23:27:22,886 - app.routes - INFO - 🔐 Login page accessed
+2025-09-06 23:27:22,888 - app - INFO - 📤 Response: 200 for POST http://localhost:5001/login
+2025-09-06 23:27:22,890 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:27:22] "POST /login HTTP/1.1" 200 -
+2025-09-06 23:27:22,962 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:27:22,964 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:27:22,965 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:27:22] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:27:23,010 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:27:23,012 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:27:23,013 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:27:23] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:27:23,032 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:27:23,034 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:27:23,035 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:27:23] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:27:23,057 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:27:23,059 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:27:23,059 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:27:23] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:27:25,960 - app - INFO - 📥 POST http://localhost:5001/login - IP: 127.0.0.1
+2025-09-06 23:27:25,960 - app.routes - INFO - 🔐 Login page accessed
+2025-09-06 23:27:25,965 - app - INFO - 📤 Response: 200 for POST http://localhost:5001/login
+2025-09-06 23:27:25,966 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:27:25] "POST /login HTTP/1.1" 200 -
+2025-09-06 23:27:26,026 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:27:26,028 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:27:26,029 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:27:26] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:27:26,092 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:27:26,095 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:27:26,096 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:27:26,098 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:27:26] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:27:26,099 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:27:26,100 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:27:26] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:27:26,118 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:27:26,119 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:27:26,121 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:27:26] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:28:57,402 - app - INFO - 📥 GET http://localhost:5001/register - IP: 127.0.0.1
+2025-09-06 23:28:57,402 - app.routes - INFO - 📝 Registration page accessed
+2025-09-06 23:28:57,404 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/register
+2025-09-06 23:28:57,406 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:28:57] "GET /register HTTP/1.1" 200 -
+2025-09-06 23:28:57,454 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:28:57,456 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:28:57,457 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:28:57] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:28:57,510 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:28:57,511 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:28:57,513 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:28:57,514 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:28:57] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:28:57,515 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:28:57,516 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:28:57] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:28:57,549 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:28:57,550 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:28:57,551 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:28:57] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:29:12,487 - app - INFO - 📥 POST http://localhost:5001/register - IP: 127.0.0.1
+2025-09-06 23:29:12,487 - app.routes - INFO - 📝 Registration page accessed
+2025-09-06 23:29:12,548 - app.routes - INFO - 📝 Registration attempt for email: test@restaurant.com
+2025-09-06 23:29:12,551 - app.routes - WARNING - ⚠️ Registration failed - email already exists: test@restaurant.com
+2025-09-06 23:29:12,552 - app - INFO - 📤 Response: 302 for POST http://localhost:5001/register
+2025-09-06 23:29:12,555 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:12] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-09-06 23:29:12,564 - app - INFO - 📥 GET http://localhost:5001/register - IP: 127.0.0.1
+2025-09-06 23:29:12,565 - app.routes - INFO - 📝 Registration page accessed
+2025-09-06 23:29:12,568 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/register
+2025-09-06 23:29:12,569 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:12] "GET /register HTTP/1.1" 200 -
+2025-09-06 23:29:12,631 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:29:12,632 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:29:12,633 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:12] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:29:12,701 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:29:12,702 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:29:12,703 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:12] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:29:12,705 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:29:12,708 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:29:12,709 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:12] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:29:12,717 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:29:12,718 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:29:12,719 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:12] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:29:26,312 - app - INFO - 📥 POST http://localhost:5001/register - IP: 127.0.0.1
+2025-09-06 23:29:26,313 - app.routes - INFO - 📝 Registration page accessed
+2025-09-06 23:29:26,315 - app.routes - INFO - 📝 Registration attempt for email: test1@restaurant.com
+2025-09-06 23:29:26,803 - app.routes - INFO - ✅ New user registered successfully: test1@restaurant.com (ID: 3)
+2025-09-06 23:29:26,803 - app.routes - INFO - 🔐 User auto-logged in after registration: test1@restaurant.com
+2025-09-06 23:29:26,803 - app - INFO - 📤 Response: 302 for POST http://localhost:5001/register
+2025-09-06 23:29:26,805 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:26] "[32mPOST /register HTTP/1.1[0m" 302 -
+2025-09-06 23:29:26,813 - app - INFO - 📥 GET http://localhost:5001/dashboard - IP: 127.0.0.1
+2025-09-06 23:29:26,818 - app.routes - INFO - 📊 Dashboard accessed by user: test1@restaurant.com (ID: 3)
+2025-09-06 23:29:26,825 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Pending
+2025-09-06 23:29:26,836 - app.routes - INFO - 📱 User messaging capability: False (Templates: 0)
+2025-09-06 23:29:26,867 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/dashboard
+2025-09-06 23:29:26,869 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:26] "GET /dashboard HTTP/1.1" 200 -
+2025-09-06 23:29:26,933 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:29:26,934 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:29:26,935 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:26] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:29:27,048 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:29:27,051 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:29:27,052 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:29:27,053 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:27] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:29:27,054 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:29:27,056 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:27] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:29:27,070 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:29:27,071 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:29:27,072 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:29:27] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:22,139 - app - INFO - 📥 GET http://localhost:5001/inbox - IP: 127.0.0.1
+2025-09-06 23:31:22,143 - app - INFO - 📤 Response: 302 for GET http://localhost:5001/inbox
+2025-09-06 23:31:22,145 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:22] "[32mGET /inbox HTTP/1.1[0m" 302 -
+2025-09-06 23:31:22,157 - app - INFO - 📥 GET http://localhost:5001/dashboard - IP: 127.0.0.1
+2025-09-06 23:31:22,161 - app.routes - INFO - 📊 Dashboard accessed by user: test1@restaurant.com (ID: 3)
+2025-09-06 23:31:22,164 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Pending
+2025-09-06 23:31:22,168 - app.routes - INFO - 📱 User messaging capability: False (Templates: 0)
+2025-09-06 23:31:22,173 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/dashboard
+2025-09-06 23:31:22,175 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:22] "GET /dashboard HTTP/1.1" 200 -
+2025-09-06 23:31:22,245 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:31:22,246 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:31:22,247 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:22] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:31:22,329 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:22,330 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:22,331 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:22] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:22,333 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:31:22,335 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:31:22,336 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:22] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:31:22,345 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:22,346 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:22,347 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:22] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:26,301 - app - INFO - 📥 GET http://localhost:5001/dashboard - IP: 127.0.0.1
+2025-09-06 23:31:26,304 - app.routes - INFO - 📊 Dashboard accessed by user: test1@restaurant.com (ID: 3)
+2025-09-06 23:31:26,307 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Pending
+2025-09-06 23:31:26,309 - app.routes - INFO - 📱 User messaging capability: False (Templates: 0)
+2025-09-06 23:31:26,313 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/dashboard
+2025-09-06 23:31:26,315 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:26] "GET /dashboard HTTP/1.1" 200 -
+2025-09-06 23:31:26,364 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:31:26,366 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:31:26,367 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:26] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:31:26,431 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:26,433 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:31:26,435 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:31:26,436 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:26,436 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:26] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:31:26,437 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:26] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:26,455 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:26,457 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:26,457 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:26] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:27,780 - app - INFO - 📥 GET http://localhost:5001/dashboard - IP: 127.0.0.1
+2025-09-06 23:31:27,784 - app.routes - INFO - 📊 Dashboard accessed by user: test1@restaurant.com (ID: 3)
+2025-09-06 23:31:27,786 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Pending
+2025-09-06 23:31:27,790 - app.routes - INFO - 📱 User messaging capability: False (Templates: 0)
+2025-09-06 23:31:27,793 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/dashboard
+2025-09-06 23:31:27,795 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:27] "GET /dashboard HTTP/1.1" 200 -
+2025-09-06 23:31:27,852 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:31:27,853 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:31:27,853 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:27] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:31:27,892 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:31:27,895 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:27,896 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:31:27,898 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:27] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:31:27,899 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:27,901 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:27] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:27,935 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:27,937 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:27,937 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:27] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:30,322 - app - INFO - 📥 GET http://localhost:5001/inbox - IP: 127.0.0.1
+2025-09-06 23:31:30,326 - app - INFO - 📤 Response: 302 for GET http://localhost:5001/inbox
+2025-09-06 23:31:30,328 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:30] "[32mGET /inbox HTTP/1.1[0m" 302 -
+2025-09-06 23:31:30,339 - app - INFO - 📥 GET http://localhost:5001/dashboard - IP: 127.0.0.1
+2025-09-06 23:31:30,341 - app.routes - INFO - 📊 Dashboard accessed by user: test1@restaurant.com (ID: 3)
+2025-09-06 23:31:30,344 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Pending
+2025-09-06 23:31:30,346 - app.routes - INFO - 📱 User messaging capability: False (Templates: 0)
+2025-09-06 23:31:30,349 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/dashboard
+2025-09-06 23:31:30,351 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:30] "GET /dashboard HTTP/1.1" 200 -
+2025-09-06 23:31:30,403 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:31:30,404 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:31:30,405 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:30] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:31:30,446 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:30,447 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:31:30,449 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:30,451 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:31:30,452 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:30] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:30,453 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:30] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:31:30,475 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:30,476 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:30,477 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:30] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:32,620 - app - INFO - 📥 GET http://localhost:5001/dashboard - IP: 127.0.0.1
+2025-09-06 23:31:32,623 - app.routes - INFO - 📊 Dashboard accessed by user: test1@restaurant.com (ID: 3)
+2025-09-06 23:31:32,626 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Pending
+2025-09-06 23:31:32,629 - app.routes - INFO - 📱 User messaging capability: False (Templates: 0)
+2025-09-06 23:31:32,633 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/dashboard
+2025-09-06 23:31:32,635 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:32] "GET /dashboard HTTP/1.1" 200 -
+2025-09-06 23:31:32,684 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:31:32,685 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:31:32,686 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:32] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:31:32,762 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:32,764 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:32,765 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:32] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:32,767 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:31:32,769 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:31:32,770 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:32] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:31:32,780 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:32,781 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:32,782 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:32] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:33,630 - app - INFO - 📥 GET http://localhost:5001/subscription - IP: 127.0.0.1
+2025-09-06 23:31:33,684 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/subscription
+2025-09-06 23:31:33,685 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:33] "GET /subscription HTTP/1.1" 200 -
+2025-09-06 23:31:33,740 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:31:33,741 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:31:33,742 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:33] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:31:33,819 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:31:33,821 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:31:33,823 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:33] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:31:33,824 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:33,826 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:33,827 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:33] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:33,841 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:33,842 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:33,843 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:33] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:45,659 - app - INFO - 📥 GET http://localhost:5001/upgrade/1 - IP: 127.0.0.1
+2025-09-06 23:31:45,691 - app - INFO - 📤 Response: 302 for GET http://localhost:5001/upgrade/1
+2025-09-06 23:31:45,693 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:45] "[32mGET /upgrade/1 HTTP/1.1[0m" 302 -
+2025-09-06 23:31:45,704 - app - INFO - 📥 GET http://localhost:5001/subscription - IP: 127.0.0.1
+2025-09-06 23:31:45,724 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/subscription
+2025-09-06 23:31:45,726 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:45] "GET /subscription HTTP/1.1" 200 -
+2025-09-06 23:31:45,785 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:31:45,786 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:31:45,787 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:45] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:31:45,852 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:31:45,853 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:31:45,854 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:45] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:31:45,857 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:45,858 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:45,859 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:45] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:31:45,887 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:31:45,888 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:31:45,890 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:31:45] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:32:54,248 - app - INFO - 📥 GET http://localhost:5001/pricing - IP: 127.0.0.1
+2025-09-06 23:32:54,275 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/pricing
+2025-09-06 23:32:54,276 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:32:54] "GET /pricing HTTP/1.1" 200 -
+2025-09-06 23:32:54,343 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:32:54,345 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:32:54,345 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:32:54] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:32:54,393 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:32:54,395 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:32:54,396 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:32:54] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:32:54,398 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:32:54,401 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:32:54,402 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:32:54] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:32:54,432 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:32:54,434 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:32:54,435 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:32:54] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:32:56,974 - app - INFO - 📥 GET http://localhost:5001/dashboard - IP: 127.0.0.1
+2025-09-06 23:32:56,978 - app.routes - INFO - 📊 Dashboard accessed by user: test1@restaurant.com (ID: 3)
+2025-09-06 23:32:56,980 - app.routes - INFO - 📋 User status - Docs uploaded: False, Onboarding: Pending
+2025-09-06 23:32:56,984 - app.routes - INFO - 📱 User messaging capability: False (Templates: 0)
+2025-09-06 23:32:56,988 - app - INFO - 📤 Response: 200 for GET http://localhost:5001/dashboard
+2025-09-06 23:32:56,990 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:32:56] "GET /dashboard HTTP/1.1" 200 -
+2025-09-06 23:32:57,049 - app - INFO - 📥 GET http://localhost:5001/static/custom.css - IP: 127.0.0.1
+2025-09-06 23:32:57,050 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/custom.css
+2025-09-06 23:32:57,050 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:32:57] "[36mGET /static/custom.css HTTP/1.1[0m" 304 -
+2025-09-06 23:32:57,114 - app - INFO - 📥 GET http://localhost:5001/static/manifest.json - IP: 127.0.0.1
+2025-09-06 23:32:57,117 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:32:57,119 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/manifest.json
+2025-09-06 23:32:57,120 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:32:57,121 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:32:57] "[36mGET /static/manifest.json HTTP/1.1[0m" 304 -
+2025-09-06 23:32:57,122 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:32:57] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-06 23:32:57,137 - app - INFO - 📥 GET http://localhost:5001/static/icons/favicon.ico - IP: 127.0.0.1
+2025-09-06 23:32:57,138 - app - INFO - 📤 Response: 304 for GET http://localhost:5001/static/icons/favicon.ico
+2025-09-06 23:32:57,139 - werkzeug - INFO - 127.0.0.1 - - [06/Sep/2025 23:32:57] "[36mGET /static/icons/favicon.ico HTTP/1.1[0m" 304 -
+2025-09-09 14:49:30,481 - app - INFO - 📥 GET http://localhost:5001/api/v2/converse_integration/integrations/verify - IP: 127.0.0.1
+2025-09-09 14:49:30,483 - app - INFO - 📥 GET http://localhost:5001/api/v1/profile - IP: 127.0.0.1
+2025-09-09 14:49:30,522 - app - INFO - 📤 Response: 404 for GET http://localhost:5001/api/v1/profile
+2025-09-09 14:49:30,523 - app - INFO - 📤 Response: 404 for GET http://localhost:5001/api/v2/converse_integration/integrations/verify
+2025-09-09 14:49:30,531 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2025 14:49:30] "[33mGET /api/v1/profile HTTP/1.1[0m" 404 -
+2025-09-09 14:49:30,533 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2025 14:49:30] "[33mGET /api/v2/converse_integration/integrations/verify HTTP/1.1[0m" 404 -
+2025-09-09 14:49:30,641 - app - INFO - 📥 GET http://localhost:5001/api/v2/converse_integration/integrations/crm - IP: 127.0.0.1
+2025-09-09 14:49:30,642 - app - INFO - 📤 Response: 404 for GET http://localhost:5001/api/v2/converse_integration/integrations/crm
+2025-09-09 14:49:30,643 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2025 14:49:30] "[33mGET /api/v2/converse_integration/integrations/crm HTTP/1.1[0m" 404 -
+2025-09-09 14:49:30,650 - app - INFO - 📥 GET http://localhost:5001/api/v2/converse_integration/integration/accounts/tpi_providers?account_id=90006958 - IP: 127.0.0.1
+2025-09-09 14:49:30,651 - app - INFO - 📤 Response: 404 for GET http://localhost:5001/api/v2/converse_integration/integration/accounts/tpi_providers?account_id=90006958
+2025-09-09 14:49:30,652 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2025 14:49:30] "[33mGET /api/v2/converse_integration/integration/accounts/tpi_providers?account_id=90006958 HTTP/1.1[0m" 404 -
+2025-09-09 15:04:38,138 - app - INFO - 📥 GET http://localhost:5001/api/v2/converse_integration/integrations/verify - IP: 127.0.0.1
+2025-09-09 15:04:38,139 - app - INFO - 📤 Response: 404 for GET http://localhost:5001/api/v2/converse_integration/integrations/verify
+2025-09-09 15:04:38,140 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2025 15:04:38] "[33mGET /api/v2/converse_integration/integrations/verify HTTP/1.1[0m" 404 -
+2025-09-09 15:04:38,150 - app - INFO - 📥 GET http://localhost:5001/api/v1/profile - IP: 127.0.0.1
+2025-09-09 15:04:38,151 - app - INFO - 📤 Response: 404 for GET http://localhost:5001/api/v1/profile
+2025-09-09 15:04:38,151 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2025 15:04:38] "[33mGET /api/v1/profile HTTP/1.1[0m" 404 -
+2025-09-09 15:04:38,292 - app - INFO - 📥 GET http://localhost:5001/api/v2/converse_integration/integrations/crm - IP: 127.0.0.1
+2025-09-09 15:04:38,293 - app - INFO - 📤 Response: 404 for GET http://localhost:5001/api/v2/converse_integration/integrations/crm
+2025-09-09 15:04:38,294 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2025 15:04:38] "[33mGET /api/v2/converse_integration/integrations/crm HTTP/1.1[0m" 404 -
+2025-09-09 15:04:38,296 - app - INFO - 📥 GET http://localhost:5001/api/v2/converse_integration/integration/accounts/tpi_providers?account_id=90006958 - IP: 127.0.0.1
+2025-09-09 15:04:38,298 - app - INFO - 📤 Response: 404 for GET http://localhost:5001/api/v2/converse_integration/integration/accounts/tpi_providers?account_id=90006958
+2025-09-09 15:04:38,299 - werkzeug - INFO - 127.0.0.1 - - [09/Sep/2025 15:04:38] "[33mGET /api/v2/converse_integration/integration/accounts/tpi_providers?account_id=90006958 HTTP/1.1[0m" 404 -

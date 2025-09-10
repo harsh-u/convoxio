@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Business API Demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        .api-section {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            background: #f8f9fa;
+        }
+        .response-box {
+            background: #212529;
+            color: #00ff00;
+            padding: 1rem;
+            border-radius: 0.375rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .btn-api {
+            margin: 0.25rem;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+        }
+        .status-success { background-color: #28a745; }
+        .status-error { background-color: #dc3545; }
+        .status-pending { background-color: #ffc107; }
+    </style>
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row">
+            <div class="col-12">
+                <h1 class="mb-4">
+                    <i class="bi bi-api me-2"></i>
+                    WhatsApp Business API Demo
+                </h1>
+                <p class="lead">Test all API endpoints for mobile app development</p>
+            </div>
+        </div>
+
+        <!-- Authentication Section -->
+        <div class="api-section">
+            <h3><i class="bi bi-shield-lock me-2"></i>Authentication</h3>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Register</h5>
+                    <div class="mb-3">
+                        <input type="text" id="reg-business" class="form-control mb-2" placeholder="Business Name">
+                        <input type="email" id="reg-email" class="form-control mb-2" placeholder="Email">
+                        <input type="tel" id="reg-phone" class="form-control mb-2" placeholder="Phone (919876543210)">
+                        <input type="password" id="reg-password" class="form-control mb-2" placeholder="Password">
+                        <button class="btn btn-primary btn-api" onclick="register()">Register</button>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5>Login</h5>
+                    <div class="mb-3">
+                        <input type="email" id="login-email" class="form-control mb-2" placeholder="Email">
+                        <input type="password" id="login-password" class="form-control mb-2" placeholder="Password">
+                        <button class="btn btn-success btn-api" onclick="login()">Login</button>
+                        <button class="btn btn-secondary btn-api" onclick="getUserStatus()">Get Status</button>
+                        <button class="btn btn-outline-danger btn-api" onclick="logout()">Logout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard Section -->
+        <div class="api-section">
+            <h3><i class="bi bi-speedometer2 me-2"></i>Dashboard</h3>
+            <button class="btn btn-info btn-api" onclick="getDashboard()">Get Dashboard Data</button>
+            <button class="btn btn-info btn-api" onclick="getQuickStats()">Get Quick Stats</button>
+        </div>
+
+        <!-- Templates Section -->
+        <div class="api-section">
+            <h3><i class="bi bi-file-text me-2"></i>Templates</h3>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Template Management</h5>
+                    <button class="btn btn-primary btn-api" onclick="getTemplates()">Get All Templates</button>
+                    <button class="btn btn-success btn-api" onclick="getApprovedTemplates()">Get Approved Only</button>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5>Create Template</h5>
+                    <div class="mb-3">
+                        <input type="text" id="template-name" class="form-control mb-2" placeholder="Template Name">
+                        <input type="text" id="template-language" class="form-control mb-2" placeholder="Language (en_US)" value="en_US">
+                        <textarea id="template-content" class="form-control mb-2" placeholder="Message Content" rows="3"></textarea>
+                        <select id="template-category" class="form-control mb-2">
+                            <option value="TRANSACTIONAL">Transactional</option>
+                            <option value="MARKETING">Marketing</option>
+                            <option value="OTP">OTP</option>
+                        </select>
+                        <button class="btn btn-primary btn-api" onclick="createTemplate()">Create Template</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Messaging Section -->
+        <div class="api-section">
+            <h3><i class="bi bi-send me-2"></i>Messaging</h3>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Send Individual Message</h5>
+                    <div class="mb-3">
+                        <input type="tel" id="msg-recipient" class="form-control mb-2" placeholder="Recipient (919876543210)">
+                        <input type="text" id="msg-name" class="form-control mb-2" placeholder="Recipient Name (optional)">
+                        <input type="number" id="msg-template-id" class="form-control mb-2" placeholder="Template ID">
+                        <button class="btn btn-success btn-api" onclick="sendMessage()">Send Message</button>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5>Send Bulk Messages</h5>
+                    <div class="mb-3">
+                        <textarea id="bulk-recipients" class="form-control mb-2" placeholder="Recipients (one per line)" rows="3"></textarea>
+                        <input type="number" id="bulk-template-id" class="form-control mb-2" placeholder="Template ID">
+                        <button class="btn btn-warning btn-api" onclick="sendBulkMessages()">Send Bulk</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-3">
+                <button class="btn btn-info btn-api" onclick="getMessageHistory()">Get Message History</button>
+                <button class="btn btn-secondary btn-api" onclick="getScheduledMessages()">Get Scheduled Messages</button>
+            </div>
+        </div>
+
+        <!-- File Upload Section -->
+        <div class="api-section">
+            <h3><i class="bi bi-cloud-upload me-2"></i>File Upload</h3>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Upload Documents</h5>
+                    <div class="mb-3">
+                        <label class="form-label">PAN Document:</label>
+                        <input type="file" id="pan-file" class="form-control mb-2" accept=".pdf,.jpg,.png,.jpeg">
+                        <label class="form-label">GST Document:</label>
+                        <input type="file" id="gst-file" class="form-control mb-2" accept=".pdf,.jpg,.png,.jpeg">
+                        <button class="btn btn-primary btn-api" onclick="uploadDocuments()">Upload Documents</button>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5>Manage Uploads</h5>
+                    <button class="btn btn-info btn-api" onclick="getUploads()">Get Uploaded Files</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Onboarding Section -->
+        <div class="api-section">
+            <h3><i class="bi bi-gear me-2"></i>Onboarding</h3>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>WhatsApp Setup</h5>
+                    <div class="mb-3">
+                        <input type="tel" id="setup-phone" class="form-control mb-2" placeholder="WhatsApp Number (919876543210)">
+                        <input type="text" id="setup-otp" class="form-control mb-2" placeholder="OTP (use 123456 for demo)" value="123456">
+                        <button class="btn btn-success btn-api" onclick="simpleSetup()">Complete Setup</button>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <h5>Manual Credentials</h5>
+                    <div class="mb-3">
+                        <input type="text" id="cred-token" class="form-control mb-2" placeholder="Access Token">
+                        <input type="text" id="cred-waba" class="form-control mb-2" placeholder="WABA ID">
+                        <input type="text" id="cred-phone" class="form-control mb-2" placeholder="Phone Number ID">
+                        <button class="btn btn-warning btn-api" onclick="updateCredentials()">Update Credentials</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-3">
+                <button class="btn btn-info btn-api" onclick="getOnboardingStatus()">Get Onboarding Status</button>
+                <button class="btn btn-secondary btn-api" onclick="startOnboarding()">Start OAuth Flow</button>
+                <button class="btn btn-outline-danger btn-api" onclick="resetConnection()">Reset Connection</button>
+            </div>
+        </div>
+
+        <!-- Analytics Section -->
+        <div class="api-section">
+            <h3><i class="bi bi-graph-up me-2"></i>Analytics</h3>
+            <button class="btn btn-primary btn-api" onclick="getAnalytics()">Get Full Analytics</button>
+            <button class="btn btn-info btn-api" onclick="getAnalyticsSummary()">Get Summary</button>
+            <button class="btn btn-success btn-api" onclick="getTemplateAnalytics()">Template Analytics</button>
+        </div>
+
+        <!-- Response Display -->
+        <div class="api-section">
+            <h3>
+                <i class="bi bi-terminal me-2"></i>
+                API Response
+                <span id="status-indicator" class="status-indicator status-pending"></span>
+                <small id="status-text" class="text-muted">Ready</small>
+            </h3>
+            <div id="response-box" class="response-box">
+                Waiting for API call...
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const API_BASE = '/api';
+        
+        function updateStatus(success, message) {
+            const indicator = document.getElementById('status-indicator');
+            const text = document.getElementById('status-text');
+            
+            if (success) {
+                indicator.className = 'status-indicator status-success';
+                text.textContent = 'Success';
+                text.className = 'text-success';
+            } else {
+                indicator.className = 'status-indicator status-error';
+                text.textContent = 'Error';
+                text.className = 'text-danger';
+            }
+        }
+        
+        function displayResponse(data) {
+            const responseBox = document.getElementById('response-box');
+            responseBox.textContent = JSON.stringify(data, null, 2);
+            updateStatus(data.success !== false, data.message || 'Response received');
+        }
+        
+        async function apiCall(method, endpoint, data = null) {
+            try {
+                const options = {
+                    method: method,
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    credentials: 'include'
+                };
+                
+                if (data && method !== 'GET') {
+                    options.body = JSON.stringify(data);
+                }
+                
+                const response = await fetch(API_BASE + endpoint, options);
+                const result = await response.json();
+                displayResponse(result);
+                return result;
+            } catch (error) {
+                displayResponse({success: false, error: error.message});
+            }
+        }
+        
+        async function apiCallFormData(endpoint, formData) {
+            try {
+                const response = await fetch(API_BASE + endpoint, {
+                    method: 'POST',
+                    body: formData,
+                    credentials: 'include'
+                });
+                const result = await response.json();
+                displayResponse(result);
+                return result;
+            } catch (error) {
+                displayResponse({success: false, error: error.message});
+            }
+        }
+        
+        // Authentication functions
+        async function register() {
+            const data = {
+                business_name: document.getElementById('reg-business').value,
+                email: document.getElementById('reg-email').value,
+                phone_number: document.getElementById('reg-phone').value,
+                password: document.getElementById('reg-password').value
+            };
+            await apiCall('POST', '/auth/register', data);
+        }
+        
+        async function login() {
+            const data = {
+                email: document.getElementById('login-email').value,
+                password: document.getElementById('login-password').value
+            };
+            await apiCall('POST', '/auth/login', data);
+        }
+        
+        async function logout() {
+            await apiCall('POST', '/auth/logout');
+        }
+        
+        async function getUserStatus() {
+            await apiCall('GET', '/auth/user/status');
+        }
+        
+        // Dashboard functions
+        async function getDashboard() {
+            await apiCall('GET', '/dashboard');
+        }
+        
+        async function getQuickStats() {
+            await apiCall('GET', '/quick-stats');
+        }
+        
+        // Template functions
+        async function getTemplates() {
+            await apiCall('GET', '/templates');
+        }
+        
+        async function getApprovedTemplates() {
+            await apiCall('GET', '/templates/approved');
+        }
+        
+        async function createTemplate() {
+            const data = {
+                name: document.getElementById('template-name').value,
+                language: document.getElementById('template-language').value,
+                content: document.getElementById('template-content').value,
+                category: document.getElementById('template-category').value
+            };
+            await apiCall('POST', '/templates', data);
+        }
+        
+        // Messaging functions
+        async function sendMessage() {
+            const data = {
+                recipient: document.getElementById('msg-recipient').value,
+                recipient_name: document.getElementById('msg-name').value,
+                template_id: parseInt(document.getElementById('msg-template-id').value)
+            };
+            await apiCall('POST', '/send-message', data);
+        }
+        
+        async function sendBulkMessages() {
+            const recipients = document.getElementById('bulk-recipients').value
+                .split('\n')
+                .map(r => r.trim())
+                .filter(r => r);
+            
+            const data = {
+                recipients_list: recipients,
+                template_id: parseInt(document.getElementById('bulk-template-id').value)
+            };
+            await apiCall('POST', '/send-bulk', data);
+        }
+        
+        async function getMessageHistory() {
+            await apiCall('GET', '/message-history');
+        }
+        
+        async function getScheduledMessages() {
+            await apiCall('GET', '/scheduled-messages');
+        }
+        
+        // Upload functions
+        async function uploadDocuments() {
+            const formData = new FormData();
+            const panFile = document.getElementById('pan-file').files[0];
+            const gstFile = document.getElementById('gst-file').files[0];
+            
+            if (panFile) formData.append('pan_file', panFile);
+            if (gstFile) formData.append('gst_file', gstFile);
+            
+            if (panFile || gstFile) {
+                await apiCallFormData('/upload', formData);
+            } else {
+                displayResponse({success: false, error: 'Please select at least one file'});
+            }
+        }
+        
+        async function getUploads() {
+            await apiCall('GET', '/uploads');
+        }
+        
+        // Analytics functions
+        async function getAnalytics() {
+            await apiCall('GET', '/analytics');
+        }
+        
+        async function getAnalyticsSummary() {
+            await apiCall('GET', '/analytics/summary');
+        }
+        
+        async function getTemplateAnalytics() {
+            await apiCall('GET', '/analytics/templates');
+        }
+        
+        // Onboarding functions
+        async function simpleSetup() {
+            const data = {
+                whatsapp_number: document.getElementById('setup-phone').value,
+                otp: document.getElementById('setup-otp').value
+            };
+            await apiCall('POST', '/onboard/simple-setup', data);
+        }
+        
+        async function updateCredentials() {
+            const data = {
+                access_token: document.getElementById('cred-token').value,
+                waba_id: document.getElementById('cred-waba').value,
+                phone_id: document.getElementById('cred-phone').value
+            };
+            await apiCall('POST', '/onboard/update-credentials', data);
+        }
+        
+        async function getOnboardingStatus() {
+            await apiCall('GET', '/onboard/status');
+        }
+        
+        async function startOnboarding() {
+            await apiCall('POST', '/onboard/start');
+        }
+        
+        async function resetConnection() {
+            await apiCall('POST', '/onboard/reset');
+        }
+        
+        // Initialize with user status check
+        document.addEventListener('DOMContentLoaded', function() {
+            getUserStatus();
+        });
+    </script>
+</body>
+</html>

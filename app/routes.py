@@ -30,6 +30,12 @@ def index():
         return redirect(url_for('main.dashboard'))
     return render_template('index.html')
 
+@main.route('/api-demo')
+def api_demo():
+    """API demonstration page for mobile app development"""
+    logger.info("🔗 API demo page accessed")
+    return render_template('api_demo.html')
+
 @main.route('/register', methods=['GET', 'POST'])
 def register():
     logger.info("📝 Registration page accessed")

@@ -52,6 +52,24 @@ def create_app():
     app.register_blueprint(admin_blueprint)
     app.logger.info("👑 Admin routes blueprint registered")
 
+    # Register API blueprints
+    from app.api.auth import auth_api
+    from app.api.dashboard import dashboard_api
+    from app.api.templates import templates_api
+    from app.api.messaging import messaging_api
+    from app.api.uploads import uploads_api
+    from app.api.analytics import analytics_api
+    from app.api.onboarding import onboarding_api
+    
+    app.register_blueprint(auth_api, url_prefix='/api/auth')
+    app.register_blueprint(dashboard_api, url_prefix='/api')
+    app.register_blueprint(templates_api, url_prefix='/api')
+    app.register_blueprint(messaging_api, url_prefix='/api')
+    app.register_blueprint(uploads_api, url_prefix='/api')
+    app.register_blueprint(analytics_api, url_prefix='/api')
+    app.register_blueprint(onboarding_api, url_prefix='/api')
+    app.logger.info("🔗 API blueprints registered")
+
     # Add request logging middleware
     @app.before_request
     def log_request_info():
