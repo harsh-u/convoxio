@@ -1,5 +1,6 @@
 import logging
 import requests
+from datetime import datetime
 from flask import Blueprint, request, jsonify, current_app
 from flask_login import login_required, current_user
 from app import db
@@ -291,6 +292,67 @@ def auto_create_starter_templates(user_id):
         
     except Exception as e:
         logger.error(f"❌ Error creating starter templates: {str(e)}")
+
+@onboarding_api.route('/onboard/support-request', methods=['POST'])
+@login_required
+def submit_support_request():
+    """Handle support request form submission for manual WhatsApp setup"""
+    try:
+        data = request.get_json()
+        
+        # Validate required fields
+        required_fields = ['business_name', 'business_type', 'contact_person', 'whatsapp_number', 'business_address', 'business_description']
+        for field in required_fields:
+            if not data.get(field):
+                return jsonify({'error': f'{field} is required'}), 400
+        
+        # Create support request record (you can create a new model for this)
+        support_request_data = {
+            'user_id': current_user.id,
+            'business_name': data['business_name'],
+            'business_type': data['business_type'],
+            'contact_person': data['contact_person'],
+            'whatsapp_number': data['whatsapp_number'],
+            'business_address': data['business_address'],
+            'website': data.get('website', ''),
+            'business_description': data['business_description'],
+            'status': 'pending',
+            'created_at': datetime.now()
+        }
+        
+        # Update user's onboarding status to "In Progress"
+        current_user.onboarding_status = 'In Progress'
+        
+        # Update user's business information
+        if data['business_name']:
+            current_user.business_name = data['business_name']
+        if data['whatsapp_number']:
+            current_user.phone_number = data['whatsapp_number']
+        
+        db.session.commit()
+        
+        # Log the support request (in a real app, you'd save this to a SupportRequest model)
+        logger.info(f"📋 Support request submitted by user {current_user.id}: {support_request_data}")
+        
+        # In a real implementation, you would:
+        # 1. Save to SupportRequest model
+        # 2. Send email notification to support team
+        # 3. Create a ticket in your support system
+        # 4. Send confirmation email to user
+        
+        # For now, we'll simulate this by logging and updating user status
+        logger.info(f"✅ Support request processed for user {current_user.id} - {data['business_name']}")
+        
+        return jsonify({
+            'success': True,
+            'message': 'Support request submitted successfully! Our team will contact you within 24 hours.',
+            'request_id': f"REQ-{current_user.id}-{int(datetime.now().timestamp())}",
+            'estimated_completion': '1-2 business days'
+        }), 200
+        
+    except Exception as e:
+        logger.error(f"❌ Support request error: {str(e)}")
+        return jsonify({'error': 'Failed to submit support request'}), 500
 
 def calculate_completion_percentage(docs_uploaded, whatsapp_connected, has_templates):
     """Calculate onboarding completion percentage"""
